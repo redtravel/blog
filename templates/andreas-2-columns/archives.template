@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template"} 
+{include file="$blogtemplate/sidebar-l.template"}
+		<DIV id=content>		
+			<H2>{$locale->tr("archives")}</H2>
+				<ul>
+					{foreach from=$archives item=month}
+					<li>
+						<a href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]
+					</li>
+					{/foreach}
+				</ul>
+
+		</div>
+{include file="$blogtemplate/footer.template"} 

@@ -1,0 +1,26 @@
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $blogOwner->hasPicture() && $AboutMyself}  
+    <div class="block-shadow">
+     <div class="block-main">
+      <div class="{cycle values="box-red,box-blue,box-orange,box-teal,box-purple,box-green"}">
+       <div class="block-recently">
+
+        <div class="block-title">
+         <div class="block-header">{$locale->tr("about_myself")}</div>
+        </div>
+
+        <div class="recent-posts">
+  	 <ul>
+  	{assign var=picture value=$blogOwner->getPicture()}
+  	<li><img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /></li>
+  	<br/>
+  	{$AboutMyself}
+  	</ul>     
+        </div><br/>        
+
+       </div>
+      </div>
+     </div>
+    </div>
+{/if}

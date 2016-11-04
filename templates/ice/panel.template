@@ -1,0 +1,63 @@
+<div id="panel">
+
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $blogOwner->hasPicture() && $AboutMyself}  
+  	<div class="block">
+  	<h5>{$locale->tr("about_myself")}</h5>
+  	<div>
+  	{assign var=picture value=$blogOwner->getPicture()}
+  	<img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /><br/>
+  	{$AboutMyself}
+  	</div>
+  	</div>
+{/if}
+
+   <div class="block">
+   <h5>search</h5>
+    <form method="get" action="{$url->getUrl("/")}index.php">
+	 <div id="search">
+      <input class="search" name="searchTerms" value="" size="14" type="text" />
+      <input name="op" value="Search" type="hidden" />
+      <input name="blogId" value="{$blog->getId()}" type="hidden" />
+      <input class="search" name="Search" value="{$locale->tr("search_s")}" type="submit" />
+     </div>
+	</form>
+   </div>
+
+	<div class="block">
+	 <h5>calendar</h5>
+         <div id="calendar">{$calendar}</div>
+	</div>
+
+	
+	<div class="block">
+	 <h5>{$locale->tr("recently")}</h5>
+      {include file="$blogtemplate/recentposts.template"}
+	</div>
+	
+	<div class="block">
+	 <h5>{$locale->tr("categories")}</h5>
+      {include file="$blogtemplate/articlecategories.template"}
+	</div>
+	
+	<div class="block">
+	<h5>{$locale->tr("links")}</h5>
+	{include file="$blogtemplate/mylinks.template"}
+	</div>
+	
+	<div class="block">
+	 <h5>{$locale->tr("archives")}</h5>
+      {include file="$blogtemplate/archives.template"}
+	</div>
+	
+	<div class="block">
+	 <h5>Syndicate</h5>
+      {include file="$blogtemplate/syndicate.template"}
+	</div>
+		
+	<div class="block">
+	 <h5>Credits</h5>
+      {include file="$blogtemplate/credits.template"}
+	</div>
+</div>

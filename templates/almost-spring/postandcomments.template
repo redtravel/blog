@@ -1,0 +1,64 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" - $postPageTitle"}
+{include file="$blogtemplate/header.template"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+{assign var=nextpost value=$post->getNextArticle()}
+{assign var=prevpost value=$post->getPrevArticle()}
+{assign var=postId value=$post->getId()}
+<div id="content">
+<div class="post">
+<p align="center">
+{if $prevpost == true}
+<a href="{$url->postPermalink($prevpost)}" title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">&laquo; {$locale->tr("previous_post")}</a> |
+{/if}
+{if $nextpost == true}
+<a href="{$url->postPermalink($nextpost)}" title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}&raquo;</a>
+{/if}
+</p>
+{include file="$blogtemplate/post.template"}
+   		<!-- {$url->postTrackbackLink($post)} -->
+        {pager style="links"}    
+
+{* show comments *}
+<h2 id="comments"><a name="Comments"></a>{$post->getNumComments()} {$locale->tr("comments")} in "{$post->getTopic()}"</h2>
+<ol id="commentlist">
+{assign var="counter" value=1}
+{foreach name=comment from=$comments item=comment}
+{if $counter%2 == 1}
+<li class="alt" id="comment-{$comment->getId()}">
+{else}
+<li class="" id="comment-{$comment->getId()}">
+{/if}
+<a name="{$comment->getId()}"></a>
+<h3 class="commenttitle">
+{if $comment->getUserUrl() != ""}
+<a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a>
+{else}
+{$comment->getUsername()}
+{/if} said: {$comment->getTopic()}</h3> 
+<p class="commentmeta">
+{assign var=commentDate value=$comment->getDateObject()}	
+{$locale->formatDate($commentDate, "%d/%m/%Y, at %H:%M")} [<a href="{$url->postPermalink($post)}#NewComment"> {$locale->tr("reply")} </a>]
+</p>
+{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()}
+</li>
+{assign var="counter" value="`$counter+1`"}
+{/foreach}
+</ol>
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+<h3 id="respond"><a name="NewComment"></a>{$locale->tr("add_comment")}</h3>
+{include file="$misctemplatepath/commentform.template"}
+{/if}
+
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,119 @@
+<div id="links">
+<div class="sidetitle">
+{$locale->tr("search")}
+</div>
+    <div class="side" id="Search"> 
+    <div class="sidebody">
+	<form id="search_form"  name="search_form" method="post" action="{$url->getIndexUrl()}">
+	<label for="searchTerms"><input type="text" id="searchTerms" name="searchTerms" value="" /></label>
+	<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+	<input type="hidden" name="op" value="Search" />
+	<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+	</form>
+	</div>
+    </div>  
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $blogOwner->hasPicture() && $AboutMyself}  
+  	<div class="sidetitle">{$locale->tr("about_myself")}</div>
+  	 <div class="side">
+  	 <ul>
+  	{assign var=picture value=$blogOwner->getPicture()}
+  	<li><img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /></li>
+  	<li>{$AboutMyself}</li>
+  	</ul>
+  	</div>
+{/if}
+<div class="sidetitle">
+	{$locale->tr("recently")}
+</div>
+<div class="side">
+	{foreach from=$recentposts item=post}
+	<div class="sidebody"><a class="aside" title="{$post->getText()|strip_tags|truncate:15:"..."|escape}" href="{$url->postLink($post)}">{$post->getTopic()}</a></div>
+	{/foreach}
+</div>
+
+{if !empty($recentcomments)}
+{if $recentcomments->isEnabled()}
+<div class="sidetitle">Recent Comments</div>
+{assign var=comments value=$recentcomments->getRecentComments()}
+<div class="side">
+{foreach from=$post->getComments() item=comment}
+{assign var=commentpostid value=$comment->getArticleId()}
+{assign var=commentpost value=$recentcomments->getArticle($commentpostid)}
+<div class="sidebody"><a class="aside" title="View comments by {$comment->getUsername()}" href="{$url->postPermalink($commentpost)}#{$comment->getId()}"><b>{$comment->getUsername()}：</b>{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()|strip_tags|truncate:100:"..."|strip_tags}</a></div>
+{/foreach}
+</div>            
+{/if}
+{/if}
+
+{if !empty($recenttrackbacks)}
+{if $recenttrackbacks->isEnabled()}
+<div class="sidetitle">Recent Trackbacks</div>
+{assign var=trackbacks value=$recenttrackbacks->getRecentTrackbacks()}
+<div class="side">
+{foreach from=$trackbacks item=trackback}
+{assign var=trackbackpostid value=$trackback->getArticleId()}
+{assign var=trackbackpost value=$recenttrackbacks->getArticle($trackbackpostid)}
+<div class="sidebody"><a class="aside" title="View trackbacks by {$trackback->getBlogName()}" href="{$trackback->getUrl()}"><b>{$trackback->getBlogName()}：</b>{$trackback->getTitle()}</a></div>
+{/foreach}
+</div>            
+{/if}
+{/if}
+
+<div class="sidetitle">
+  {$locale->tr("categories")}
+</div>
+<div class="side">
+	{foreach from=$articlecategories item=articleCategory}
+	<div class="sidebody"><a class="aside" href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> [{$articleCategory->getNumArticles()}]
+	<a class="nodecoration" href="{$url->categoryRssLink($articleCategory)}"><img border="0" src="{$url->getUrl("/imgs/rss_logo_small.gif")}" alt="RSS Feed for this category." height="12" /></a></div>
+	{/foreach}
+</div>
+
+<div class="sidetitle">
+	{$locale->tr("archives")}
+</div>
+<div class="side">
+	{foreach from=$archives item=archivelink}
+	<div class="sidebody">
+	<a class="aside" href="{$archivelink->getUrl()}">{$archivelink->getName()}</a> [{$archivelink->getNumArticles()}]</div>
+	{/foreach}
+</div>
+
+<div class="sidetitle">
+	{$locale->tr("links")}
+</div>
+<div class="side">
+	{foreach from=$mylinkscategories item=linkcategory}
+	<div class="sidebody">
+		<b>{$linkcategory->getName()}</b><br />
+		{foreach from=$linkcategory->getLinks() item=link}
+		<a class="aside" href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a><br />
+		{/foreach}
+	</div>
+	{/foreach}  
+   </ul>
+</div>
+<div class="syndicate">
+	<a title="Link to the RSS 0.90 feed." href="{$url->rssLink("rss090")}"><img src="{$url->getUrl("/imgs/rss090_logo.gif")}" border="0"/></a></div>
+<div class="syndicate">	
+	<a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}"><img src="{$url->getUrl("/imgs/rss10_logo.gif")}" border="0"/></a></div>
+<div class="syndicate">	
+	<a title="Link to the RSS 2.0 feed." href="{$url->rssLink("rss20")}"><img src="{$url->getUrl("/imgs/rss20_logo.gif")}" border="0"/></a></div>
+<div class="syndicate">	
+	<a title="Link to the Atom 0.3 feed." href="{$url->rssLink("atom")}"><img src="{$url->getUrl("/imgs/atom_logo.png")}" border="0"/></a></div>
+
+<div class="syndicate"><a class="aside" href="http://blog.yam.com">Designed by Roodo</a></div>
+
+<div class="syndicate">
+Powered By <a class="aside" href="http://www.lifetype.net">LifeType</a>
+</div>
+</div>

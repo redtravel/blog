@@ -1,0 +1,289 @@
+/*
+	Theme Name: fSubtle
+	Theme URI: http://www.fahlstad.se
+	Description: A subtle theme
+	Version: 1.0
+	Author: Fredrik Fahlstad
+	Author URI: http://www.fahlstad.se
+*/
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	margin: 0px;
+	padding: 0px;
+	color:#333;
+	line-height: 140%;
+	background-color: #707070;
+	background-image: url(images/bg.jpg);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+
+#wrap {
+	width: 647px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#main {
+	overflow: hidden;
+}
+#content {
+	float: left;
+	width: 430px;
+	padding-right: 10px;
+	padding-left: 3px;
+}
+#sidebar {
+	float: right;
+	width: 190px;
+	font-size: 11px;
+}
+#footer{
+	clear:both;
+	text-align: center;
+}
+#header {
+	height:160px;
+	background-image: url(images/header-copy.jpg);
+	background-repeat: no-repeat;
+	margin-top: 10px;
+	background-position: center;
+}
+h1#blogname {
+padding-top:40px;
+padding-left:20px;
+padding-bottom:5px;
+}
+#header h1 a{
+	color:#EFEFEF;font-size:200%;
+	font-family:Geneva, Arial, Helvetica, sans-serif
+
+	}
+.description {
+color:#FFFFFF;
+padding-left:20px;
+}
+h1,h2,h3 {
+	color: #365873;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 120%;	
+}
+.entrytitle {
+	padding-bottom:5px;
+}
+.entrytitle h3{
+	font-size:100%;
+	padding: 0px;
+}
+h3.entrytitle a
+{
+	color:#365873;
+}
+.entrybody h3, .entrybody h2{
+	font-size:100%;
+	}
+.entrymeta, .entrydate {
+	font-size: 78%;
+	text-transform: uppercase;
+	color: #999999;
+	font-family: "Trebuchet MS", Trebuchet, Arial, Verdana, Sans-serif;
+	font-weight: normal;
+}
+p{
+	font-size: 85%;
+	margin-bottom:15px;
+}
+a, a:visited{
+	text-decoration:none;
+	color: #8C2929;
+}
+a:hover {
+	text-decoration:underline;
+}
+/* Sidebar Content
+----------------------------------------------- */
+/*#sidebar h2 {
+	font-size:100%;
+	letter-spacing:1px;
+	color:#999999;
+	text-transform:uppercase;
+	font-family: "Trebuchet MS", Trebuchet, Arial, Verdana, Sans-serif;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	display:block;
+	background-color:#ddd;
+	padding-left:3px;
+}
+#sidebar ul {
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	font-size: 11px;
+	list-style-type: none;
+  }
+#sidebar li {
+  }
+#sidebar ul ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+  }
+#sidebar ul ul li{
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 3px;
+  }
+
+#sidebar p {
+  color:#666;
+  line-height:1.5em;
+  font: 11px Verdana;
+  padding:10px;
+  }
+  #sidebar a {
+  color:#365873;
+ }*/
+ #sidebar h2{
+	color:#FFFFFF;
+	background-color:#bbb;
+	display:block;
+	margin:0;
+	font-size:11px;
+	text-transform:uppercase;
+	border-left-width: 5px;
+	border-left-style: solid;
+	border-left-color: #3F5D72;
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 5px;
+}
+#sidebar ul{
+	padding:0;
+	margin:0;
+	list-style:none
+}
+#sidebar ul ul{
+	margin-bottom:10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+#sidebar ul ul ul{
+}
+#sidebar ul li{
+}
+#sidebar ul ul li{
+	list-style:square;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+}
+#sidebar ul ul ul li{
+}
+#sidebar a{
+color:#3F5D72;
+}
+
+.entry {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+.firstpost {
+	background-color: #FFFFFF;
+}
+.firstpost h3{
+	font-size:140%;
+		color:#4b5ba2;
+
+}
+.arc h2 {
+	font-size:140%;
+	margin:0;
+	padding:0;
+}
+.arc {
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+}
+#searchdiv{
+	font-size:10px;
+	font-weight:bold;
+	margin-bottom: 10px;
+}
+blockquote p{
+	font-style:italic;
+	border-left:solid 3px #CCCCCC;
+	padding-left:5px;
+	}
+/**********************************************/
+/* Comments
+/**********************************************/
+
+p.comments_link img {
+	border:0;
+}
+
+ol#commentlist {
+}
+#commentblock {
+	padding: 10px;
+}
+
+#commentlist li p{
+	font-size:11px;
+	background-color:#ddd;
+	padding: 5px;
+}
+.pager {
+	clear:all;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.pager a, .pager a:link, .pager a:href, .pager a:hover {
+ text-decoration: none;
+ border: 0px;
+}
+
+.pager .pagerLinkPrevPage, .pagerLink, .pagerLinkNextPage{
+	padding: 2px 6px;
+}
+
+.pager .pagerLinkPrevPage{
+	margin-right:20px;
+}
+.pager .pagerLinkNextPage {
+	margin-left:20px;
+}
+
+.pager .pagerCurrent {
+	padding: 2px 6px; 
+	border-color: #999; 
+	font-weight: bold; 
+	font-size: 13px; 
+	vertical-align: top; 
+	background: #fff; 
+	color: #FF0084;	
+}

@@ -1,0 +1,28 @@
+		{assign var="postDate" value=$post->getDateObject()}
+		{assign var="postOwner" value=$post->getUserInfo()} 
+		
+<div class="entry-asset asset hentry">
+  <div class="asset-header">
+	<h1 class="asset-name entry-title"><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h1>
+    <div class="asset-meta">
+    <span class="byline vcard">By <span class="vcard author">{$postOwner->getUsername()}</span> on <abbr class="published"> {$locale->formatDate($postDate,"%B %d, %Y")} | {foreach name=categories from=$post->getCategories() item=postCategory}<a href="{$url->categoryLink($postCategory)}" title="{$locale->tr("category")}: {$postCategory->getName()}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}{/foreach}</abbr>      </span>
+
+    <span class="separator">|</span> <a class="permalink" rel="bookmark" title="{$post->getTopic()}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a>
+    | {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1 || $post->getNumComments() > 0 }<a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comments")|capitalize} -> {$post->getTopic()}">{if $post->getNumComments() == 0 }{$locale->tr("add_comment")}{else if}{$locale->tr("comments")|capitalize} ({$post->getNumComments()}){/if}</a> {/if} 
+    | {if $post->getNumTrackbacks() > 0}<a href="{$url->postTrackbackStatsLink($post)}" title="{$post->getTopic()}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a>{else}{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()}){/if}
+	{if $OnMainPage}	
+	{else}
+		| {assign var=nextpost value=$post->getNextArticle()}{if $nextpost == true}<a href="{$url->postPermalink($nextpost)}" title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}</a> | {/if}
+		{assign var=prevpost value=$post->getPrevArticle()}{if $prevpost == true}<a href="{$url->postPermalink($prevpost)}" title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">{$locale->tr("previous_post")}</a>  {/if} 
+	{/if}      
+	
+	</div><!--asset-meta-->
+  </div><!--/asset-header-->
+  <div class="asset-content entry-content">
+	<div class="asset-body">
+	   {$post->getText()} 
+	</div>
+  </div>
+  <div class="asset-footer"></div>
+
+</div><!-- entry-1 -->

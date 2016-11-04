@@ -1,0 +1,30 @@
+	<tr>
+		<td class="footernav" colspan="2">
+		<div id="footernav">
+			<ul>
+				<li id="fcurrent"><a href="{$url->blogLink()}">Home</a></li>
+				<li><img src="{$url->getTemplateFile('images/navsep.gif')}" alt="" /></li>
+				<li><a href="">Forums</a></li>
+				<li><a href="">Resources</a></li>
+				<li><a href="">Disclaimer</a></li>
+				<li><a href="{$url->templatePage('about')}">About</a></li>
+			</ul>
+		</div>
+		</td>
+	</tr>
+
+</table>
+
+</div>
+</div>
+</div>
+
+<div class="shadbotmid">
+	<div class="shadbotleft"> </div>
+	<div class="shadbotright"> </div>
+	&nbsp;
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- POST -->
+<h3 class="storytitle"><a href="{$url->postPermalink($post)}">{$post->getTopic()|capitalize}</a></h3>
+
+{assign var=postText value=$post->getText()}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+
+<div style="border-bottom: 1px solid silver; text-align: left; padding:3px 0px 3px 5px;">
+	<span class="shadedark">{$postOwner->getUsername()}</span>
+	<span class="shadelight">{$locale->formatDate($postDate,"%d %B, %Y %H:%M")}</span>
+	<span class="shadedark">{foreach name=categories from=$post->getCategories() item=postCategory}<a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}{/foreach}</span>
+	<span class="shadelight"><a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a></span>
+	<span class="shadedark"><a href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getTotalTrackbacks()})</a></span>
+</div>
+
+<div class="storycontent">
+	{$postText}
+	<br style="clear: both;" />
+</div>
+
+<div class="feedback">
+	<a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comment on this")}">
+	{if $post->getTotalComments() eq 0}{$locale->tr("comment on this")}{else}{$post->getTotalComments()} {$locale->tr("comments")}{/if}
+	</a> |
+	{if $post->getTotalTrackbacks() > 0}
+		<a href="{$url->postTrackbackStatsLink($post)}" title="{$locale->tr("trackbacks")}">{$post->getTotalTrackbacks()} {$locale->tr("trackbacks")}</a>
+	{else}
+		{$post->getTotalTrackbacks()} {$locale->tr("trackbacks")}
+	{/if}
+</div>
+<!-- POST end -->

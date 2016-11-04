@@ -1,0 +1,84 @@
+</div>
+<!-- begin sidebar -->
+<div id="sidebar">
+
+<ul>
+	
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $blogOwner->hasPicture() && $AboutMyself}  
+<li>
+<h2>{$locale->tr("about_myself")}</h2>
+{assign var=picture value=$blogOwner->getPicture()}
+<p><img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /></p>
+<p>{$blogOwner->getfullName()}</p>
+<p>{$AboutMyself}</p>
+</li>
+{/if}
+
+	
+<li>	
+<h2>{$locale->tr("search")}</h2>
+<form method="post" action="{$url->getIndexUrl()}">
+<input type="text" name="searchTerms" value="" size="15" />
+<input type="hidden" name="op" value="Search" />
+<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+<input type="submit" name="Search" value="{$locale->tr("search")}" />
+</form>
+
+</li>
+
+<li>
+<h2>{$locale->tr("recently")}</h2>
+<ul>
+{foreach from=$recentposts item=recentpost}
+<li class=page_item><A title="{$recentpost->getText()|truncate:150:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a><br/></li>
+{/foreach}
+</ul>
+</li>
+
+<li>
+<h2>{$locale->tr("categories")}</h2>
+<ul>
+{foreach from=$articlecategories item=articleCategory}
+<li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> ({$articleCategory->getNumArticles()})</li>
+{/foreach}
+</ul>
+</li>
+
+
+<li>
+<h2>{$locale->tr("menu")}</h2>
+<ul>
+<li><a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a>
+<li><a title="{$locale->tr("admin")}" href="{$url->getAdminUrl()}">{$locale->tr("admin")}</a></li>
+<li><a title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+<li><a title="{$locale->tr("archives")}" href="{$url->templatePage("archives")}">{$locale->tr("archives")|capitalize}</a>
+<li><a title="{$locale->tr("links")}" href="{$url->templatePage("bookmark")}">{$locale->tr("links")|capitalize}</a>
+</ul>
+</li>
+
+<li>
+<h2>{$locale->tr("syndicate")}</h2>
+<ul>
+<li><a title="RSS 0.90" href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+<li><a title="RSS 1.0" href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+<li><a title="RSS 2.0" href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+<li><a title="Atom" href="{$url->rssLink("rss20")}">Atom</a></li>
+</ul>
+</li>
+
+<li>
+<h2>Meta</h2>
+<ul>
+<li><a title="This page validates as XHTML 1.0 Transitional" href="http://validator.w3.org/check/referer">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> </li>
+<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a> </li>
+<li><a title="Powered by LifeType, state-of-the-art semantic personal publishing platform." href="http://www.lifetype.net/">Powered by Lifetype</a></li>
+</ul>
+</li>
+
+
+
+</ul>
+</div>
+<!-- The main column ends  -->	</div>

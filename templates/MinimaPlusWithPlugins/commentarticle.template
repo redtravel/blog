@@ -1,0 +1,8 @@
+{include file="$blogtemplate/header.template"}
+		<!-- Loop Start -->
+		<div class="post">
+		<h3 class="post-title">{$locale->tr("add_comment")}</H3>
+		</div>
+{include file="$blogtemplate/commentform.template"}
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"}

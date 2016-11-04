@@ -1,0 +1,17 @@
+{include file="$blogtemplate/header.template"} 
+		<DIV class="entry first">		
+			<H3 class=entrytitle>{$locale->tr("archives")}</H3>
+			<DIV class=entrybody>
+				<ul>
+					{foreach from=$archives item=month}
+					<li>
+						<a href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]
+					</li>
+					{/foreach}
+				</ul>
+
+			</div>
+		</div>
+
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"} 

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset={$locale->getCharset()}"/>
+<meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+<link rel="stylesheet" type="text/css" href="{$url->getTemplateFile("default.css")}" media="screen"/>
+
+<link rel="alternate" type="application/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+<link rel="alternate" type="application/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+<link rel="alternate" type="application/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+<link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("favicon.ico")}" />
+
+<title>{$pageTitle|escape:"html"}</title>
+{if $badbehavior}
+   {$badbehavior->showBB2JavaScript()}
+{/if}
+</head>
+
+<body>
+<div class="top">
+<div class="header">
+<div class="left">
+{$blog->getBlog()}
+</div>
+<div class="right">
+<h2>{$blog->getAbout()}</h2>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<div class="navigation">
+<a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a>
+<a title="{$locale->tr("archives")}" href="{$url->templatePage("archives")}">{$locale->tr("archives")}</a>
+<a title="{$locale->tr("admin")}" href="{$url->getAdminUrl()}">{$locale->tr("admin")}</a>
+<a title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a>
+<a title="{$locale->tr("summary")}" href="{$url->getUrl("/summary.php")}">{$locale->tr("summary")}</a>
+<a href="{$url->templatePage("links")}">{$locale->tr("my_links")}</a>
+<div class="clearer"><span></span></div>
+</div>
+
+<div class="main">
+
+<div class="content">

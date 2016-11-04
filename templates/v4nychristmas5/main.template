@@ -1,0 +1,22 @@
+{include file="$blogtemplate/header.template"}
+	<!-- Loop Start -->
+	{if $showAll}
+	<div class=entry>
+		{if $showAll == 1 && $category}
+			<div class="titolopost">{$locale->tr("posts")}: {$category->getName()}</div>
+		{/if}
+		<ul>
+		{foreach from=$posts item=post}
+			<!-- showing only the topic of the post, in case we have too many! -->
+			{assign var="postDate" value=$post->getDateObject()}
+			<li>{$locale->formatDate($postDate,"%Y.%B%d")} <a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></li>
+		{/foreach}
+		</ul>
+	</div>
+	{else}
+		{foreach from=$posts item=post}
+			{include file="$blogtemplate/post.template"}
+		{/foreach}
+	{/if}
+{pager style="links"}  
+{include file="$blogtemplate/footer.template"}

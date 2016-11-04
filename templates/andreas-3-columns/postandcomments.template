@@ -1,0 +1,67 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/sidebar-l.template"}
+{include file="$blogtemplate/sidebar-r.template"}
+
+<div id="content">
+	{assign var="poster" value=$post->getUserInfo()}
+	<!-- {$url->postTrackbackLink($post)} -->
+	<a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($post)}"><h2>{$post->getTopic()}</h2></a>
+	{assign var="postDate" value=$post->getDateObject()}
+	{assign var="postOwner" value=$post->getUserInfo()}
+	<span class="date">{$postOwner->getUsername()} | {$locale->formatDate($postDate,"%d %B, %Y %H:%M")}</span>
+	<p>{$post->getText()}</p>
+	
+	<p class="info">
+	Posted in 
+		{foreach name=categories from=$post->getCategories() item=postcategory}
+			<a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+		{/foreach}. 
+		{$locale->tr("comment on this")}: <a href="{$url->postPermalink($post)}">({$post->getNumComments()})</a>. 
+		{$locale->tr("trackbacks")}:<a href="{$url->postTrackbackStatsLink($post)}">({$post->getNumTrackbacks()})</a>.
+		<a title="{$locale->tr("permalink_title")}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a>	<br>
+		
+		{* I am not so keen on using if's in templates, but can't think of another way... *}
+		{assign var=nextpost value=$post->getNextArticle()}
+		{if $nextpost == true}
+			<a href="{$url->postPermalink($nextpost)}" title="Next post: {$nextpost->getTopic()}">&laquo;Next post</a> |
+		{/if}
+		{assign var=prevpost value=$post->getPrevArticle()}
+		{if $prevpost == true}
+			<a href="{$url->postPermalink($prevpost)}" title="Previous post: {$prevpost->getTopic()}">Previous post&raquo;</a>
+		{/if}
+	</p>
+
+	{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+	<h2 id="comments">Comments</h2>
+	<ol id="commentlist">
+	
+	{assign var="counter" value=1}
+	{foreach name=comment from=$comments item=comment}
+		<a name="{$comment->getId()}"></a>
+		<li id="comment-{$comment->getId()}">
+			<p class="header"><strong>{$counter}.</strong>
+			<a href="{$comment->getUserUrl()}">{$comment->getUsername()}</a> &nbsp;|&nbsp; {assign var=commentDate value=$comment->getDateObject()} {$locale->formatDate($commentDate, "%m/%d,%Y")} at {$locale->formatDate($commentDate, "%H:%M")}</p>
+			<p>{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()}</p>
+		</li>
+		{assign var="counter" value="`$counter+1`"}
+	{/foreach}
+	</ol>
+	<a name="comments"></a>
+	
+	<h2 id="commentsformheader">Leave a Reply</h2>
+	
+		{include file="$misctemplatepath/commentform.template"}
+	{/if} 
+
+</div>
+{include file="$blogtemplate/footer.template"}

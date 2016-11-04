@@ -1,0 +1,27 @@
+{include file="$blogtemplate/header.template"}
+   {assign var="poster" value=$post->getUserInfo()}
+   <!-- {$url->postTrackbackLink($post)} -->
+   {include file="$blogtemplate/post.template"}
+        {pager style="links"}    
+   {if $post->getNumComments()!=0}
+   <a name="comments" id="comments"></a>
+   <div class="commtitle">{$locale->tr("comments")}</div>
+   {/if}
+   {foreach from=$comments item=comment}
+   {assign var="commentDate" value=$comment->getDateObject()}
+   <div class="commhead"><strong>{$comment->getTopic()}</strong> | {$comment->getUsername()} | {$locale->formatDate($commentDate, "%d/%m/%Y %H:%M")} | <a href="{$url->replyCommentLink($post,$comment)}">{$locale->tr("reply")}</a></div>
+   <div class="commtext">{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()}</div>
+   {/foreach}
+   {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+   <a id="formcomment" name="formcomment"></a>
+   <div class="commtitle">{$locale->tr("add_comment")}</div>
+   {include file="$blogtemplate/commentform.template"}
+   {/if}
+   {include file="$blogtemplate/footer.template"}

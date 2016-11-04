@@ -1,0 +1,105 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+
+{include file="$blogtemplate/header.template"}
+
+	<DIV class=entry>
+		<!-- {$url->postTrackbackLink($post)} -->
+		{assign var="postDate" value=$post->getDateObject()}
+		{assign var="postOwner" value=$post->getUserInfo()}
+		<H3 class=entrytitle><A href="{$url->postPermalink($post)}">{$post->getTopic()}</A></H3>
+		<DIV class=date>Published on {$locale->formatDate($postDate,"%m/%d,%Y")}</DIV>
+		<DIV class=entrybody>
+			<P>{$post->getText()}</P>
+			<BR clear=all>
+			</DIV>
+	</DIV>
+	<DIV class=feedback>
+		<DIV class=meta>Posted by {$postOwner->getUsername()} at
+			{$locale->formatDate($postDate,"%H:%M")}
+			<A class=aposted href="{$url->postPermalink($post)}#comments">{$locale->tr("comment on this")} ({$post->getNumComments()})</A>
+			<A class=aposted href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</A>
+			<a href="{$url->blogLink()}">{$locale->tr("Main")}</a>
+			{foreach name=categories from=$post->getCategories() item=postcategory}
+				<a class=aposted href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+			{/foreach}<br>
+			{* Prevpost and nextpost use *}
+			{assign var=nextpost value=$post->getNextArticle()}
+			{assign var=prevpost value=$post->getPrevArticle()}
+			{if $nextpost == true}
+				<a href="{$url->postPermalink($nextpost)}" title="Previous post: {$nextpost->getTopic()}">{$locale->tr("previous_post")}</a>
+			{/if}
+			{if $prevpost == true}
+				<a href="{$url->postPermalink($prevpost)}" title="Next post: {$prevpost->getTopic()}">{$locale->tr("next_post")}</a>
+			{/if}
+			{* End of article_index *}
+		</DIV>
+	</DIV>	
+
+	{if !empty($blogtimes)}
+		{if $blogtimes->isEnabled()}
+			{$blogtimes->show()}
+		{/if}
+	{/if}
+
+	<a name="comments"></a>
+
+	<h2 id="commentsformheader">Leave a Reply</h2>
+	{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+		{include file="$misctemplatepath/commentform.template"}
+	{/if}
+	<h2 id="comments">Comments </h2>
+        {pager style="links"}    
+	<ol id="commentlist">
+	
+	{assign var="counter" value=1}
+	{foreach name=comment from=$comments item=comment}
+		<a name="{$comment->getId()}"></a>
+		{if $counter%2!=0}
+		<li class="alt" id="comment-{$comment->getId()}">
+		
+		{else}
+		<li class="standard" id="comment-{$comment->getId()}">
+		{/if}
+			<div class="commentname">
+				<span class="commentauthor"><a href="{$comment->getUserUrl()}">{$comment->getUsername()}</a></span>
+			</div>
+			<div class="commentinfo">
+				<span class="commentdate">
+					{assign var=commentDate value=$comment->getDateObject()} {$locale->formatDate($commentDate, "%m/%d,%Y")} | <a href="#comment-{$comment->getId()}" title="">{$locale->formatDate($commentDate, "%H:%M")}</a>
+				</span>
+			</div>
+			<div class='commenttext'>			{if !empty($gravatar)}
+			{if $gravatar->isEnabled()}
+				<img src="{$gravatar->gravatar($comment)}" width="{$gravatar->getSize()}" height="{$gravatar->getSize()}" align="left" hspace="10"/>
+			{/if}{/if}
+{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()}</div>
+		</LI>
+		{assign var="counter" value="`$counter+1`"}
+	{/foreach}
+	</ol>
+
+	{if !empty($articlereferers)}
+		{if $articlereferers->isEnabled()}
+			<h2 id="comments">Article Referers</h2>
+			{assign var=postid value=$post->getId()}
+			{assign var=referers value=$articlereferers->getArticleReferers($postid)}
+			<ol>
+				{foreach from=$referers item=referer}
+				<li>
+					<a href="{$referer->getUrl()}">{$referer->getUrl()|truncate:65:"..."}</a>  ({$referer->getCount()})
+				</li>
+				{/foreach}
+			</ol>
+		{/if}
+	{/if}
+
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"}

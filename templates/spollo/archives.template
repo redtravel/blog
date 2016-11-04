@@ -1,0 +1,17 @@
+{assign var="OnArchivesPage" value=1}
+{assign var=title value=$locale->tr("archives")}
+
+{include file="$blogtemplate/header.template" pageTitle="$pageTitle | $title"}
+{include file="$blogtemplate/panel.template"}
+
+<!-- Content Start -->
+<div id="content">
+<h2>{$locale->tr("archives")|capitalize}</h2>
+<ul>
+{foreach from=$archives item=month}
+<li style="list-style-type: none; line-height:1.3em;"><a class="archive" href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]</li>
+{/foreach}
+</ul>
+</div>
+<!-- Content End -->
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,354 @@
+/*
+Theme Name: Falling Leaves
+Theme URI: http://www.hexfactor.com/wordpress/
+Description: I'll let you be the judge of that.
+Version: 0.9
+Author: Shawn Grimes
+Author URI: http://www.hexfactor.com/
+*/
+
+/* The Basics */
+* { 
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #A73A02;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #D88207;
+	text-decoration: underline;
+}
+
+a img {
+	border: none;
+}
+
+p {
+	padding: 5px 0 5px 0;
+	letter-spacing:1px;
+	line-height:1.5;
+}
+
+small {
+	font-size: 85%;
+}
+acronym, abbr {
+	border-bottom: 1px dashed #444;
+	font-size: 90%;
+	letter-spacing: 1px;
+}
+
+blockquote {
+    margin: 20px 20px;
+    padding: 10px 10px 10px 65px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: url(images/block.gif) #fff no-repeat top left;
+    color: #666;
+    text-align: justify;
+}
+
+/* forms */
+#CommentForm legend {
+    display:none;
+}
+#CommentForm fieldset {
+    border:none;
+}
+
+#CommentForm label {
+        display:block;
+        width:320px;
+        float:left;
+        text-align:right;
+}
+#CommentForm input, span, textarea {
+    margin-left:5px;
+
+}
+#CommentForm div {
+    clear:both;
+    margin-bottom:10px;
+}
+form {
+	margin-top: 7px;
+}
+
+
+
+
+#sidebar p {
+	font-size: 10pt;
+	line-height: 1.5;
+}
+
+#sidebar li {
+	font-size: 10pt;
+	line-height: 1.5;
+	list-style: NONE;
+}
+
+
+
+#footer p {
+	color: #666;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.date {
+	font-size: 10pt;
+	font-weight: normal;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.description {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #fff;
+	margin-left: 300px;
+}
+
+.feedback {
+	background-color: #f8f8f8;
+	padding: 0 5px 2px 5px;
+}
+
+.meta {
+	font-size: 10pt;
+	font-weight: normal;
+	text-align: left;
+}
+
+.post {
+	margin-bottom: 35px;
+	line-height:1.5;
+}
+
+/* Headings */
+h1 { font: normal 28px Georgia, "Times New Roman", Times, serif; margin-left: 300px; padding-top: 15px; }
+h1 a { color: #fff; text-decoration: none; border: none; }
+h1 a:hover { color: #fff; text-decoration: none; border: none; }
+h2 { border-bottom: 1px solid #ddd; color: #336; padding-bottom: 2px; font: normal 17px Arial, Helvetica, sans-serif; }
+h2 a { color: #336; text-decoration: none; border: none; }
+h2 a:hover { color: #889AC2; text-decoration: none; border: none; }
+#sidebar h2 { font-size: 13px; font-weight: normal; }
+h3 { border-bottom: 1px dotted #ddd; color: #336; padding-bottom: 2px; font: normal 14px Arial, Helvetica, sans-serif; padding-top: 20px; }
+h4 { font: 10pt Arial, Helvetica, sans-serif; }
+
+/* Layout */
+body { 
+	background-color: #dda;
+	font: 10pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	letter-spacing:1px;
+	color: #444;
+	margin: 10px 0;
+}
+
+#container {
+	width: 700px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 20px 20px 0 20px;
+    border-right: 2px solid #C2C295;
+    border-left: 2px solid #C2C295;
+    border-top: 1px solid #c2c295;
+    border-bottom: 2px solid #c2c295;
+}
+
+#content {
+	float: left;
+	width: 450px;
+}
+
+#footer {
+	clear: both;
+	border-top: 1px solid #ddd;
+	padding-bottom: 8px;
+	text-align: left;
+}
+
+#header {
+	height: 300px;
+	margin-bottom: 35px;
+	background: url(images/masthead.jpg);
+	text-align: center;
+}
+
+.sep {
+	margin: 25px 0 20px 0;
+	padding: 0;
+	height: 30px;
+	border:none;
+	background: url(images/sep.gif);
+}
+
+#sidebar {
+	float: right;
+	width: 200px;
+	margin-bottom: 35px;
+}
+
+/* Images */
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #ddd;
+}
+	
+img.alignright {
+	padding: 4px;
+	margin: 4px 0 5px 7px;
+	display: inline;
+	border: 1px solid #ddd;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 4px 7px 5px 0;
+	display: inline;
+	border: 1px solid #ddd;
+}
+
+/* Lists */
+.post ol{
+margin-left:40px;
+}
+
+.post ul{
+margin-left:40px;
+}
+
+
+li {
+	
+	line-height: 1.5;
+}
+
+li li {
+	list-style: circle;
+}
+
+/* Comments */
+.alt {
+	margin: 0;
+	padding: 10px;
+}
+	
+.alt {
+	background-color: #dda;
+	border-top: 1px solid #c2c295;
+	border-bottom: 1px solid #c2c295;
+}
+
+.commentlist {
+	padding: 0;
+}
+
+.commentlist li {
+	margin: 15px 0 3px;
+	padding: 5px 10px 3px;
+	list-style: none;
+}
+
+.commentlist p {
+	margin: 10px 5px 10px 0;
+}
+
+.commentlist ol {
+}
+
+.commentlist li {
+	margin: 15px 0 3px;
+	padding: 5px 10px 3px;
+	list-style: none;
+}
+
+.commentlist p {
+	margin: 10px 5px 10px 0;
+}
+
+
+.calendarhead {
+	FONT-SIZE: 10pt;
+	COLOR: 	#4B4B3C;
+	PADDING-TOP: 5px;
+	TEXT-ALIGN: left;
+	Font-Family: palatino,  georgia, verdana, arial, 
+	height: 30px;
+	width: 100%;
+	padding-bottom: 5px;
+	line-height:1.5;
+}
+.calendartable {
+	WIDTH: 100%;
+	TEXT-ALIGN: center;
+	margin-bottom: 5px;
+}
+.calendarweek {
+	FONT-SIZE: 10pt; 
+	COLOR: #333333;
+	TEXT-ALIGN: left;
+	line-height:1.5;	
+}
+.calendarwd {
+	
+	background-repeat: no-repeat;
+}
+.calendard {
+	empty-cells: show;
+}
+.calendardbg {
+}
+.calendar {
+	FONT-SIZE: 10pt;
+}
+
+.pager {
+	clear:all;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.pager a, .pager a:link, .pager a:href, .pager a:hover {
+ text-decoration: none;
+ border: 0px;
+}
+
+.pager .pagerLinkPrevPage, .pagerLink, .pagerLinkNextPage{
+	padding: 2px 6px;
+}
+
+.pager .pagerLinkPrevPage{
+	margin-right:20px;
+}
+.pager .pagerLinkNextPage {
+	margin-left:20px;
+}
+
+.pager .pagerCurrent {
+	padding: 2px 6px; 
+	border-color: #999; 
+	font-weight: bold; 
+	font-size: 13px; 
+	vertical-align: top; 
+	background: #fff; 
+	color: #FF0084;	
+}

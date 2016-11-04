@@ -1,0 +1,9 @@
+{include file="$blogtemplate/header.template"}
+ {foreach from=$posts item=post}
+   {assign var="postDate" value=$post->getDateObject()}
+   <div class="blogbody">
+   {include file="$blogtemplate/post.template"}
+   </div>
+ {/foreach}
+{pager style="links"}  
+{include file="$blogtemplate/footer.template"}

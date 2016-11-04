@@ -1,0 +1,121 @@
+{pager style="links"}
+</div>
+
+<div id="left">
+
+<!--
+<div id="navcontainer">
+
+
+<ul id="navlist">
+<li id="active"><a href="#" id="current">Home</a></li>
+<li class="green"><a href="#">Health</a></li>
+<li><a href="#">Fruits</a></li>
+<li><a href="#">Community</a></li>
+<li><a href="#">About us </a></li>
+</ul>
+</div>
+-->
+<div id="navcontainer">    	
+   	{$locale->tr("search")}
+</div>
+<div id="navlist">
+	<form id="search_form" method="post" action="{$url->getIndexUrl()}">
+	<label for="searchTerms"><input type="text" id="searchTerms" name="searchTerms" value="" /></label>
+	<input type="submit" name="Search" value="{$locale->tr("search_s")}" class="button" />
+	<input type="hidden" name="op" value="Search" />
+	<input type="hidden" name="blogId" value="{$blog->getId()}" />   
+	</form>
+	</div> 
+
+<div id="navcontainer">
+	{$locale->tr("recently")}
+</div>
+
+<div id="navlist">
+   	<ul>
+	{foreach from=$recentposts item=post}
+       <li><a title="{$post->getTopic()}" href="{$url->postLink($post)}">{$post->getTopic()}</a></li>
+   		{/foreach}
+   	</ul>
+</div>
+<div id="navcontainer">
+	{$locale->tr("categories")}
+</div>
+<div id="navlist">
+	<ul>
+    	{foreach from=$articlecategories item=articleCategory}
+    	<li><a title="{$articleCategory->getName()}" href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()} 
+		<abbr title="{$articleCategory->getNumPublishedArticles()} {$locale->tr("posts")}">[{$articleCategory->getNumArticles()}]</abbr>
+		</a></li>
+   		{/foreach}
+	</ul>
+</div>
+
+<div id="navcontainer">
+{$locale->tr("archives")}
+</div>
+<div id="navlist">	
+	<ul>
+		{foreach from=$archives item=month}
+    	<li><a href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]</li>
+    	{/foreach}
+   	</ul>
+</div>
+   	
+<div id="navcontainer">
+{$locale->tr("my_links")}
+</div> 
+<div id="navlist">
+{foreach from=$mylinkscategories item=linkcategory}
+<em>{$linkcategory->getName()}</em>
+   	<ul>
+  		{foreach from=$linkcategory->getLinks() item=link}
+  	<li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a>: {$link->getDescription()} {if $link->getRssFeed() != ""}
+      <a href="{$link->getRssFeed()}"><img src="{$url->getUrl("/imgs/rss_logo_small.gif")}" alt="RSS" /></a>
+    {/if}</li>
+    		{/foreach}
+  	</ul>
+  		{/foreach}
+</div>
+
+		
+
+
+<div id="navcontainer">
+{$locale->tr("menu")}
+</div>
+<div id="navlist">
+   	<ul>
+   	<li><a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+   	<li><a title="{$locale->tr("archives")}" href="{$url->templatePage("archives")}">{$locale->tr("archives")}</a></li>
+   	<li><a title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+   	<li><a title="{$locale->tr("admin")}" href="{$url->getAdminUrl()}">{$locale->tr("admin")}</a></li>
+   	</ul>
+</div>
+
+<div id="navcontainer">
+{$locale->tr("syndicate")}
+</div>
+<div id="navlist">
+    	<ul>
+    	<li><a title="RSS 0.90" href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+    	<li><a title="RSS 1.0" href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+    	<li><a title="RSS 2.0" href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+    	<li><a title="Atom" href="{$url->rssLink("rss20")}">Atom</a></li>
+    	</ul>
+</div>
+
+<div class="clearer">&nbsp;</div>	
+	
+</div>
+<div id="footer">
+	Copyright@2007. <a href="http://reic.twbbs.org" titl="Reic's place" target="_blank">Reic's Place</a>. All rights reserved.
+	Powered by <a href="http://www.lifetype.net" target="_blank">Lifetype</a>.<br />
+Designed by <a href="http://www.oswd.org/user/profile/id/10642" target="_blank" title="Delicious Fruit">Dieter Schneider</a>, <a href="http://www.csstemplateheaven.com/" title="csstemplateheave">CssTemplateHeaven</a>. 
+Ported to Lifetype by <a href="http://reic.twbbs.org" titl="Reic's place" target="_blank">Reic Wang</a>.
+</div>
+
+</div>
+</body>
+</html>

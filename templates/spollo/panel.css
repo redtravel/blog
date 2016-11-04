@@ -1,0 +1,74 @@
+#panel {
+display: inline;
+float: left;
+margin: 10px 10px 10px 10px;
+padding: 5px 5px 5px 5px;
+width: 150px !important;
+background-color: #EEEEEE;
+overflow: hidden;
+border: 1px solid #CECECE;
+}
+
+#panel ul {
+margin: 0 0 15px 0;
+padding: 0;
+}
+
+#panel ul ul {
+border-top: 1px solid #999999;
+font-weight: normal;
+text-transform:none;
+}
+
+#panel ul li {
+font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+font-size: 14px;
+font-weight: bold;
+color: #666;
+list-style-type: none;
+padding-left: 3px;
+text-align: left;
+margin: 2px 0px;
+text-transform:uppercase;
+}
+
+#panel li li {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 11px;
+font-weight: normal;
+text-align: left;
+list-style-type: none;
+border-bottom: 0;
+text-transform:none;
+margin-top:5px;
+}
+
+.category{
+padding: 5px 0px 5px 20px;
+background: transparent url(imgs/folder.gif) no-repeat center left;
+}
+
+.recent{
+padding: 5px 0px 5px 20px;
+background: transparent url(imgs/page.gif) no-repeat center left;
+}
+
+.url{
+padding: 5px 0px 5px 20px;
+background: transparent url(imgs/url.gif) no-repeat center left;
+}
+
+.feed{
+padding: 5px 0px 5px 20px;
+background: transparent url(imgs/feed.gif) no-repeat center left;
+}
+
+.xhtml{
+padding: 5px 0px 5px 20px;
+background: transparent url(imgs/xhtml.gif) no-repeat center left;
+}
+
+.css{
+padding: 5px 0px 5px 20px;
+background: transparent url(imgs/css.gif) no-repeat center left;
+}

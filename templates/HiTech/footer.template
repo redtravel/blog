@@ -1,0 +1,12 @@
+<div class="footerjr">
+
+<div class="footertextjr">
+<div class="styleBottom">Design by <a href="http://www.juliettarose.com/145" target="_blank" class="styleBottom"> JuliettaRose Studio. </a>Powered by <a href="http://www.lifetype.net/" target="_blank" class="styleBottom">Lifetype</a></div>
+</div>
+
+<div class="key"><a title="{$locale->tr("admin")}" href="{$url->getAdminUrl()}"><img src="{$url->getTemplateFile("images/pic.gif")}" width="50" height="50"/></a></div>
+</div>
+</div>
+
+</body>
+</html>

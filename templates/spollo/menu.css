@@ -1,0 +1,93 @@
+/*
+menu
+*/
+
+#menu {
+list-style-type:none;
+background:url(imgs/menu_bg.gif) 50% 0 #515151 repeat-x;
+margin:0;
+padding:0;
+height:80px;
+width:780px;
+border-top:1px solid #FFFFFF;
+overflow:hidden;
+}
+
+#menu li {
+background:none;
+padding:0;
+display:table-row !important;
+vertical-align:middle;
+float:left;
+height:80px;
+}
+
+#menu li.last_menu {
+float:right;
+}
+
+#menu li a {
+font-size:.8em;
+text-transform:uppercase;
+height:80px;
+float:left;
+padding: 0px 10px 0px 10px;
+background:url(imgs/menu_triple.gif) top left transparent repeat-x;
+}
+
+html>body #menu li a {
+float: none;
+font-size:.8em;
+text-transform:uppercase;
+line-height:normal;
+display:table-cell;
+vertical-align:middle;
+height:80px;
+padding:0 10px 0 10px;
+background:url(imgs/menu_triple.gif) top left transparent repeat-x;
+}
+
+/* Holly Hack: Hide From IE5/Mac \*/
+* #menu img { margin: 32px 0; vertical-align: middle; }
+/* Holly Hack: End Hide From IE5/Mac */
+
+#menu li a:hover,
+#menu li a:active {
+background-position:center left;
+color:#FFFFFF;
+}
+
+#menu li a.first_menu {
+padding-left:35px;
+background: transparent url(imgs/menu_start_triple.gif) no-repeat top left;
+}
+
+#menu li a.last_menu {
+padding-right: 35px;
+background: transparent url(imgs/menu_end_triple.gif) no-repeat top right;
+}
+
+#menu li a.first_menu:hover,
+#menu li a.first_menu:active {
+background-position:center left;
+}
+
+#menu li a.last_menu:hover,
+#menu li a.last_menu:active {
+background-position:center right;
+}
+
+#menu li a, #menu li a:visited, #menu li a:hover {
+color:white;
+text-decoration:none;
+}
+
+#menu .current_page_item a, #menu .current_page_item a:hover {
+background-position:bottom right;
+color:#FFFFFF;
+}
+
+#menu .current_page_item a.first_menu, #menu .current_page_item a.first_menu:hover {
+background-position:bottom left;
+color:#FFFFFF;
+}

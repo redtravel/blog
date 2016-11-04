@@ -1,0 +1,13 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+		<div class="entry">
+			<h2><A href="{$url->postPermalink($post)}">{$post->getTopic()}</A></h2>
+			<P>{$post->getText()}</P>
+			<p class="info"><A class="commentlink" href="{$url->postPermalink($post)}#comments">Comments ({$post->getNumComments()})</A>
+			Posted to {foreach name=categories from=$post->getCategories() item=postcategory}
+					<a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+				{if !$smarty.foreach.categories.last}, {/if}
+				{/foreach} <em class="date">{$locale->formatDate($postDate,"%m/%d/%Y")}</em>
+			<span class="editlink"> <A title="{$locale->tr("admin")}" href="{$url->getAdminUrl()}">Edit</a> </span></p>
+
+		</div>

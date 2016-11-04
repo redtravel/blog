@@ -1,0 +1,30 @@
+{assign var=title value=$locale->tr("trackbacks_for_article")}
+{assign var=pub value=$post->getTopic()}
+{include file="$blogtemplate/header.template" pageTitle="$pageTitle | $title \"$pub\""} 
+<div class="post">
+	<h2>{$locale->tr("trackbacks_for_article")}: "<a href="{$url->postLink($post)}">{$post->getTopic()}</a>"</h2>
+	<div class="post-links" style="float:right">Trackback URL: {$url->getTrackbackUrl()}?id={$post->getId()}</div>
+	{if $trackbacks}
+		{foreach from=$trackbacks item=trackback}
+			<div class="post-title">
+				<h3><a href="{$trackback->getUrl()}">{$trackback->getTitle()}</a></h3>
+				<div class="post-content">
+					<dl>
+						<dt>{$locale->tr("trackback_excerpt")}:</dt>
+						<dd>{$trackback->getExcerpt()}</dd>
+						<dt>{$locale->tr("trackback_weblog")}:</dt>
+						<dd>{$trackback->getBlogName()}</dd>
+						{assign var="trackbackDate" value=$trackback->getDateObject()}
+						<dt>{$locale->tr("date")}:</dt>
+						<dd>{$locale->formatDate($trackbackDate, "%d/%m/%Y %H:%M")}</dd>
+					</dl>
+				</div>
+			</div>
+		{/foreach}
+	{else}
+		<div class="post-content" align="center"><br/><br/>{$locale->tr("search_no_matching_posts")}</div>
+	{/if}
+</div>
+</div>
+{include file="$blogtemplate/sidebar.template"}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,34 @@
+{assign var="OnAlbumPage" value=1}
+{include file="$blogtemplate/header.template"} 
+
+ <div id="loop_articles">
+
+<h2>{$locale->tr("albums")}</h2>
+
+ <!-- album contents go here -->
+
+	<div class="clearer">&nbsp;</div>
+
+{assign var="counter" value=0}
+{foreach from=$albums item=album}
+    <div class="gallery-album">
+        <div class="gallery-thumb">
+        <a href="{$url->albumLink($album)}"><img src="{$url->getTemplateFile("./styles/default/greenfolder.png")}" alt="{$album->getName()}" /></a>
+        </div>
+        <h4>{$album->getName()}</h4>
+        <div class="meta">
+         {$album->getNumResources()} {$locale->tr("resources")}
+        </div>
+        <p>{$album->getDescription()}</p>
+    </div>
+{/foreach}
+
+	<div class="clearer">&nbsp;</div>
+
+</div>
+
+<!-- end of the albums -->
+
+
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"} 

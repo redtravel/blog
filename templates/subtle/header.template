@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset={$locale->getCharset()}" />
+	<title>{$pageTitle|escape:"html"}</title>
+	 <meta name="generator" content="{$version}" /> <!-- leave this for stats -->
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+     <link rel="stylesheet" type="text/css" title="Style" href="{$url->getTemplateFile("assets/css/layout.css")}" media="screen" />
+     <link rel="stylesheet" type="text/css" title="Style" href="{$url->getTemplateFile("assets/css/layout.css")}" media="print" />
+     <link rel="stylesheet" type="text/css" title="Style" href="{$url->getTemplateFile("styles/default/default.css")}" media="all" />
+     <link rel="stylesheet" type="text/css" title="Style" href="{$url->getTemplateFile("styles/default/gallery.css")}" media="all" />
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+
+	<link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("favicon.ico")}" />
+
+ {if $OnAlbumPage}
+    {* we need to build the path to the lightbox library... *}
+    {literal}<script type="text/javascript"><!--
+    var path="{/literal}{$url->getTemplateFile("assets/lightbox/")}{literal}";
+     --></script>{/literal}
+     
+     <script type="text/javascript" src="{$url->getTemplateFile("assets/lightbox/js/prototype.js")}"></script>
+     <script type="text/javascript" src="{$url->getTemplateFile("assets/lightbox/js/scriptaculous.js?load=effects")}"></script>
+     <script type="text/javascript" src="{$url->getTemplateFile("assets/lightbox/js/lightbox.js")}"></script>
+     <link rel="stylesheet" href="{$url->getTemplateFile("assets/lightbox/css/lightbox.css")}" type="text/css" media="screen" />
+ {/if}
+{if $badbehavior}
+   {$badbehavior->showBB2JavaScript()}
+{/if}
+</head>
+
+<body>
+<!-- Cached content created: {"0"|date_format:"%D %H:%M:%S"} -->
+<div id="container">
+
+	<div id="header">
+		<div class="style_content">
+
+			<form action="{$url->getIndexUrl()}" name="search_box" id="search_box" method="get">
+				<label for="input_search" id="label_search">{$locale->tr("search")}</label> 
+				<input type="text" id="input_search" class="input" name="searchTerms" />
+				<input type="image" src="{$url->getTemplateFile("assets/images/icon_search.gif")}" align="top" id="button_search" value="{$locale->tr("search_s")}" />
+	<input type="hidden" name="op" value="Search" />
+	<input type="hidden" name="blogId" value="{$blog->getId()}" /> 
+			</form>
+			
+			<h1 id="title"><a href="{$url->blogLink()}">{$blog->getBlog()}</a></h1>
+			<div id="tagline">{$blog->getAbout()}</div>
+{if $OnMainPage}{assign var=mainClass value="current_page_item"}{else}{assign var=mainClass value="page_item"}{/if}
+{if $OnAlbumPage}{assign var=albumClass value="current_page_item"}{else}{assign var=albumClass value="page_item"}{/if}
+{if $OnArchivesPage}{assign var=archClass value="current_page_item"}{else}{assign var=archClass value="page_item"}{/if}
+	
+    	<ul id="menu">
+    	<li class="{$mainClass}"><a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+    	<li class="{$archClass}"><a title="{$locale->tr("archives")}" href="{$url->templatePage("archives")}">{$locale->tr("archives")}</a></li>
+    	<li class="{$albumClass}"><a title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+        </ul>
+
+		</div>
+	</div>
+
+
+	<div id="content">
+		<div class="style_content">
+
+
+<!-- Header End -->

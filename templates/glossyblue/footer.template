@@ -1,0 +1,23 @@
+<div id="footer">
+	<div class="footer-recent-posts">
+		{include file="$blogtemplate/text1_text.txt"}
+	</div>
+
+	<div class="footer-recent-posts">
+		{include file="$blogtemplate/text2_text.txt"}
+	</div>
+
+	<div class="footer-about">
+		{include file="$blogtemplate/about_text.txt"}
+	</div>
+	
+  <hr class="clear" />
+  </div>
+</div>
+
+<div id="credits">
+	<div class="alignleft">Design by <a href="http://www.ndesign-studio.com">N.Design Studio</a></div>
+	<div class="alignright">Powered by <a href="http://www.lifetype.net" target="_blank">Lifetype</a>. Template adapted by <a href="http://www.lifetype.ru" target="_blank">Russian Lifetype</a></div>	
+</div>
+</body>
+</html>

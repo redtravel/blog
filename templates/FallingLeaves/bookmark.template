@@ -1,0 +1,11 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/links.template"}
+		<!-- Loop Start -->
+			<h2>{$locale->tr("my_links")}</h2>
+				{foreach from=$mylinkscategories item=linkcategory}
+				<H3>{$linkcategory->getName()}</h3>
+					{foreach from=$linkcategory->getLinks() item=link}
+						<a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a>: {$link->getDescription()}<br />
+					{/foreach}
+				{/foreach}
+{include file="$blogtemplate/footer.template"} 

@@ -1,0 +1,15 @@
+<hr class="low" />
+
+<!-- footer ................................. -->
+<div id="footer">
+
+	<p><strong>&copy; Copyright 2006 {$blog->getBlog()}. All rights reserved.</strong><br />
+	Design by <a href="http://www.kingcosmonaut.de/">Sebastian Schmieg</a> . Icons by <a href="http://www.graphicpush.com/blogicons/">Kevin Potts</a> . Powered by <a href="http://www.lifetype.net/">Lifetype</a> .</p>
+	
+</div> <!-- /footer -->
+
+</div> <!-- /container -->
+
+</body>
+
+</html>

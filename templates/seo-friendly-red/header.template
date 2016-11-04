@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+ <head>
+ <meta http-equiv="content-type" content="text/html; charset={$locale->getCharset()}" />
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+ <meta name="generator" content="{$version}" />
+ 
+{assign var="blogTitle" value=$blog->getBlog()}
+{assign var="categoryName" value=""}
+{if !empty($post)}
+	{assign var="pageTitle" value=$post->getTopic()}
+	{foreach name=categories from=$post->getCategories() item=postCategory}
+		{assign var="categoryName" value=$postCategory->getName()}
+	{/foreach}
+	{assign var="pageTitle" value="$pageTitle | $categoryName | $blogTitle"}
+{elseif !empty($category)}
+	{assign var="pageTitle" value=$category->getName()}
+	{assign var="pageTitle" value="$pageTitle | $blogTitle"}
+{/if} 
+ <title>{$pageTitle|escape:"html"}</title>
+ 
+ <link rel="stylesheet" type="text/css" title="Style" href="{$url->getTemplateFile("styles.css")}" />
+ <link rel="alternate" type="application/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="application/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="application/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />  
+ <link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("favicon.ico")}" />
+  {if $badbehavior}
+     {$badbehavior->showBB2JavaScript()}
+  {/if} 
+ </head>
+<body class="layout-wt">
+<!-- Cached content created: {"0"|date_format:"%D %H:%M:%S"} -->
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <div id="header-content">
+                        <h1 id="header-name"><a href="{$url->blogLink()}">{$blog->getBlog()}</a></h1>
+                        <h2 id="header-description">{$blog->getAbout()}</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="content-inner">
+                    <div id="alpha">
+                        <div id="alpha-inner">

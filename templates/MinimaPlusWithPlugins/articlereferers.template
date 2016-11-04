@@ -1,0 +1,17 @@
+	<div class="clear">&nbsp;</div>
+	<div class="post">
+	{if !empty($articlereferers)}
+		{if $articlereferers->isEnabled()}
+			<b>Article Referers</b>
+			{assign var=postid value=$post->getId()}
+			{assign var=referers value=$articlereferers->getArticleReferers($postid)}
+			<ol>
+				{foreach from=$referers item=referer}
+				<li>
+					<a href="{$referer->getUrl()}">{$referer->getUrl()|truncate:65:"..."}</a>  ({$referer->getCount()})
+				</li>
+				{/foreach}
+			</ol>
+		{/if}
+	{/if}
+</div>

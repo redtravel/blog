@@ -1,0 +1,1 @@
+a:1:{i:0;O:14:"UserPermission":9:{s:7:"_userId";s:1:"2";s:7:"_blogId";s:1:"0";s:7:"_permId";s:1:"1";s:3:"_id";s:2:"31";s:3:"_pk";s:2:"id";s:6:"_class";s:8:"DbObject";s:7:"_fields";a:3:{s:7:"blog_id";s:9:"getBlogId";s:7:"user_id";s:9:"getUserId";s:13:"permission_id";s:15:"getPermissionId";}s:11:"_properties";a:0:{}s:14:"unserializable";a:0:{}}}

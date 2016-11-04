@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+
+<head>
+<title>{$pageTitle|escape:"html"}</title>
+
+<meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+<meta name="generator" content="{$version}" />
+<meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="{$url->getTemplateFile("style.css")}" title="Spollo" />
+<link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("imgs/favicon.ico")}" />
+
+<link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+<link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+<link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+
+{if !empty($badbehavior)}
+{$badbehavior->showBB2JavaScript()}
+{/if}
+
+</head>
+
+<body >
+<!-- header -->
+<div id="header">
+<div style="float:right; margin: 40px 20px 0px 0px; color: white;">
+<form name="search_form" method="post" action="{$url->getIndexUrl()}" >
+<label for="input_search" id="label_search">{$locale->tr("search")|lower}</label>
+<input type="text" id="input_search" class="input" name="searchTerms" value="" size="18" />
+<input type="image" src="{$url->getTemplateFile('imgs/search.gif')}" align="top" id="button_search" value="Search" />
+<input type="hidden" name="op" value="Search" />
+<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+</form>
+</div>
+<h1><a href="{$url->blogLink()}" title="{$blog->getBlog()}">{$blog->getBlog()}</a></h1>
+<h2> {$blog->getAbout()|strip_tags} </h2>
+</div>
+<!-- header end -->
+<div id="box">
+<!-- main menu -->
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=MyEmail value=$blogOwner->getEmail()}
+{if $OnMainPage}{assign var=mainClass value="current_page_item"}{else}{assign var=mainClass value="page_item"}{/if}
+{if $OnAlbumPage}{assign var=albumClass value="current_page_item"}{else}{assign var=albumClass value="page_item"}{/if}
+{if $OnAboutPage}{assign var=aboutClass value="current_page_item"}{else}{assign var=aboutClass value="page_item"}{/if}
+{if $OnArchivesPage}{assign var=archClass value="current_page_item"}{else}{assign var=archClass value="page_item"}{/if}
+<ul id="menu">
+<li class="{$mainClass}"><a class="first_menu" href="{$url->getIndexUrl()}"><img src="{$url->getTemplateFile('imgs/computer.gif')}" width="16" height="16" alt="[+]" align="top" style="border:0"/> blog</a></li>
+<li class="{$albumClass}"><a href="{$url->albumLink()}" title="resources"><img src="{$url->getTemplateFile('imgs/bricks.gif')}" width="16" height="16" alt="[+]" align="top" style="border:0"/> resources</a></li>
+<li class="{$archClass}"><a href="{$url->templatePage("archives")}" title="archives"><img src="{$url->getTemplateFile('imgs/date.gif')}" width="16" height="16" alt="[+]" align="top" style="border:0"/> archives</a></li>
+<li class="{$aboutClass}"><a href="{$url->templatePage("about")}" title="about"><img src="{$url->getTemplateFile('imgs/vcard.gif')}" width="16" height="16" alt="[+]" align="top" style="border:0"/> about</a></li>
+<li class="last_menu"><a class="last_menu" href="mailto:{$MyEmail}"><img src="{$url->getTemplateFile('imgs/mail.gif')}" width="16" height="16" alt="[+]" align="top" style="border:0"/>  mail me</a></li>
+</ul>
+<!-- main menu end -->

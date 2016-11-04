@@ -1,0 +1,14 @@
+</div><!-- begin footer -->
+<div id=footer>
+<p>
+<a class="alignright" href="#header">{#lcl_backtotop#}</a>
+</p>
+<p>
+{$blog->getBlog()} {#lcl_proudlypowered#}
+</p>
+</div>
+</div>
+
+<!-- Original Design by Shawn Grimes (http://www.hexfactor.com/) -->
+</body>
+</html>

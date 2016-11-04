@@ -1,0 +1,7 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/links.template"}
+		<!-- Loop Start -->
+			<h2 id="respond">{$locale->tr("add_comment")}</h2>
+	
+{include file="$blogtemplate/commentform.template"}
+{include file="$blogtemplate/footer.template"}

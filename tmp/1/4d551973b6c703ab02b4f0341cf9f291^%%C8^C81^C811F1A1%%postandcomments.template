@@ -1,0 +1,201 @@
+580
+a:4:{s:8:"template";a:6:{s:42:"andreas-3-columns/postandcomments.template";b:1;s:46:"./templates//andreas-3-columns/header.template";b:1;s:49:"./templates//andreas-3-columns/sidebar-l.template";b:1;s:49:"./templates//andreas-3-columns/sidebar-r.template";b:1;s:40:"./templates/default/commentform.template";b:1;s:46:"./templates//andreas-3-columns/footer.template";b:1;}s:9:"timestamp";i:1478054668;s:7:"expires";i:-1;s:13:"cache_serials";a:1:{s:86:"/alidata/www/gitspace/juchi/lifetype/tmp/1/%%3F^3F2^3F2BCD9C%%commentform.template.inc";s:32:"5aaf97055f751a530bc66788d31b8ec1";}}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" 
+      lang="zh-CN" dir="ltr">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ <meta name="generator" content="lifetype-1.2_r7217" />
+ <meta http-equiv="Content-Language" content="zh-CN" />
+ <meta name="author" content="Your Name / Original design: Andreas Viklund - http://andreasviklund.com/" />
+ <title>test | my blog</title>
+ <link rel="stylesheet" title="Default" href="http://sq2.goodteeth.cn/templates/andreas-3-columns/andreas01.css" type="text/css" />
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss20" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss10" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss090" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=atom" />
+ <link rel="stylesheet" type="text/css" href="http://sq2.goodteeth.cn/templates/andreas-3-columns/print.css" media="print" />
+ <link rel="shortcut icon" type="image/x-icon" href="http://sq2.goodteeth.cn/templates/andreas-3-columns/favicon.ico" />
+   <script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1478054668 116.227.55.251';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+</head>
+<body><div id="wrap">
+
+<div id="header">
+<h1><a href="http://sq2.goodteeth.cn/index.php?blogId=1">my blog</a></h1>
+<p></p>
+</div>
+
+<img id="frontphoto" src="http://sq2.goodteeth.cn/templates/andreas-3-columns/front.jpg" width="760" height="175" alt="" />
+<div id="avmenu">
+	<h2 class="hide">Menu:</h2>
+	<ul>
+		<li><a href="http://sq2.goodteeth.cn/index.php?blogId=1">Home</a></li>
+		<li><a href="http://sq2.goodteeth.cn/index.php?op=ViewAlbum&amp;albumId=0&amp;blogId=1">Albums</a></li>
+		<li><a href="http://sq2.goodteeth.cn/admin.php">Admin</a></li>
+		<li><a title="文章汇整" href="http://sq2.goodteeth.cn/index.php?op=Template&amp;blogId=1&amp;show=archives">Archives</a></li>
+		<li><a title="summary" href="http://sq2.goodteeth.cn/summary.php">Summary</a></li>
+	</ul>
+
+<h3>Recent Entries</h3>		
+		<ul>
+					<li><a title=" test " href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1">test</a></li>
+					<li><a title="如果你可以看到这篇文章，表示注册过程已经顺利完成。现在你可以开始blogging了！" href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=1&amp;blogId=1">恭喜！</a></li>
+				</ul>
+
+	<form method="post" action="http://sq2.goodteeth.cn/index.php">
+		<LABEL for=s>Search this site:</LABEL>
+		<input type="text" name="searchTerms" value="" size="13" />
+		<input type="hidden" name="op" value="Search" />
+		<input type="hidden" name="blogId" value="1"/>
+		<input type="submit" name="Search" value="Go" />
+	</form>
+
+</div><div id="extras">
+			
+	<h3>Categories</h3>
+	<p>
+		<a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;postCategoryId=3&amp;blogId=1">随笔</a> [1]<br/>
+		<a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;postCategoryId=1&amp;blogId=1">General</a> [1]<br/>
+		</p>
+	
+	<h3>Links</h3>
+	<p>
+		<b>General</b><br/>
+				</p>
+	
+	<h3>Syndicate</h3>
+	<p>
+		<a class="nodecoration" title="Link to the RSS 0.90 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss090"><img src="http://sq2.goodteeth.cn/imgs/rss090_logo.gif" style="border:0px;" alt="RSS 0.90" /></a><br/>
+		<a class="nodecoration" title="Link to the RSS 1.0 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss10"><img src="http://sq2.goodteeth.cn/imgs/rss10_logo.gif" style="border:0px;" alt="RSS 1.0" /></a><br/>
+		<a class="nodecoration" title="Link to the RSS 2.0 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss20"><img src="http://sq2.goodteeth.cn/imgs/rss20_logo.gif" style="border:0px;" alt="RSS 2.0" /></a><br/>
+		<a class="nodecoration" title="Link to the Atom 0.3 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=atom"><img src="http://sq2.goodteeth.cn/imgs/atom_logo.png" style="border:0px;" alt="Atom 0.3" /></a><br/>	
+	</p>
+	
+	<h3>Version:</h3>
+	<p>andreas01 v1.3</p>
+</div>
+ 
+ 
+<div id="content">
+		<!-- <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                   xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"><rdf:Description
+                             rdf:about="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1"
+                             dc:identifier="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1"
+                             dc:title="test"
+                             trackback:ping="http://sq2.goodteeth.cn/trackback.php?id=3"/></rdf:RDF> -->
+	<a title="文章汇整静态链接网址" href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1"><h2>test</h2></a>
+			<span class="date">lichao | 02 十一月, 2016 10:12</span>
+	<p><p>test</p></p>
+	
+	<p class="info">
+	Posted in 
+					<a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;postCategoryId=3&amp;blogId=1">随笔</a>		. 
+		评论: <a href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1">(1)</a>. 
+		引用:<a href="http://sq2.goodteeth.cn/index.php?op=Trackbacks&amp;articleId=3&amp;blogId=1">(0)</a>.
+		<a title="文章汇整静态链接网址" href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1">静态链接网址</a>	<br>
+		
+													<a href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=1&amp;blogId=1" title="Previous post: 恭喜！">Previous post&raquo;</a>
+			</p>
+
+		<h2 id="comments">Comments</h2>
+	<ol id="commentlist">
+	
+				<a name="1"></a>
+		<li id="comment-1">
+			<p class="header"><strong>1.</strong>
+			<a href="">redtreelchao</a> &nbsp;|&nbsp;  11/02,2016 at 10:14</p>
+			<p>						<img src="http://sq2.goodteeth.cn/gallery/2/previews/aaa.png" alt="redtreelchao" align="right" class="poster_avatar"/>
+	<p>魂牵梦萦堶</p>
+</p>
+		</li>
+				</ol>
+	<a name="comments"></a>
+	
+	<h2 id="commentsformheader">Leave a Reply</h2>
+	
+		<div id="CommentForm">
+<form id="NewComment" action="http://sq2.goodteeth.cn/index.php" method="post">
+<fieldset>
+<legend id="add_comment_title">发表评论</legend>
+<table border="0">
+<tr id="add_comment_topic">
+ <td><label for="commentTopic">标题</label></td>
+ <td><input type="text" name="commentTopic" id="commentTopic" value="" /></td>
+</tr>
+<tr id="add_comment_text">
+  <td><label for="commentText">内容<sup class="required">*</sup></label></td>
+  <td><textarea rows="10" cols="50" name="commentText" id="commentText"></textarea></td>
+ </tr>
+
+
+<tr id="add_comment_username">
+  <td><label for="userName">昵称<sup class="required">*</sup></label></td>
+  <td>
+   {nocache:5aaf97055f751a530bc66788d31b8ec1#0}  </td>
+</tr>
+
+<tr id="add_comment_useremail">
+  <td><label for="userEmail">电子邮件</label></td>
+  <td><input type="text" name="userEmail" id="userEmail" value="" /></td>
+</tr>
+<tr id="add_comment_userurl">
+  <td><label for="userUrl">个人网页</label></td>
+  <td><input type="text" name="userUrl" id="userUrl" value="" /></td>
+</tr>
+
+      
+<tr id="add_comment_submit">
+ <td colspan="2">
+  <input id="Add" type="submit" value="发表" name="Add" />
+ <input type="hidden" name="op" value="AddComment" />
+ <input type="hidden" name="articleId" value="3" />
+ <input type="hidden" name="blogId" value="1" />
+ <input type="hidden" name="parentId" value="" />
+ </td>
+</tr>
+
+</table>
+
+</fieldset>
+</form>
+
+
+</div>
+	 
+
+</div>
+<div id="footer">
+Design by <a href="http://andreasviklund.com">Andreas Viklund</a>.
+Powered by <a href="http://www.lifetype.net">LifeType</a>.
+</div>
+
+</div>
+</body>
+</html>

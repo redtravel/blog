@@ -1,0 +1,64 @@
+242
+a:4:{s:8:"template";a:4:{s:25:"summary/userlist.template";b:1;s:23:"summary/header.template";b:1;s:21:"summary/user.template";b:1;s:23:"summary/footer.template";b:1;}s:9:"timestamp";i:1478054718;s:7:"expires";i:-1;s:13:"cache_serials";a:0:{}}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+    <title>聚齿网</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style type="text/css" media="screen">@import "styles/summary.css";</style>
+    <meta name="description" content="聚齿网" />
+ 	<link rel="shortcut icon" type="image/x-icon" href="http://sq2.goodteeth.cn/imgs/favicon.ico" />
+    <script type="text/javascript">
+    var blogLocale = 'UTF-8';
+  	// base url where we can find the admin.php script
+  	var plogBaseUrl = "http://sq2.goodteeth.cn";
+	var plogSummaryBaseUrl = plogBaseUrl + "/summary.php";
+	var plogBlogId = "0";
+</script>
+<script type="text/javascript" src="js/ui/default.js"></script>
+<script type="text/javascript" src="js/ui/common.js"></script>
+</head>
+<body class="column3">
+<div id="wrapper">
+<div id="header">
+</div>
+<map name="linksmenu" id="linksmenu" title="Navigation">
+    <div id="menubar">
+        <div id="menu">
+          <ul class="menuTop">
+             <li class="menuOption"><a href="summary.php?op=Summary">汇整</a></li>
+             <li class="menuOption"><a href="summary.php?op=Register&amp;start=1">注册</a></li>
+             <li class="menuOption"><a href="summary.php?op=PostList">文章</a></li>
+             <li class="menuOption"><a href="summary.php?op=BlogList">博客</a></li>
+             <li class="menuOption"><a href="summary.php?op=UserList">用户</a></li>
+          </ul>
+        </div>
+    </div>
+</map>
+<div id="onecolumn">
+    	       		     <img src="http://sq2.goodteeth.cn/gallery/2/previews/aaa.png"  width="60" height="60" class="postgrav" />
+     
+
+        <h3><a href="?op=UserProfile&amp;userId=2">redtreelchao</a></h3>
+		<div class="subtitle">
+		 <b>博客:</b>
+		 		 		  		  <a href="http://sq2.goodteeth.cn/index.php?blogId=2">我是大侠</a>		 		</div>
+		<div class="footer"></div>
+		<div class="clearleft">&nbsp;</div>    	               <img src="templates/summary/nouser.gif" class="postgrav" width="60" height="60" alt="lichao" />	
+     
+
+        <h3><a href="?op=UserProfile&amp;userId=1">lichao</a></h3>
+		<div class="subtitle">
+		 <b>博客:</b>
+		 		 		  		  <a href="http://sq2.goodteeth.cn/index.php?blogId=1">my blog</a>		 		</div>
+		<div class="footer"></div>
+		<div class="clearleft">&nbsp;</div>    
+  
+</div>
+<div class="spacer">&nbsp;</div>
+<div id="footer">
+  Powered by <a href="http://www.lifetype.net">LifeType</a>	-
+  Design by <a href="http://www.balearweb.com">BalearWeb</a> 
+</div>
+</div>
+</body>
+</html>

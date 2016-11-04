@@ -1,0 +1,46 @@
+<div id="comments">
+	<dl id="comments-block">
+		<dd style="margin: 0px; padding: 0px;">
+		{assign var="counter" value=1}
+		<a href="#postcomment" title="Leave a comment">Leave a comment</a></p>
+		<a name="comments"></a>
+		{foreach name=comment from=$comments item=comment}
+			<a name="comment-{$comment->getId()}"></a>
+			{if $counter%2!=0}
+			<div class="commentBox" style="background-color: #eeeee6; padding: 5px;">
+			{else}
+			<div class="commentBox" style="background-color: #e5e5e5; padding: 5px;">
+			{/if}
+			<p>
+			{if $comment->IsPosterAuthenticated()}
+             {assign var=commenter value=$comment->getUser()}
+			 {if $commenter->hasPicture()}
+			   {assign var=commenterimg value=$commenter->getPicture()}
+			   <img src="{$commenterimg->getPreviewLink()}" alt="{$commenter->getUserName()}" />
+			  {/if}
+			{/if}
+			<br/>
+			{$comment->getText()}
+			</p>
+			<br>
+			
+			<p class="post-footer" style="margin-bottom: 0px; padding-bottom: 0px;"><em>By <a href='{$comment->getUserUrl()}' rel='external nofollow'>{$comment->getUsername()}</a> on {assign var=commentDate value=$comment->getDateObject()}{$locale->formatDate($commentDate, "%m/%d,%Y, at %H:%M")}</em></p>
+			</div>
+			{assign var="counter" value="`$counter+1`"}
+		{/foreach}
+		
+		{pager style="links" anchor="#comments"}
+		</dd>
+	</dl>
+	
+	<div class="right">
+			<a href="{$url->getTrackbackUrl()}?id={$post->getId()}" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+	</div>
+	
+	<br /><br />
+
+	<!-- Show Comment Form -->
+	{include file="$blogtemplate/commentform.template"}
+
+	<!-- End #comments -->  
+</div>

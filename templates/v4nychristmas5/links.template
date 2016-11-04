@@ -1,0 +1,16 @@
+{include file="$blogtemplate/header.template"}
+
+<div class="divTitle">{$locale->tr("my_links")}</div>
+{foreach from=$mylinkscategories item=linkcategory}
+<ul>
+<li id="linkcat-1">{$linkcategory->getName()}
+<ul>
+{foreach from=$linkcategory->getLinks() item=link}
+
+<li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+{/foreach}
+</ul>
+</li>
+</ul>
+{/foreach}
+{include file="$blogtemplate/footer.template"}

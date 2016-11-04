@@ -1,0 +1,99 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+
+{include file="$blogtemplate/header.template"}
+<div>
+	<div class="post">
+		<!-- {$url->postTrackbackLink($post)} -->
+		{assign var="postDate" value=$post->getDateObject()}
+		{assign var="postOwner" value=$post->getUserInfo()}
+		<h2 class="storytitle">{$post->getTopic()}</h2>
+		<div class="date">Published on {$locale->formatDate($postDate,"%m/%d,%Y")}</div>
+		<p>{$post->getText()}</p>
+		<br style="clear:all" />
+	</div>
+	<div class="feedback">
+		<div class="meta">{$locale->tr('posted_by')} {$postOwner->getUsername()} {#lcl_at#}
+			{$locale->formatDate($postDate,"%H:%M")}
+			<a class="aposted" href="{$url->postPermalink($post)}#comments">{$locale->tr("comment on this")} ({$post->getNumComments()})</a> |
+			<a class="aposted" href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a> |
+			{foreach name=categories from=$post->getCategories() item=postcategory}
+				<a class="aposted" href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+				{if !$smarty.foreach.categories.last}, {/if}
+			{/foreach}<br />
+			{* Prevpost and nextpost use *}
+			<a href="{$url->blogLink()}">{#lcl_backhome#}</a>
+			{assign var=nextpost value=$post->getNextArticle()}
+			{assign var=prevpost value=$post->getPrevArticle()}
+			{if $nextpost == true}
+				<a href="{$url->postPermalink($nextpost)}" title="{#lcl_nextpost#} {$nextpost->getTopic()}">{$locale->tr("next_post")}</a>
+			{/if}
+			{if $prevpost == true}
+				<a href="{$url->postPermalink($prevpost)}" title="{#lcl_prevpost#} {$prevpost->getTopic()}">{$locale->tr("prev_post")}</a>
+			{/if}
+			{* End of article_index *}
+		</div>
+	</div>
+	
+
+	<h3 id="trackback">{#lcl_trackbackurl#}</h3>
+	<div class="trackback-url">{$url->getTrackbackUrl()}?id={$post->getId()}</div>
+
+
+	{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+	<h3 id="respond">{#lcl_leaveareply#}</h3>
+		{include file="$misctemplatepath/commentform.template"}
+	{/if}
+	<h3 id="comments">{#lcl_commentssofar#} <em>{$post->getTopic()}</em></h3>
+	<ol class="commentlist">
+	
+	{assign var="counter" value=1}
+	{foreach name=comment from=$comments item=comment}
+		{if $counter%2!=0}
+		<li class="alt" id="comment-{$comment->getId()}">
+		
+		{else}
+		<li class="" id="comment-{$comment->getId()}">
+		{/if}
+		
+			<small class="commentmetadata"><strong>{$comment->getUsername()}</strong> {#lcl_says#}</small><br />
+			<small class="commentmetadata"><a href="#comment-{$comment->getId()}" title="">{assign var=commentDate value=$comment->getDateObject()} {$locale->formatDate($commentDate, "%m/%d,%Y, at %H:%M")}</a> </small><br />
+			<small>
+			{if $comment->getUserUrl()}
+			<a href="{$comment->getUserUrl()}">{#lcl_visit#} {$comment->getUsername()}</a>
+			{else}
+			{#lcl_visit#} {$comment->getUsername()}
+			{/if}
+			</small>
+		
+			{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()}
+		</li>
+		{assign var="counter" value="`$counter+1`"}
+	{/foreach}
+	</ol>
+
+	<div class="clear">&nbsp;</div>
+	<div class="post">
+	{if !empty($articlereferers)}
+		{if $articlereferers->isEnabled()}
+			<h3>Article Referers</h3>
+			{assign var=postid value=$post->getId()}
+			{assign var=referers value=$articlereferers->getArticleReferers($postid)}
+			<ol>
+				{foreach from=$referers item=referer}
+				<li>
+					<a href="{$referer->getUrl()}">{$referer->getUrl()|truncate:65:"..."}</a>  ({$referer->getCount()})
+				</li>
+				{/foreach}
+			</ol>
+		{/if}
+	{/if}
+	</div>
+{include file="$blogtemplate/footer.template"}

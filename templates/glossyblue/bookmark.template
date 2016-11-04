@@ -1,0 +1,22 @@
+{assign var=title value=$locale->tr("links")}
+{include file="$blogtemplate/header.template" pageTitle="$pageTitle | $title"} 
+	<div class="post">
+		<h2>{$locale->tr("my_links")}</h2>
+		<div id="bookmark">
+			<ul>
+				<li>
+				{foreach from=$mylinkscategories item=linkcategory}
+					<h3 class="bookmarktitle">{$linkcategory->getName()}</h3>
+					<ul class="list-bookmark">
+						{foreach from=$linkcategory->getLinks() item=link}
+							<li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a>: {$link->getDescription()}</li>
+						{/foreach}
+					</ul>
+				{/foreach}
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{include file="$blogtemplate/sidebar.template"}
+{include file="$blogtemplate/footer.template"}

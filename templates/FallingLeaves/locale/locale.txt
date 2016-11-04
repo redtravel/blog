@@ -1,0 +1,33 @@
+# German locales for FallingLeaves Template
+[de_DE]
+lcl_leaveareply = "Hinterlasse eine Nachricht"
+lcl_meta = "Meta"
+lcl_proudlypowered = "is proudly powered by <a href="http://www.lifetype.net/">LifeType</a>"
+lcl_backtotop = "Nach oben"
+lcl_backhome = "Zur&uuml;ck zur Startseite"
+lcl_prevpost = "Vorheriger Artikel:"
+lcl_nextpost = "Nächster Artikel:"
+lcl_trackbackurl = "Trackback URL"
+lcl_commentssofar = "Antworten auf"
+lcl_says = "sagt:"
+lcl_visit = "besuche"
+lcl_publishedon = "Ver&ouml;ffentlicht am"
+lcl_at = "um"
+
+
+
+# English locales for FallingLeaves Template
+[en_UK]
+lcl_leaveareply = "Leave a Reply"
+lcl_meta = "Meta"
+lcl_proudlypowered = "is proudly powered by <a href="http://www.lifetype.net/">LifeType</a>"
+lcl_backtotop = "Back to top"
+lcl_backhome = "Back to Home"
+lcl_prevpost = "Previous post:"
+lcl_nextpost = "Next post:"
+lcl_trackbackurl = "Trackback URL"
+lcl_commentssofar = "Responses to"
+lcl_says = "says:"
+lcl_visit = "Visit"
+lcl_publishedon = "Published on"
+lcl_at = "at"

@@ -1,0 +1,71 @@
+   		{assign var="OnAlbumPage" value=1}
+   		{include file="$blogtemplate/header.template"} 
+
+<div id="loop_articles">
+<h2>{$locale->tr("albums")}</h2>
+
+<h3><a href="{$url->parentAlbumLink($album)}">
+    	<img class="parent" src="{$url->getTemplateFile("styles/default/back.gif")}" alt="{$locale->tr("parent")}" /></a> {$album->getName()}</h3>
+<p>{$album->getDescription()}</p>
+
+<!-- album contents go here -->
+ 
+
+	<div class="clear">&nbsp;</div>
+ 
+
+  {if $pager->getCurrentPage() == 1}
+    {assign var="counter" value=0}
+    {assign var=children value=$album->getChildren()}
+    {foreach from=$children item=childalbum}
+        <div class="gallery-album">
+            <div class="gallery-thumb">
+            <a href="{$url->albumLink($childalbum)}"><img src="{$url->getTemplateFile("./styles/default/greenfolder.png")}" alt="{$childalbum->getName()}" /></a>
+            </div>
+            <h4>{$childalbum->getName()}</h4>
+            <div class="meta">
+             {$childalbum->getNumResources()} {$locale->tr("resources")}
+            </div>
+            <p>{$childalbum->getDescription()}</p>
+        </div>
+    {/foreach}
+  {/if}
+ 
+<!-- show the resources here -->
+
+
+<div class="gallery-items">
+ {foreach from=$resources item=resource}
+	<div class="gallery-thumb">
+   		{if $resource->hasPreview()}
+   	<a href="{$url->resourceDownloadLink($resource)}" rel="lightbox">
+    	<img alt="{$resource->getDescription()}" src="{$url->resourcePreviewLink($resource)}" /></a>
+    	<p><a href="{$url->resourceLink($resource)}">{$resource->getFileName()}</a></p>
+   		{else}
+   	<a href="{$url->resourceLink($resource)}">
+   		{if $resource->isSound()}
+    	<img alt="Sound" src="{$url->getTemplateFile("styles/default/sound.png")}" /></a>
+   		{elseif $resource->isVideo()}
+    	<img alt="Video" src="{$url->getTemplateFile("styles/default/video.png")}" /></a>
+   		{elseif $resource->isZip()}
+    	<img alt="Zip" src="{$url->getTemplateFile("styles/default/compressed.png")}" /></a>
+   		{else}
+   	<img alt="File" src="{$url->getTemplateFile("styles/default/file.png")}" /></a>
+   		{/if}  
+   	<p>{$resource->getFileName()}</p>
+   		{/if}
+  	</div>
+  		{/foreach}
+ 
+ <br style="clear:both;" />
+ {pager style="links"}
+</div>
+
+	<div class="clear">&nbsp;</div>
+
+</div>
+
+<!-- end of album contents --> 
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"} 
+		

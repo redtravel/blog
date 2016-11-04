@@ -1,0 +1,59 @@
+{include file="$blogtemplate/header.template"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+{assign var=nextpost value=$post->getNextArticle()}
+{assign var=prevpost value=$post->getPrevArticle()}
+{assign var=postId value=$post->getId()}
+<div id="content">
+<div class="post">
+<p align="center">
+{if $prevpost == true}
+<a href="{$url->postPermalink($prevpost)}" title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">&laquo; {$locale->tr("previous_post")}</a> |
+{/if}
+{if $nextpost == true}
+<a href="{$url->postPermalink($nextpost)}" title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}&raquo;</a>
+{/if}
+</p>
+<!-- {$url->postTrackbackLink($post)} -->
+{include file="$blogtemplate/post.template"}
+
+{* show comments *}
+<a name="#comments"></a>
+<h3 id="comments">{$post->getNumComments()} {$locale->tr("comments")} | "{$post->getTopic()}"</h3>
+<ol class="commentlist">
+{foreach name=comment from=$comments item=comment}
+<li class="alt" id="comment-{$comment->getId()}">
+{$locale->tr("posted_by")}:
+{if $comment->getUserUrl() != ""}
+<cite><a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a></cite>
+{else}
+<cite>{$comment->getUsername()}</cite>
+{/if} |
+<a name="{$comment->getId()}"></a>
+{$comment->getTopic()} [<a href="{$url->postPermalink($post)}#NewComment"> {$locale->tr("reply")} </a>]<br />
+<small class="commentmetadata">{assign var=commentDate value=$comment->getDateObject()}	{$locale->formatDate($commentDate, "%d/%m/%Y, %H:%M")}</small>
+<p>
+	{if $comment->IsPosterAuthenticated()}
+	 {assign var=poster value=$comment->getUser()}
+	 {if $poster->hasPicture()}
+	   {assign var=posterimg value=$poster->getPicture()}
+	   {assign var=commenter value=$comment->getUser()}
+	   <img src="{$posterimg->getPreviewLink()}" alt="{$commenter->getUserName()}" />
+	  {/if}
+	{/if}
+
+{$comment->getText()}
+</p>
+</li>
+{/foreach}
+</ol>
+{pager style="links" anchor="#comments"}
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+<div id="respond">&nbsp;</div>
+{include file="$blogtemplate/commentform.template"}
+{/if}
+
+</div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

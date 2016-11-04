@@ -1,0 +1,8 @@
+<form method="post" id="searchform" action="{$url->getIndexUrl()}">
+{literal}
+<input type="text" value="{$locale->tr("search")}" name="searchTerms" id="s" onfocus="if (this.value == '{$locale->tr("search")}') {this.value = '';}" onblur="if (this.value == '') {this.value = '{$locale->tr("search")}';}" />
+{/literal}
+<input type="submit" name="Search" id="searchsubmit" value="{$locale->tr("search")}" />
+<input type="hidden" name="op" value="{$locale->tr("search")}" />
+<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+</form>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head profile="http://gmpg.org/xfn/11">
+<title>{$pageTitle|escape:"html"}</title>
+<meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+<meta name="generator" content="{$version}" />
+<link rel="stylesheet" type="text/css" media="all" href="{$url->getTemplateFile("style.css")}" />
+<link rel="stylesheet" media="all" type="text/css" href="{$url->getTemplateFile("menus.css")}" />
+<link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("favicon.ico")}" />
+<link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+<link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+<link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+
+{if !empty($badbehavior)}
+{$badbehavior->showBB2JavaScript()}
+{/if}
+
+</head>
+<body>
+
+<div class="sitejr">
+<div class="topjr">
+<div class="toptextjr"><h1><a href="{$url->blogLink()}" title="{$blog->getBlog()}">{$blog->getBlog()}</a></h1></div>
+<div class="toptext">{$blog->getAbout()|strip_tags}</div>
+</div>
+<div class="menubgjr">
+<div class="menujr">
+<ul class="prodrop4">
+<li class="top"><a href="{$url->blogLink()}" title="{$locale->tr("main")}" id="home" class="top_link"><span>{$locale->tr("main")}</span></a></li>
+<li class="top"><a href="{$url->albumLink()}" title="{$locale->tr("albums")}" id="products" class="top_link"><span>{$locale->tr("albums")}</span></a></li>
+<li class="top"><a href="{$url->templatePage("bookmark")}" title="{$locale->tr("links")}" id="services" class="top_link"><span>{$locale->tr("my_links")}</span></a></li>
+<li class="top"><a href="{$url->templatePage("about")}" title="{$locale->tr("about")}" id="contacts" class="top_link"><span>{$locale->tr("about")}</span></a></li>
+</ul>
+</div>
+</div>
+<div class="contentjr">

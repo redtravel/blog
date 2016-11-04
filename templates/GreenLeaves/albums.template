@@ -1,0 +1,28 @@
+{assign var="OnAlbumPage" value=1}
+{include file="$blogtemplate/header.template"}
+
+<div class="post">
+	<h2>{$locale->tr("albums")|capitalize}</h2><br />
+	<table style="border:2px;width:100%;border-color:blue;" summary="{$locale->tr("album")}">
+		<tr>
+		{assign var="counter" value=0}
+		{foreach from=$albums item=album}
+		{assign var="aDate" value=$album->getTimestamp()}
+			<td style="width:33%;" align="center" >
+				<div class="gallery-thumb">
+					<a href="{$url->albumLink($album)}"  class="Album" ><img src="{$url->getTemplateFile('/images/album.png')}" alt="{$locale->tr("albums")}" /><br/>{$album->getName()} ({$album->getNumResources()})<br />{$album->getDescription()|truncate:255:"..."|escape}</a><br/><br/>{assign var="counter" value="`$counter+1`"}
+				</div>
+			</td>
+			{if $counter%3 == 0}
+		</tr>
+		<tr>
+		{/if}
+		{/foreach}
+			<td></td>
+		</tr>
+	</table>
+</div>
+<div class="page-nav">{pager style="links"}</div>
+</div>
+{include file="$blogtemplate/sidebar.template"}
+{include file="$blogtemplate/footer.template"}

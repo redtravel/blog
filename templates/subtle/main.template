@@ -1,0 +1,19 @@
+		{assign var="OnMainPage" value=1}
+		{include file="$blogtemplate/header.template"} 
+		
+<div id="loop_articles">
+
+
+{foreach from=$posts item=post}
+        {assign var="postDate" value=$post->getDateObject()}
+		{assign var="postOwner" value=$post->getUserInfo()}
+   {include file="$blogtemplate/post.template"}
+{/foreach}
+
+{pager style="links"}
+</div>
+
+{include file="$blogtemplate/panel.template"}
+
+
+{include file="$blogtemplate/footer.template"} 

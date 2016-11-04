@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template"} 
+		<!-- Loop Start -->
+		<div class="post">
+			<h3 class="post-title">{$locale->tr("archives")}</H3>
+				<ul>
+					{foreach from=$archives item=month}
+					<li>
+						<a href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]
+					</li>
+					{/foreach}
+				</ul>
+		</div>
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"} 

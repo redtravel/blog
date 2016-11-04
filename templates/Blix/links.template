@@ -1,0 +1,64 @@
+
+</div> <!-- /content -->
+<hr class="low" />
+
+<!-- subcontent ................................. -->
+<div id="subcontent">
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $blogOwner->hasPicture() && $AboutMyself}
+  	<h2>{$locale->tr("about_myself")}</h2>
+  	{assign var=picture value=$blogOwner->getPicture()}
+  	<img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" />
+  	<p>{$AboutMyself}</p>
+{/if}
+
+
+<H2><em>Around here</em></H2>
+<UL class="feeds">
+{foreach from=$recentposts item=recentpost}
+<LI><A title="{$recentpost->getText()|truncate:150:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a></LI>
+{/foreach}
+</UL>
+
+
+	<h2><em>Categories</em></h2>
+		<ul class="categories">
+		{foreach from=$articlecategories item=articleCategory}
+			<LI><A href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()} ({$articleCategory->getNumArticles()})</A></LI>
+		{/foreach}
+		</ul>
+
+	<h2><em>{$locale->tr("my_links")}</em></h2>
+
+	
+				{foreach from=$mylinkscategories item=linkcategory}
+				<STRONG><P>{$linkcategory->getName()}</P></STRONG>
+				<ul class="links">
+					{foreach from=$linkcategory->getLinks() item=link}
+					<li>
+						<a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a>
+					</li>
+					{/foreach}
+				</ul>
+				{/foreach}
+
+	
+
+	<h2><em>Feeds</em></h2>
+
+	<ul class="feeds">
+	<li><A href="{$url->rssLink("rss10")}">RSS</A></li>
+	<LI><A title="This page validates as XHTML 1.0 Transitional" href="http://validator.w3.org/check/referer">Valid <ABBR title="eXtensible HyperText Markup Language">XHTML</ABBR></A> </LI>
+<LI><A href="http://gmpg.org/xfn/"><ABBR title="XHTML Friends Network">XFN</ABBR></A> </LI>
+<LI><A title="Powered by LifeType, state-of-the-art semantic personal publishing platform." href="http://www.lifetype.net/">LifeType</A> </LI>
+
+	</ul>
+
+
+
+
+
+
+
+</div> <!-- /subcontent -->

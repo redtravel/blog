@@ -1,0 +1,93 @@
+/* Aqua-Soft.org Wordpress theme, made by Tim Kimberl */
+body { margin: 15px 30px 10px 30px; color: #000000; background: #3873b3; font: 11px ËÎÌו,'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif; }
+a:link { color: #1b4ca2; text-decoration: none; }
+a:visited { color: #1b4ca2; text-decoration: none; }
+a:hover, a:active { color: #1b4ca2; text-decoration: underline; }
+td { font: 11px 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif; }
+#container { margin-left: auto; margin-right: auto; width: 99%; min-width: 770px; max-width: 1000px; }
+#wrapper { background: #ffffff; color: #000000; }
+img { border: none; vertical-align: middle; }
+p img { padding: 0; max-width: 100%; }
+img.centered { margin-left: auto; margin-right: auto; display: block; }
+img.alignright { padding: 4px; margin: 0 0 2px 7px; display: inline; }
+img.alignleft { padding: 4px; margin: 0 7px 2px 0; display: inline; }
+.subtoolbar { padding: 5px 6px 5px 6px; background: url(images/pin_dark.gif) #e4e4e4; color: #000000; }
+.rightcol { padding: 0px; width: 175px; background: #f4f4f4; color: #000000; }
+.content { padding: 10px 20px 20px 20px; background: #ffffff; color: #000000; font-size: 12px; text-align: justify; }
+.tableborder { border: 0px; margin: 0px; padding: 0px; background: url(images/tb_bg.gif) #cccccc repeat-x; color: #000000; }
+.footernav { margin: 0px; padding: 0px; background: url(images/toolbar_bg.gif) #f4f4f4; color: #000000; }
+#footernav { float: left; width: 100%; }
+#footernav ul{ margin: 0; padding: 0 0 0 6px; list-style: none; }
+#footernav li{ float: left; margin: 0 0 0 1px; padding: 0; display: inline; text-align: center; vertical-align: middle; }
+#footernav a{ margin-left: 1px; margin-right: 1px; padding: 3px 5px 3px 5px; display: block; color: #000000; text-decoration: none; }
+#footernav a:hover{ color: #000000; }
+#footernav a:active{ border-left: 1px solid #b6b6b6; border-right: 1px solid #b6b6b6; margin-left: 0px; margin-right: 0px; background: url(images/toolbara_bg.gif) #f4f4f4; color: #000000; }
+#footernav #fcurrent a{ border-left: 1px solid #b6b6b6; border-right: 1px solid #b6b6b6; margin-left: 0px; margin-right: 0px; background: url(images/toolbara_bg.gif) #f4f4f4; color: #000000; }
+.captionleft { float: left; width: 79px; background: url(images/caption_left.gif) #3873b3; height: 21px; }
+.captionmid { width: 100%; background: url(images/caption_mid.gif) #efefef repeat-x; font: 13px/21px 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif; text-align: center; height: 21px; }
+.captionmid a:link,.captionmid  a:visited,.captionmid  a:active{ background: transparent; color: #000000; text-decoration: none; }
+.captionmid a:hover{ text-decoration: underline; }
+.captionright { float: right; width: 79px; background: url(images/caption_right.gif) #3873b3; height: 21px; }
+.toolbar { margin: 0px; padding: 0px 0px 0px 6px; background: url(images/toolbar_bg.gif) #f4f4f4; color: #000000; }
+#toolbar { float: left; margin: 0px; padding: 0px; width: 100%; background: url(images/toolbar_bg.gif) #f4f4f4; color: #000000; }
+#toolbar ul{ margin: 0; padding: 0px; list-style: none; }
+#toolbar li{ float: left; margin: 0 0 0 1px; padding: 0; display: inline; text-align: center; vertical-align: middle; }
+#toolbar a{ margin-left: 1px; margin-right: 1px; padding: 39px 5px 3px 5px; display: block; color: #000000; text-decoration: none; }
+#toolbar a:active{ border-left: 1px solid #b6b6b6; border-right: 1px solid #b6b6b6; margin-left: 0px; margin-right: 0px; background: url(images/toolbara_bg.gif) #f4f4f4; color: #000000; }
+#toolbar #tcurrent a{ border-left: 1px solid #b6b6b6; border-right: 1px solid #b6b6b6; margin-left: 0px; margin-right: 0px; background: url(images/toolbara_bg.gif) #f4f4f4; color: #000000; }
+#toolbar #tbhome a { padding: 0px; margin: 0px; width: 170px; border: 0px; display: block; background: url(images/site_logo.gif) no-repeat; height: 55px; }
+#toolbar #tbhome:active { border: 0px; margin: 0 0 0 1px; }
+#toolbar #tbforum:active { background: url(images/toolbara_bg.gif) #f4f4f4; }
+#toolbar #tbforum a { display: block; background: url(images/tb_forum_a.gif) no-repeat top center; }
+#toolbar #tbforum a:active { display: block; background: url(images/tb_forum_a.gif) no-repeat top center; }
+#toolbar #tbres:active { background: url(images/toolbara_bg.gif) #f4f4f4; }
+#toolbar #tbres a { display: block; background: url(images/tb_res_a.gif) no-repeat top center; }
+#toolbar #tbres a:active { display: block; background: url(images/tb_res_a.gif) no-repeat top center; }
+#toolbar #tbdisc:active { background: url(images/toolbara_bg.gif) #f4f4f4; }
+#toolbar #tbdisc a { display: block; background: url(images/tb_disc_a.gif) no-repeat top center; }
+#toolbar #tbdisc a:active { display: block; background: url(images/tb_disc_a.gif) no-repeat top center; }
+#toolbar #tbabout:active { background: url(images/toolbara_bg.gif) #f4f4f4; }
+#toolbar #tbabout a { display: block; background: url(images/tb_about_a.gif) no-repeat top center; }
+#toolbar #tbabout a:active { display: block; background: url(images/tb_about_a.gif) no-repeat top center; }
+#toolbar #tbaero a { padding: 0px; margin: 0px; width: 98px; border: 0px; display: block; background: url(images/tb_aero.gif) no-repeat; height: 55px; }
+#toolbar #tbaero:active { border: 0px; margin: 0px; }
+.shadleft { padding-left: 15px; background: url(images/shad_left.gif) repeat-y left; }
+.shadright { padding-right: 15px; background: url(images/shad_right.gif) repeat-y right; }
+.shadbotleft { float: left; width: 79px; background: url(images/shad_bot_left.gif) #3873b3; height: 24px; }
+.shadbotmid { background: url(images/shad_bot_mid.gif) repeat-x; text-align: center; height: 24px; }
+.shadbotright { float: right; width: 79px; background: url(images/shad_bot_right.gif) #3873b3; height: 24px; }
+#spotlight { background: url(images/spotlight_bg.gif) #0361e4 repeat-x; height: 31px; }
+#spotlight img { vertical-align: baseline; }
+.searchbox { background: url(images/spotlight_search_bg.gif) repeat-x; height: 31px; }
+.searchbox input { border: 0px; margin: 0px; width: 145px; background: #ffffff; color: #505050; font: 12px 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif; }
+#lsresult { padding: 2px 0px 0px 0px; border-bottom: 1px solid #e1e1e1; background: url(images/pin_light.gif) #ececec; color: #000000; }
+#results { margin: 0px; padding: 2px 0px 6px 0px; list-style: none; }
+#results li img { width: 16px; vertical-align: middle; height: 16px; }
+#results li a { padding: 1px 0px 1px 5px; display: block; color: #000000; font-size: 11px; text-align: left; text-decoration: none; }
+#results li a:hover { background: url(images/results_highlight.gif) #1b4ca2; color: #ffffff; cursor: pointer; }
+#results li:hover { background: url(images/results_highlight.gif) #1b4ca2; color: #ffffff; cursor: pointer; }
+.rc_section { border-top: 1px solid #ffffff; border-bottom: 1px solid #cccccc; margin: 0px 7px 0px 4px; padding: 5px; }
+.rc_title { margin: 0px; padding: 0px; color: #000000; font-weight: bold; font-family: ËÎÌו,'Lucida Grande', Verdana, Arial, Sans-Serif;}
+.rc_title a, .rc_title a:visited { color: #000000; text-decoration: none; }
+.rc_title a:hover { color: #000000; text-decoration: underline; }
+.rc_list { margin: 0px; padding: 0px 0px 0px 4px; list-style: none; }
+.rc_section a { color: #6e6e6e; text-decoration: none; }
+.rc_section a:hover { text-decoration: underline; }
+.rc_section a:active { color: #1b4ca2; text-decoration: none; }
+.rc_section #active a { color: #1b4ca2; font-weight: bold; text-decoration: none; }
+.rc_section #active a:hover { text-decoration: underline; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.post { margin: 0 0 40px; text-align: justify; }
+small { color: #6e6e6e; font-size: 11px; }
+.heading { font-size: 20px; font-weight: bold; }
+.entry p { line-height: 140%; }
+.entry p a:visited { color: #b85b5a; }
+.entry ul { margin-left: 0px; padding: 0 0 0 30px; padding-left: 10px; list-style: none; text-indent: -10px; }
+.entry li { margin: 7px 0 8px 10px; }
+.entry ol { padding: 0 0 0 35px; margin: 0; }
+.entry ol li { margin: 0; padding: 0; }
+.entry form { text-align: center; }
+.postmetadata ul, .postmetadata li { display: inline; list-style-type: none; list-style-image: none; }
+#rss { margin: 6px 0px 6px 0px; padding: 0px 0px 0px 33px; display: block; background: url(images/rss.gif) no-repeat; height: 15px; }
+#irc { margin: 6px 0px 6px 0px; padding: 0px 0px 0px 33px; display: block; background: url(images/irc.gif) no-repeat; height: 15px; }

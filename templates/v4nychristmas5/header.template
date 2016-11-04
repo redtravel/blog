@@ -1,0 +1,58 @@
+<!--//
+//	Layout and template copyright V4NY.net - V4NY
+//	
+//	RULES:
+//	You can edit them but don't remove credits.
+//	
+//	HELP:
+//	If you have some problems with my templates, you can send me an e-mail to admin@*REMOVETHIS*v4ny.com
+//	or post in my forum http://layoutstudios.com/forum
+//	
+//	Thank you
+//	Vanessa (aka V4NY]
+//
+//-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+ <meta name="generator" content="{$version}" />
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+ <title>{$pageTitle|escape:"html"}</title>
+ <link rel="stylesheet" title="Default" href="{$url->getTemplateFile("style.css")}" type="text/css" media=screen />
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+
+ <link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("favicon.ico")}" />
+{if $badbehavior}
+   {$badbehavior->showBB2JavaScript()}
+{/if}
+</head>
+
+
+<body>
+<!-- begin container -->
+	<div id="container">
+		<!-- begin header -->
+			<div id="header"></div>
+		<!-- end header -->
+		
+		<!-- inizio contenuto principale -->
+			<div id="divcontent">
+				<div id="menu">
+					<ul id="navSquare">
+              					<li><a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+				  		<li><a title="{$locale->tr("archives")}" href="{$url->templatePage("archives")}">{$locale->tr("archives")}</a></li>
+						<li><A title="{$locale->tr("admin")}" href="{$url->getAdminUrl()}">{$locale->tr("admin")}</a></li>
+						<li><A title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+						<li><a title="{$locale->tr("summary")}" href="{$url->getUrl("/summary.php")}">{$locale->tr("summary")}</a></li>
+						<li><a href="{$url->templatePage("links")}">{$locale->tr("my_links")}</a></li>
+					</ul>
+				</div>
+
+		<!-- begin content -->
+			<div id="content" class="narrowcolumn">	
+	

@@ -1,0 +1,46 @@
+<div id="sidebar">
+	<ul>
+		<li>
+			<form method="post" id="searchform" action="{$url->getIndexUrl()}">
+				<div>
+					<input type="text" name="searchTerms" value="" id="s" />
+					<input type="hidden" name="op" value="Search" />
+					<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+					<input type="submit" name="Search" value="{$locale->tr("search")}" />
+				</div>
+			</form>
+		</li>
+		
+		<li>
+			<h2 class="sidebartitle">{$locale->tr("categories")}</h2>
+			<ul class="list-cat">
+				{foreach from=$articlecategories item=articleCategory}
+					<li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()} [{$articleCategory->getNumArticles()}]</a></li>
+				{/foreach}
+			</ul>
+		</li>
+			
+		<li class="widget_calendar">
+			<h2 class="sidebartitle">{$locale->tr("calendar")}</h2>
+				{$calendar}
+		</li>
+		
+		<li>	
+			<h2 class="sidebartitle">{$locale->tr("archives")}</h2>
+		    <ul class="list-archives">
+		        {foreach from=$archives item=month}
+					<li><a href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]</li>
+		    	{/foreach}
+		    </ul>
+		</li>
+		
+		<li>
+	        <h2 class="sidebartitle">{$locale->tr("recently")}</h2>
+	          <ul class="list-page">
+	            {foreach from=$recentposts item=post}
+					<li><a href="{$url->postLink($post)}">{$post->getTopic()|strip_tags|truncate:20:"...":false}</a><br/></li>
+	            {/foreach}
+	          </ul>
+	    </li>
+	</ul>
+</div>

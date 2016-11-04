@@ -1,0 +1,8 @@
+{include file="$blogtemplate/header.template"}
+		<div class=entry>
+		<!-- Loop Start -->
+				<h3>Features</h3>
+				{$blog->getAbout()}
+		</div>
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"}

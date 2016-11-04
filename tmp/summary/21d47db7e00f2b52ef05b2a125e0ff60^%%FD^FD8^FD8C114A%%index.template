@@ -1,0 +1,159 @@
+373
+a:4:{s:8:"template";a:5:{s:22:"summary/index.template";b:1;s:23:"summary/header.template";b:1;s:21:"summary/post.template";b:1;s:23:"summary/recent.template";b:1;s:23:"summary/footer.template";b:1;}s:9:"timestamp";i:1478054706;s:7:"expires";i:-1;s:13:"cache_serials";a:1:{s:51:"./tmp/summary/%%FD^FD8^FD8C114A%%index.template.inc";s:32:"04fc89108b98703b555ad488eb2aca46";}}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+    <title>聚齿网</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style type="text/css" media="screen">@import "styles/summary.css";</style>
+    <meta name="description" content="聚齿网" />
+ 	<link rel="shortcut icon" type="image/x-icon" href="http://sq2.goodteeth.cn/imgs/favicon.ico" />
+    <script type="text/javascript">
+    var blogLocale = 'UTF-8';
+  	// base url where we can find the admin.php script
+  	var plogBaseUrl = "http://sq2.goodteeth.cn";
+	var plogSummaryBaseUrl = plogBaseUrl + "/summary.php";
+	var plogBlogId = "0";
+</script>
+<script type="text/javascript" src="js/ui/default.js"></script>
+<script type="text/javascript" src="js/ui/common.js"></script>
+</head>
+<body class="column3">
+<div id="wrapper">
+<div id="header">
+</div>
+<map name="linksmenu" id="linksmenu" title="Navigation">
+    <div id="menubar">
+        <div id="menu">
+          <ul class="menuTop">
+             <li class="menuOption"><a href="summary.php?op=Summary">汇整</a></li>
+             <li class="menuOption"><a href="summary.php?op=Register&amp;start=1">注册</a></li>
+             <li class="menuOption"><a href="summary.php?op=PostList">文章</a></li>
+             <li class="menuOption"><a href="summary.php?op=BlogList">博客</a></li>
+             <li class="menuOption"><a href="summary.php?op=UserList">用户</a></li>
+          </ul>
+        </div>
+    </div>
+</map>
+
+
+<div id="maincolumn">
+    <div id="intro">
+        <p>请将此处修改为你希望你的用户看到的欢迎信息，或将这部份删除并重新安排整个页面。这个页面的模版在 templates/summary 里面，你可以自由地依你的喜好修改他。</p>
+    </div>
+    <h2>最新发表的文章
+            <a href="http://sq2.goodteeth.cn/rss.php?summary=1">
+        <img src="http://sq2.goodteeth.cn/imgs/rss_logo_mini.gif" alt="RSS" />
+      </a>
+  </h2>
+ 	
+ 
+	
+        <img src="templates/summary/nouser.gif" class="postgrav" width="60" height="60" alt="lichao" />	
+        
+    <h3>
+    	<a href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1">test</a>
+    </h3>
+    	
+    <div class="subtitle">
+    	发表于 <a href="http://sq2.goodteeth.cn/index.php?blogId=1">my blog</a> | 分类: <a href="?op=PostList&amp;globalArticleCategoryId=1">General</a>    </div>
+    
+    <p>
+         test 
+    </p>
+    
+    <div class="postinfo">
+        <img src="imgs/post.png" width="10" height="11" alt="Author" />
+         <strong>lichao</strong>, 2 十一月 2016 |
+        <img src="imgs/comment.png" width="11" height="10" alt="评论" />
+        <a href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1#comments">1 评论</a>
+    </div>
+    
+    <div class="clearleft">&nbsp;</div></div>
+
+<div id="column">
+<div id="columncontainer">
+    <h2>搜寻</h2>
+    <form id="searchForm" method="post" action="/summary.php">
+    <fieldset class="inputField">
+            <label for="searchTerms">站内搜寻:
+            <input type="text" name="searchTerms" id="searchTerms" value="" size="14" /></label>
+            <label for="searchType">搜寻方式:
+	   	    <select name="searchType" id="searchType">
+	    	   	<option value="1">文章</option>
+	    	   	<option value="2">博客</option>
+	    	   	<option value="3">文件</option>
+    	    </select>
+   </label>        
+        <input type="hidden" name="op" value="summarySearch" />            
+        <input type="submit" class="button" name="summarySearch" value="站内搜寻" />
+    </fieldset>
+    </form>
+
+    <h2>登入</h2>
+    <form id="loginForm" method="post" action="admin.php">
+    <fieldset class="inputField">
+	    {nocache:04fc89108b98703b555ad488eb2aca46#0}    </fieldset>
+    </form>
+    
+    <h2>最活跃博客
+          <a href="http://sq2.goodteeth.cn/rss.php?summary=1&amp;type=mostactiveblogs">
+        <img src="http://sq2.goodteeth.cn/imgs/rss_logo_mini.gif" 
+         alt="RSS" /></a>    
+    </h2>
+          <ul class="itemList">
+        	                <li class="item"><a href="http://sq2.goodteeth.cn/index.php?blogId=1">my blog</a></li>
+              </ul>
+        
+    
+    
+            <h2>最新建立的博客
+      <a href="http://sq2.goodteeth.cn/rss.php?summary=1&amp;type=newestblogs">
+        <img src="http://sq2.goodteeth.cn/imgs/rss_logo_mini.gif" 
+           alt="RSS" /></a>    
+    </h2>
+           <ul class="itemList">
+                  		            <li class="item"><a href="http://sq2.goodteeth.cn/index.php?blogId=2">我是大侠</a></li>
+                  		            <li class="item"><a href="http://sq2.goodteeth.cn/index.php?blogId=1">my blog</a></li>
+              </ul>
+    
+    <h2>最多人阅读文章
+              <a href="http://sq2.goodteeth.cn/rss.php?summary=1&amp;type=mostread">
+          <img src="http://sq2.goodteeth.cn/imgs/rss_logo_mini.gif" 
+          alt="RSS" /></a>		
+     </h2>
+              <ul class="itemList">
+                      	        		
+            <li class="item">
+              <a href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=1&amp;blogId=1">恭喜！</a> (7)<br />
+           </li>
+                      	        		
+            <li class="item">
+              <a href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1">test</a> (3)<br />
+           </li>
+                  </ul>
+      
+    <h2>最多评论文章
+          <a href="http://sq2.goodteeth.cn/rss.php?summary=1&amp;type=mostcommented">
+        <img src="http://sq2.goodteeth.cn/imgs/rss_logo_mini.gif" 
+         alt="RSS" /></a>
+	</h2>
+     
+      <ul class="itemList">
+        	      	      	
+          <li class="item">		
+            <a href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1">test</a> (1)<br />
+          </li>
+              </ul>
+        
+
+</div>
+</div>
+
+<div class="spacer">&nbsp;</div>
+<div id="footer">
+  Powered by <a href="http://www.lifetype.net">LifeType</a>	-
+  Design by <a href="http://www.balearweb.com">BalearWeb</a> 
+</div>
+</div>
+</body>
+</html>

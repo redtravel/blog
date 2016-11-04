@@ -1,0 +1,23 @@
+{assign var="OnAboutPage" value=1}
+{assign var=title value=$locale->tr("about_myself")}
+{include file="$blogtemplate/header.template" pageTitle="$pageTitle | $title"} 
+ 
+    <div class="post">
+        <h2>{$locale->tr("about_myself")}</h2>
+	{assign var=blogOwner value=$blog->getOwnerInfo()}
+	{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+	{if $blogOwner->hasPicture() && $AboutMyself}		
+		<div class="post">
+			{assign var=picture value=$blogOwner->getPicture()}
+			<div class="post-content">
+				<img src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" hspace="5" align="left" />
+				{$AboutMyself}
+			</div>
+		</div>
+	{/if}
+	</div>
+</div>
+
+{include file="$blogtemplate/sidebar.template"}
+{include file="$blogtemplate/footer.template"}
+

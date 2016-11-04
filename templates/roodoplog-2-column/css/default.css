@@ -1,0 +1,343 @@
+BODY {
+	FONT-SIZE: 12px; 
+	BACKGROUND: url(15main_image.gif) #fef4e1 no-repeat 50% 0px; 
+	MARGIN: 0px; WIDTH: 100%; COLOR: #993300; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif; 
+	HEIGHT: 100%; TEXT-ALIGN: center
+}
+A {
+	COLOR: #ffcc00; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #ffcc00; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #ffcc00; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #ffcc00
+}
+A:hover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.acalendar {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}
+A.acalendar:link {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}
+A.acalendar:visited {
+	TEXT-DECORATION: underline
+}
+A.acalendar:active {
+	
+}
+A.acalendar:hover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.acontinues {
+	COLOR: #cccccc; TEXT-DECORATION: underline
+}
+A.acontinues:link {
+	COLOR: #cccccc; TEXT-DECORATION: underline
+}
+A.acontinues:visited {
+	TEXT-DECORATION: underline
+}
+A.acontinues:active {
+	
+}
+A.acontinues:hover {
+	COLOR: #bababa; TEXT-DECORATION: none
+}
+A.amenu {
+	COLOR: #993300; TEXT-DECORATION: underline
+}
+A.amenu:link {
+	COLOR: #993300; TEXT-DECORATION: underline
+}
+A.amenu:visited {
+	TEXT-DECORATION: underline
+}
+A.amenu:active {
+	
+}
+A.amenu:hover {
+	COLOR: #bababa; TEXT-DECORATION: none
+}
+#container {
+	MARGIN: 0px auto; WIDTH: 740px; TEXT-ALIGN: left
+}
+#banner {
+	WIDTH: 740px; HEIGHT: 50px
+}
+#subbanner {
+	
+}
+#banner A {
+	COLOR: #ff9900; TEXT-DECORATION: none
+}
+#banner A:link {
+	COLOR: #ff9900; TEXT-DECORATION: none
+}
+#banner A:visited {
+	TEXT-DECORATION: none
+}
+#banner A:active {
+	
+}
+#banner A:hover {
+	COLOR: #ffcc00; TEXT-DECORATION: underline
+}
+#subbanner A {
+	COLOR: #cccccc; TEXT-DECORATION: none
+}
+#subbanner A:link {
+	COLOR: #cccccc; TEXT-DECORATION: none
+}
+#subbanner A:visited {
+	TEXT-DECORATION: none
+}
+#subbanner A:active {
+	
+}
+#subbanner A:hover {
+	COLOR: #cccccc; TEXT-DECORATION: underline
+}
+H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.blogtitle {
+	PADDING-RIGHT: 40px; FONT-WEIGHT: bold; FONT-SIZE: 20px; PADDING-BOTTOM: 0px; PADDING-TOP: 20px; LETTER-SPACING: 1px; TEXT-ALIGN: right
+}
+.description {
+	PADDING-RIGHT: 40px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff6600; LETTER-SPACING: 2px; TEXT-ALIGN: right
+}
+#content {
+	FLOAT: right; 
+	WIDTH: 500px; 
+	MARGIN-RIGHT: 0px
+}
+.blog {
+	WIDTH: 450px; 
+	FLOAT: right; 
+	MARGIN: 0px 25px
+}
+.date {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; MARGIN: 20px 0px 5px; COLOR: #ff9900; TEXT-ALIGN: right
+}
+.blogbody {
+	BORDER-RIGHT: #ff9900 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #ff9900 1px solid; PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #ff9900 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #ff9900 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #ff9900; PADDING-TOP: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 20px
+}
+.main {
+	FONT-SIZE: 12px; MARGIN: 15px 0px; COLOR: #666666; LINE-HEIGHT: 180%; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.main-continues {
+	FONT-SIZE: 13px
+}
+.posted {
+	FONT-SIZE: 11px; MARGIN: 0px 0px 5px; COLOR: #993300; TEXT-ALIGN: right
+}
+A.aposted {
+	COLOR: #666666; TEXT-DECORATION: underline
+}
+A.aposted:link {
+	COLOR: #ff6600; TEXT-DECORATION: underline
+}
+A.aposted:visited {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}
+A.aposted:active {
+	}
+A.aposted:hover {
+	COLOR: #ff9900; TEXT-DECORATION: none
+}
+.menu {
+	FONT-SIZE: 12px; COLOR: #666666; TEXT-ALIGN: right
+}
+.comments-head {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; COLOR: #ff9900; PADDING-TOP: 0px; HEIGHT: 10px
+}
+.comments-body {
+	FONT-SIZE: 12px; MARGIN: 20px 0px 15px 50px; LINE-HEIGHT: 135%
+}
+.comments-post {
+	FONT-SIZE: 12px; MARGIN: 0px 0px 25px; COLOR: #666666; TEXT-ALIGN: right
+}
+.trackback-url {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; MARGIN: 20px 0px 15px 13px; COLOR: #ff6600
+}
+.trackback-body {
+	FONT-SIZE: 13px; MARGIN: 20px 0px 15px 13px; LINE-HEIGHT: 135%
+}
+.trackback-post {
+	FONT-SIZE: 12px; MARGIN: 0px 0px 25px; COLOR: #666666; TEXT-ALIGN: right
+}
+A.atrackback-post {
+	COLOR: #2d8d5f; TEXT-DECORATION: underline
+}
+A.atrackback-post:link {
+	COLOR: #2d8d5f; TEXT-DECORATION: underline
+}
+A.atrackback-post:visited {
+	COLOR: #80b59c; TEXT-DECORATION: underline
+}
+A.atrackback-post:active {
+	}
+A.atrackback-post:hover {
+	COLOR: #bababa; TEXT-DECORATION: none
+}
+TABLE.form {
+	MARGIN: 25px 0px 0px 13px
+}
+LABEL {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px
+}
+#author {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; WIDTH: 200px; BORDER-BOTTOM: #993300 1px solid
+}
+#email {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; WIDTH: 200px; BORDER-BOTTOM: #993300 1px solid
+}
+#url {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; WIDTH: 200px; BORDER-BOTTOM: #993300 1px solid
+}
+#text {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; WIDTH: 350px; BORDER-BOTTOM: #993300 1px solid; HEIGHT: 200px
+}
+.pagetop {
+	FONT-SIZE: 12px; MARGIN: 5px 0px 25px; TEXT-ALIGN: right
+}
+#links {
+	MARGIN-TOP: 250px; 
+	FLOAT: left; 
+	MARGIN-LEFT: 10px; 
+	WIDTH: 180px; 
+	TEXT-ALIGN: center
+}
+.calendarhead {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; MARGIN: 0px; COLOR: #ffffff; PADDING-TOP: 2px; FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 4px; BACKGROUND-COLOR: #ff9900; TEXT-ALIGN: center
+}
+.calendartable {
+	BORDER-RIGHT: #ff9900 1px solid; PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN: 0px 0px 10px; BORDER-LEFT: #ff9900 1px solid; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: #ff9900 1px solid; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.calendarweek {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; TEXT-ALIGN: left
+}
+.calendarwd {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BACKGROUND-COLOR: #ff6600
+}
+.calendard {
+	empty-cells: show
+}
+.calendardbg {
+	BACKGROUND-COLOR: #efefef
+}
+.calendar {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; COLOR: #ff9900; PADDING-TOP: 2px
+}
+.sidetitle {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; COLOR: #ffffff; PADDING-TOP: 5px; LETTER-SPACING: 2px; BACKGROUND-COLOR: #ff9900; TEXT-ALIGN: center
+}
+.side {
+	BORDER-RIGHT: #ff9900 1px solid; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 10px; BORDER-LEFT: #ff9900 1px solid; LINE-HEIGHT: 200%; PADDING-TOP: 10px; BORDER-BOTTOM: #ff9900 1px solid; TEXT-ALIGN: left
+}
+A.aside {
+	COLOR: #ccccff; TEXT-DECORATION: underline
+}
+A.aside:link {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}
+A.aside:visited {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}
+A.aside:hover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.arss {
+	COLOR: #dddddd; TEXT-DECORATION: underline
+}
+A.arss:link {
+	COLOR: #2d8d5f; TEXT-DECORATION: underline
+}
+A.arss:visited {
+	COLOR: #80b59c; TEXT-DECORATION: underline
+}
+A.arss:active {
+	
+}
+A.arss:hover {
+	COLOR: #bababa; TEXT-DECORATION: none
+}
+img {BORDER: 0px;}
+.pict {MARGIN: 5px 5px 5px 5px;}
+.photo {
+	TEXT-ALIGN: center
+}
+.nickname {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; MARGIN: 10px 0px; COLOR: #2d8d5f
+}
+.message {
+	FONT-SIZE: 12px
+}
+.quotetable {
+	
+}
+.quote {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-SIZE: 12px; PADDING-BOTTOM: 1px; COLOR: #666666; PADDING-TOP: 1px
+}
+.blogtimes {
+	MARGIN: 0px 0px 15px; TEXT-ALIGN: center
+}
+.powered {
+	MARGIN: 0px 0px 10px; TEXT-ALIGN: center
+}
+.syndicate {
+	MARGIN: 5px 0px; TEXT-ALIGN: center
+}
+.checkers {
+	MARGIN-TOP: 10px; FONT-SIZE: 12px
+}
+.pager {
+	clear:all;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.pager a, .pager a:link, .pager a:href, .pager a:hover {
+ text-decoration: none;
+ border: 0px;
+}
+
+.pager .pagerLinkPrevPage, .pagerLink, .pagerLinkNextPage{
+	padding: 2px 6px;
+}
+
+.pager .pagerLinkPrevPage{
+	margin-right:20px;
+}
+.pager .pagerLinkNextPage {
+	margin-left:20px;
+}
+
+.pager .pagerCurrent {
+	padding: 2px 6px; 
+	border-color: #999; 
+	font-weight: bold; 
+	font-size: 13px; 
+	vertical-align: top; 
+	background: #fff; 
+	color: #FF0084;	
+}

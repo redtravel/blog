@@ -1,0 +1,13 @@
+		{include file="$blogtemplate/header.template"} 
+ 
+ <h2>{$locale->tr("link_tracker_results")}</h2>
+ <div>
+ 		{foreach from=$links item=link}
+ 	<ul>
+ 	<li>
+  	<a target="_blank" href="{$link->getUrl()}">{$link->getUrl()}</a></li>
+  	</ul>
+ 		{/foreach}
+</div>
+
+		{include file="$blogtemplate/footer.template"} 

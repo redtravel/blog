@@ -1,0 +1,16 @@
+{assign var="OnMainPage" value=1}
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+<div id="content">
+<!-- Posts -->
+	{foreach from=$posts item=post}
+		<div class="post">
+{include file="$blogtemplate/post.template"}
+		</div>
+	{/foreach}
+<!-- Posts end-->
+	<!-- Pager -->
+	{pager style="links"}
+	<!-- Pager end -->
+</div>
+{include file="$blogtemplate/footer.template"}

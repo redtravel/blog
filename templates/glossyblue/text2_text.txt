@@ -1,0 +1,2 @@
+<h4>Text 2</h4>
+<p>Open "text2_text.txt" file in the theme folder to edit this text.</p>

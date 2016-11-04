@@ -1,0 +1,280 @@
+/* SimpleRules CSS 1.0 - Alexander Kaiser */
+/* poolie.kulando.de - alex@poolie.de */
+/* released for LifeType (lifetype.net) unter the GPL */
+
+@import url("typography.css");
+
+body {
+background-color: #444444;
+margin-left: 0px;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+}
+
+p {
+margin: 0px;
+padding: 0px;
+}
+
+img {
+border: 0px;
+}
+
+li h2 {
+text-transform:capitalize;
+}
+
+#head {
+width: 100%;
+height: 50px;
+background-image: url(../i/head/bg.gif);
+background-repeat: repeat-x;
+}
+
+#geek {
+margin-left: auto;
+margin-right: auto;
+width: 740px;
+}
+
+#logo {
+height: 60px;
+padding-top: 10px;
+}
+
+.logoImage {
+padding-top: 20px;
+}
+
+#blog {
+width: 500px;
+background-image: url(../i/main/blogbg.gif);
+background-repeat: repeat-x;
+float: left;
+border-top: 3px solid #ffffff;
+}
+
+#menu {
+width: 200px;
+background-color: #9B1B34;
+float: right;
+border-top: 3px solid #ffffff;
+border-bottom: 5px solid #ffffff;
+}
+
+#main {
+width: 100%;
+background-image: url(../i/main/bg.gif);
+background-repeat: repeat-x;
+background-color: #E7E0D0;
+border-bottom:3px solid #ffffff;
+}
+
+#mainContent {
+margin-left: auto;
+margin-right: auto;
+width: 740px;
+}
+
+#footer {
+margin-left: auto;
+margin-right: auto;
+width: 715px;
+clear:both;
+}
+
+.icons {
+padding-left:15px;
+}
+
+#menuContent ul, #menuContent ul ol {
+margin: 0px;
+padding: 0px;
+list-style: none;
+margin-bottom: 15px;
+}
+
+fieldset {
+margin: 0px;
+padding: 0px;
+border-width : 0px;
+border-style : solid;
+/*  IE 5 Hack \*/
+display: inline;
+/* end hack */
+}
+
+.postmetadata {
+margin: 0;
+padding-bottom: 25px;
+}
+
+#footer p {
+padding-top:25px;
+padding-bottom: 25px;
+}
+
+.navigation {
+display: block;
+text-align: center;
+margin-top: 10px;
+padding-bottom: 25px;
+}
+
+.alignright {
+float: right;
+}
+
+.alignleft {
+float: left;
+}
+
+/* Begin Comments*/
+.alt {
+margin: 0;
+padding: 10px;
+}
+
+.alt {
+background-color: #f8f8f8;
+border-top: 1px solid #ddd;
+border-bottom: 1px solid #ddd;
+}
+
+.commentBox {
+margin: 0;
+padding: 10px;
+background-color: #f8f8f8;
+border-top: 1px solid #ddd;
+border-bottom: 1px solid #ddd;
+}
+
+.commentlist {
+padding: 0;
+text-align: justify;
+}
+
+.commentlist li {
+margin: 15px 0 3px;
+padding: 5px 10px 3px;
+list-style: none;
+}
+
+.commentlist p {
+margin: 10px 5px 10px 0;
+}
+
+#commentform p {
+margin: 5px 0;
+}
+
+.nocomments {
+text-align: center;
+margin: 0;
+padding: 0;
+}
+
+.commentmetadata {
+margin: 0;
+display: block;
+}
+/* End Comments */
+
+.flickr-photo-post { border: solid 1px #000000; }
+.flickr-frame-post {	float: right; text-align: center; margin-left: 15px; margin-bottom: 15px; }
+.flickr-caption-post { font-size: 9px; margin-top: 0px; }
+.pager {
+	clear:all;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.pager a, .pager a:link, .pager a:href, .pager a:hover {
+ text-decoration: none;
+ border: 0px;
+}
+
+.pager .pagerLinkPrevPage, .pagerLink, .pagerLinkNextPage{
+	padding: 2px 6px;
+}
+
+.pager .pagerLinkPrevPage{
+	margin-right:20px;
+}
+.pager .pagerLinkNextPage {
+	margin-left:20px;
+}
+
+.pager .pagerCurrent {
+	padding: 2px 6px; 
+	border-color: #999; 
+	font-weight: bold; 
+	font-size: 13px; 
+	vertical-align: top; 
+	background: #fff; 
+	color: #FF0084;	
+}
+
+/**
+ * styles for the comment form
+ */
+#CommentForm {
+	border:2px solid #9B1B34; 
+	padding-top:10px; 
+	margin-top:10px; 
+	padding-left:10px; 
+	padding-bottom:10px;
+	width:100%;
+}
+
+#CommentForm legend {
+	color:#525150;
+	padding:2px 4px 2px 4px;
+	font-weight : bold;
+}
+
+#CommentForm label {
+	display:block;
+	margin-top:8px;
+	margin-bottom:0px;
+}
+	
+#CommentForm input, textarea {
+	width: 350px;
+	padding: 2px;
+	margin: 5px 5px 1px 0px;
+}
+	
+#Submit input {
+    width: 150px;
+}
+	select {
+width: 130px;
+}
+
+/** styles for the album display **/
+
+div.album {
+	text-align: center;
+        float: left;
+        width:150px;
+        margin-bottom:20px;
+        margin-right:5px;
+  	}
+
+.album p {
+   	text-align: center;
+   	padding: 0;
+   	margin:0;
+   	width:150px;     
+	overflow: hidden;
+   	}
+   
+a img {border:none;}
+#album a:link {color: #004ca1;}
+#album a:visited {color: #b50394;}
+#album a:hover, #album a:active, #album a:focus {color: #004ca1;background:none;}

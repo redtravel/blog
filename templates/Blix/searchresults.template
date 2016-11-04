@@ -1,0 +1,15 @@
+{include file="$blogtemplate/header.template"}
+		<div class=entry>
+		<!-- Loop Start -->
+				<H2>{$locale->tr("search_results")}: {foreach from=$searchterms item=term}{$term} {/foreach}</h2>
+						{foreach from=$searchresults item=result}
+							{assign var=article value=$result->getArticle()}
+							{foreach name=categories from=$article->getCategories() item=postcategory}
+							<a class=aside href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+							{if !$smarty.foreach.categories.last}, {/if}
+							{/foreach}							
+								<a href="{$url->postPermalink($article)}">{$article->getTopic()}</a><br/>	
+						{/foreach}
+		</div>
+{include file="$blogtemplate/links.template"}		
+{include file="$blogtemplate/footer.template"}

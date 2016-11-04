@@ -1,0 +1,30 @@
+<!-- Footer Start -->
+			<br class="clear" />
+		</div>
+	</div>
+
+</div>
+
+<div id="footer">
+	<div class="style_content">
+		<h3 id="footer_title"><a href="{$url->blogLink()}"><span>{$blog->getBlog()}</span></a></h3>
+		
+		<div id="logos">
+			Powered by <a href="http://lifetype.net/" class="logo">Lifetype</a>
+			<a href="http://blog.gluedideas.com/" class="logo"><img src="{$url->getTemplateFile("assets/images/logo_gluedideas.gif")}" alt="Design by Glued Ideas" align="top" border="0" /></a>
+			<a href="http://www.famfamfam.com/" class="logo"><img src="{$url->getTemplateFile("assets/images/logo_famfamfam.gif")}" alt="Icons by Fam Fam Fam" align="top" border="0" /></a>
+		</div>
+	
+		<div id="copyright_notice" class="reduced"><p>Unless otherwise specified, all content is made available under the <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons License</a></p></div>
+		
+	</div>
+</div>
+
+<!--
+Copyright Original Desing: 2006, Glued Ideas
+Author Original Design: Christopher Frazier (cfrazier@gluedideas.com)
+Ported to LifeType by: Reto Hugi (http://hugi.to/blog)
+-->
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{assign var="OnMainPage" value=1}
+{include file="$blogtemplate/header.template"}
+{foreach from=$posts item=post}
+	{assign var="postDate" value=$post->getDateObject()}
+	{include file="$blogtemplate/post.template"}
+{/foreach}
+	<div class="navigation">{pager style="links"}</div>
+</div>
+{include file="$blogtemplate/sidebar.template"}
+{include file="$blogtemplate/footer.template"}

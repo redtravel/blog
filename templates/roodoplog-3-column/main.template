@@ -1,0 +1,12 @@
+{include file="$blogtemplate/header.template"}
+<div id="content">
+<div class="blog">
+ {foreach from=$posts item=post}
+  {include file="$blogtemplate/post.template"}
+ {/foreach}
+ <div class="pagetop"><a class="aposted" href="#top">back to top</a></div>
+</div>
+ {pager style="links"}
+ </div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

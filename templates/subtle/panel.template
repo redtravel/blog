@@ -1,0 +1,88 @@
+<!-- Start right Panel Stuff -->
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $AboutMyself || $blogOwner->hasPicture()}
+<div id="information" class="prominent reduced">
+<div class="inner">
+<h2>Welcome to {$blog->getBlog()}</h2>
+<div>
+    {if $blogOwner->hasPicture()}
+    {assign var=picture value=$blogOwner->getPicture()}
+    <img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" style="margin:10px;float:left" />
+    {/if}
+    {if $AboutMyself}
+    {$AboutMyself}
+    {/if}
+</div>
+
+<br style="clear:both" />
+</div>
+</div>
+{/if}
+
+
+<div id="widgets" class="home">
+    <div id="widgets_home_a" class="widget_set reduced">
+
+    <h3>{$locale->tr("categories")}</h3>
+    <ul class="icon category">
+    {foreach from=$articlecategories item=articleCategory}
+       {if $category && $articleCategory->getId() === $category->getId()}
+        <li>{$articleCategory->getName()} [{$articleCategory->getNumArticles()}]</li>
+        {else}
+        <li><a class="navigation" href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}   [{$articleCategory->getNumArticles()}]</a></li>
+        {/if} 
+    {/foreach}
+    </ul>
+
+
+        {if $mylinkscategories}
+        <h3>{$locale->tr("links")}</h3>
+        <ul class="icon category">
+            {foreach from=$mylinkscategories item=linkcategory}
+             <li><strong>{$linkcategory->getName()}</strong>
+             <ul>
+             {foreach from=$linkcategory->getLinks() item=link}
+              <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+             {/foreach}
+             </ul>
+             </li>
+            {/foreach}
+        	</ul>
+        {/if}
+    </div>
+
+
+
+    <div id="widgets_single_b" class="widget_set reduced">
+        <h3>{$locale->tr("recently")}</h3>
+        <ul class="icon jump">
+        {foreach from=$recentposts item=post}
+            <li><a title="{$post->getTopic()|strip_tags}}" href="{$url->postLink($post)}">{$post->getTopic()|strip_tags|truncate:20:"...":false}</a></li>
+        {/foreach}
+        </ul>
+
+
+        <h3>{$locale->tr("archives")}</h3>
+        <form action="{$smarty.server.PHP_SELF}">
+            <select size="1" name="archives" id="archivelist" onChange="location.href=this.options[this.selectedIndex].value">
+            {foreach from=$archives item=month}
+            <option class="archOption" value="{$month->getUrl()}">{$month->getName()}</option>
+            {/foreach}
+            </select>
+        </form>
+
+        <h3>{$locale->tr("syndicate")}</h3>
+        <ul class="icon feed">
+            	<li><a title="RSS 0.90" href="{$url->rssLink("rss090")}">RSS 0.90</a></li>
+            	<li><a title="RSS 1.0" href="{$url->rssLink("rss10")}">RSS 1.0</a></li>
+            	<li><a title="RSS 2.0" href="{$url->rssLink("rss20")}">RSS 2.0</a></li>
+            	<li><a title="Atom" href="{$url->rssLink("atom")}">Atom</a></li>
+        </ul>
+    </div>
+
+</div>
+
+
+			
+<!-- Content End -->

@@ -1,0 +1,35 @@
+{include file="$blogtemplate/header.template"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+
+<!-- {$url->postTrackbackLink($post)} -->
+
+	<!-- Begin .post -->
+	<div class="post">
+		<h3 class="post-title"><a href="{$url->postPermalink($post)}" style="text-decoration:none;" rel="bookmark" title="Permanent Link: {$post->getTopic()}">{$post->getTopic()}</a></h3>
+		<br>
+	{foreach name=categories from=$post->getCategories() item=postcategory}
+		<p class="post-footer">
+	<em><a href="{$url->categoryLink($postcategory)}" title="View all posts in {$postcategory->getName()}" rel="category tag">{$postcategory->getName()}</a></em>
+	</p>
+				{if !$smarty.foreach.categories.last}, {/if}
+			{/foreach}
+		
+		<div class="post-body">
+			<div>
+				<p>{$post->getText()}</p>
+			</div>
+		</div>
+		
+		<p class="post-footer">
+			<em>posted by {$postOwner->getUsername()} on 
+			<a href="{$url->postPermalink($post)}" title="permanent link">{$locale->formatDate($postDate,"%m/%d,%Y")}</a> @ {$locale->formatDate($postDate,"%H:%M")}</em> | <em><a href="{$url->postPermalink($post)}#comments">{$post->getNumComments()} Comments</a></em></a>
+		</p>
+	</div>
+
+<!-- End .post -->	
+<!-- Show All Comments -->
+{include file="$blogtemplate/comments.template"}
+
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"}

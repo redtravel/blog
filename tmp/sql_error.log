@@ -1,0 +1,242 @@
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/articles.class.php(498): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/action/defaultaction.class.php(201): Articles.getBlogArticles
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(354): DefaultAction.perform
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:27 ERROR - The following query = 
+"SELECT a.id as id, a.id, a.date,
+                             a.user_id,a.blog_id,a.status,a.properties,
+                             a.num_reads, a.slug, 1 AS relevance, a.num_comments AS num_comments,
+							 a.num_nonspam_comments AS num_nonspam_comments, a.num_trackbacks AS num_trackbacks,
+							 a.num_nonspam_trackbacks AS num_nonspam_trackbacks, 
+							 a.global_category_id AS global_category_id,
+							 a.in_summary_page AS in_summary_page,
+							 a.modification_date AS modification_date
+							 FROM lt2_articles a, lt2_articles_categories c, 
+                             lt2_article_categories_link l WHERE  a.blog_id = 1 AND c.id = l.category_id AND a.id = l.article_id AND c.in_main_page = 1 AND a.status = '1' AND a.date <= '20161102130727' GROUP BY a.id  ORDER BY a.date DESC LIMIT 0, 15"
+generated the following error message = 
+"Table 'sq.lt2_articles' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/articles.class.php(644): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(157): Articles.getDaysWithPosts
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(255): BlogView._getMonthPosts
+/alidata/www/gitspace/juchi/lifetype/class/view/errorview.class.php(58): BlogView.render
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(386): ErrorView.render
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:27 ERROR - The following query = 
+"SELECT date
+                                    FROM lt2_articles 
+                                    WHERE status = 1 
+                                    AND blog_id = 1
+                                    AND MONTH(FROM_UNIXTIME(UNIX_TIMESTAMP(date) + 0)) = 11 
+                                    AND YEAR(FROM_UNIXTIME(UNIX_TIMESTAMP(date) + 0)) = 2016 AND date <= NOW()"
+generated the following error message = 
+"Table 'sq.lt2_articles' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(290): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/dao/mylinks.class.php(41): Model.getMany
+/alidata/www/gitspace/juchi/lifetype/class/dao/mylinkscategory.class.php(148): MyLinks.getLinks
+/alidata/www/gitspace/juchi/lifetype/tmp/1/%%ED^ED9^ED9B0B59%%sidebar-r.template.php(33): MyLinksCategory.getLinks
+/alidata/www/gitspace/juchi/lifetype/class/template/smarty/Smarty.class.php(1869): include
+/alidata/www/gitspace/juchi/lifetype/class/template/template.class.php(145): Smarty._smarty_include
+/alidata/www/gitspace/juchi/lifetype/tmp/1/%%DA^DAB^DABAA9FF%%error.template.php(14): Template._smarty_include
+/alidata/www/gitspace/juchi/lifetype/class/template/smarty/Smarty.class.php(1263): include
+/alidata/www/gitspace/juchi/lifetype/class/template/template.class.php(218): Smarty.fetch
+/alidata/www/gitspace/juchi/lifetype/class/view/smartyview.class.php(257): Template.fetch
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(286): SmartyView.render
+/alidata/www/gitspace/juchi/lifetype/class/view/errorview.class.php(58): BlogView.render
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(386): ErrorView.render
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:27 ERROR - The following query = 
+"SELECT * FROM lt2_mylinks WHERE blog_id = '1' ORDER BY date DESC"
+generated the following error message = 
+"Table 'sq.lt2_mylinks' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/userdata/baseuserdataprovider.class.php(107): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/dao/users.class.php(108): BaseUserDataProvider.getUsersBlogs
+/alidata/www/gitspace/juchi/lifetype/class/action/admin/adminaction.class.php(94): Users.getUsersBlogs
+/alidata/www/gitspace/juchi/lifetype/class/action/admin/adminmanageaction.class.php(21): AdminAction.AdminAction
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(347): AdminManageAction.AdminManageAction
+/alidata/www/gitspace/juchi/lifetype/admin.php(43): Controller.process
+
+ 02-11-2016 13:07:43 ERROR - The following query = 
+"SELECT * FROM lt2_blogs WHERE owner_id = '1' AND status = '1'"
+generated the following error message = 
+"Table 'sq.lt2_blogs' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/referers.class.php(57): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/action/blogaction.class.php(336): Referers.addReferer
+/alidata/www/gitspace/juchi/lifetype/class/action/blogaction.class.php(110): BlogAction._updateReferrer
+/alidata/www/gitspace/juchi/lifetype/class/action/defaultaction.class.php(31): BlogAction.BlogAction
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(347): DefaultAction.DefaultAction
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:44 ERROR - The following query = 
+"UPDATE lt2_referers SET hits = hits + 1 WHERE url = 'http://sq2.goodteeth.cn/admin.php?op=Manage' AND article_id = '0' AND blog_id = '1';"
+generated the following error message = 
+"Table 'sq.lt2_referers' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/articles.class.php(498): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/action/defaultaction.class.php(201): Articles.getBlogArticles
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(354): DefaultAction.perform
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:44 ERROR - The following query = 
+"SELECT a.id as id, a.id, a.date,
+                             a.user_id,a.blog_id,a.status,a.properties,
+                             a.num_reads, a.slug, 1 AS relevance, a.num_comments AS num_comments,
+							 a.num_nonspam_comments AS num_nonspam_comments, a.num_trackbacks AS num_trackbacks,
+							 a.num_nonspam_trackbacks AS num_nonspam_trackbacks, 
+							 a.global_category_id AS global_category_id,
+							 a.in_summary_page AS in_summary_page,
+							 a.modification_date AS modification_date
+							 FROM lt2_articles a, lt2_articles_categories c, 
+                             lt2_article_categories_link l WHERE  a.blog_id = 1 AND c.id = l.category_id AND a.id = l.article_id AND c.in_main_page = 1 AND a.status = '1' AND a.date <= '20161102130744' GROUP BY a.id  ORDER BY a.date DESC LIMIT 0, 15"
+generated the following error message = 
+"Table 'sq.lt2_articles' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/articles.class.php(644): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(157): Articles.getDaysWithPosts
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(255): BlogView._getMonthPosts
+/alidata/www/gitspace/juchi/lifetype/class/view/errorview.class.php(58): BlogView.render
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(386): ErrorView.render
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:44 ERROR - The following query = 
+"SELECT date
+                                    FROM lt2_articles 
+                                    WHERE status = 1 
+                                    AND blog_id = 1
+                                    AND MONTH(FROM_UNIXTIME(UNIX_TIMESTAMP(date) + 0)) = 11 
+                                    AND YEAR(FROM_UNIXTIME(UNIX_TIMESTAMP(date) + 0)) = 2016 AND date <= NOW()"
+generated the following error message = 
+"Table 'sq.lt2_articles' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(290): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/dao/mylinks.class.php(41): Model.getMany
+/alidata/www/gitspace/juchi/lifetype/class/dao/mylinkscategory.class.php(148): MyLinks.getLinks
+/alidata/www/gitspace/juchi/lifetype/tmp/1/%%ED^ED9^ED9B0B59%%sidebar-r.template.php(33): MyLinksCategory.getLinks
+/alidata/www/gitspace/juchi/lifetype/class/template/smarty/Smarty.class.php(1869): include
+/alidata/www/gitspace/juchi/lifetype/class/template/template.class.php(145): Smarty._smarty_include
+/alidata/www/gitspace/juchi/lifetype/tmp/1/%%DA^DAB^DABAA9FF%%error.template.php(14): Template._smarty_include
+/alidata/www/gitspace/juchi/lifetype/class/template/smarty/Smarty.class.php(1263): include
+/alidata/www/gitspace/juchi/lifetype/class/template/template.class.php(218): Smarty.fetch
+/alidata/www/gitspace/juchi/lifetype/class/view/smartyview.class.php(257): Template.fetch
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(286): SmartyView.render
+/alidata/www/gitspace/juchi/lifetype/class/view/errorview.class.php(58): BlogView.render
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(386): ErrorView.render
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:44 ERROR - The following query = 
+"SELECT * FROM lt2_mylinks WHERE blog_id = '1' ORDER BY date DESC"
+generated the following error message = 
+"Table 'sq.lt2_mylinks' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/userdata/baseuserdataprovider.class.php(107): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/dao/users.class.php(108): BaseUserDataProvider.getUsersBlogs
+/alidata/www/gitspace/juchi/lifetype/class/action/admin/adminaction.class.php(94): Users.getUsersBlogs
+/alidata/www/gitspace/juchi/lifetype/class/action/admin/adminmanageaction.class.php(21): AdminAction.AdminAction
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(347): AdminManageAction.AdminManageAction
+/alidata/www/gitspace/juchi/lifetype/admin.php(43): Controller.process
+
+ 02-11-2016 13:07:49 ERROR - The following query = 
+"SELECT * FROM lt2_blogs WHERE owner_id = '1' AND status = '1'"
+generated the following error message = 
+"Table 'sq.lt2_blogs' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/articles.class.php(498): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/action/defaultaction.class.php(201): Articles.getBlogArticles
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(354): DefaultAction.perform
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:52 ERROR - The following query = 
+"SELECT a.id as id, a.id, a.date,
+                             a.user_id,a.blog_id,a.status,a.properties,
+                             a.num_reads, a.slug, 1 AS relevance, a.num_comments AS num_comments,
+							 a.num_nonspam_comments AS num_nonspam_comments, a.num_trackbacks AS num_trackbacks,
+							 a.num_nonspam_trackbacks AS num_nonspam_trackbacks, 
+							 a.global_category_id AS global_category_id,
+							 a.in_summary_page AS in_summary_page,
+							 a.modification_date AS modification_date
+							 FROM lt2_articles a, lt2_articles_categories c, 
+                             lt2_article_categories_link l WHERE  a.blog_id = 1 AND c.id = l.category_id AND a.id = l.article_id AND c.in_main_page = 1 AND a.status = '1' AND a.date <= '20161102130752' GROUP BY a.id  ORDER BY a.date DESC LIMIT 0, 15"
+generated the following error message = 
+"Table 'sq.lt2_articles' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/articles.class.php(644): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(157): Articles.getDaysWithPosts
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(255): BlogView._getMonthPosts
+/alidata/www/gitspace/juchi/lifetype/class/view/errorview.class.php(58): BlogView.render
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(386): ErrorView.render
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:52 ERROR - The following query = 
+"SELECT date
+                                    FROM lt2_articles 
+                                    WHERE status = 1 
+                                    AND blog_id = 1
+                                    AND MONTH(FROM_UNIXTIME(UNIX_TIMESTAMP(date) + 0)) = 11 
+                                    AND YEAR(FROM_UNIXTIME(UNIX_TIMESTAMP(date) + 0)) = 2016 AND date <= NOW()"
+generated the following error message = 
+"Table 'sq.lt2_articles' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(290): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/dao/mylinks.class.php(41): Model.getMany
+/alidata/www/gitspace/juchi/lifetype/class/dao/mylinkscategory.class.php(148): MyLinks.getLinks
+/alidata/www/gitspace/juchi/lifetype/tmp/1/%%ED^ED9^ED9B0B59%%sidebar-r.template.php(33): MyLinksCategory.getLinks
+/alidata/www/gitspace/juchi/lifetype/class/template/smarty/Smarty.class.php(1869): include
+/alidata/www/gitspace/juchi/lifetype/class/template/template.class.php(145): Smarty._smarty_include
+/alidata/www/gitspace/juchi/lifetype/tmp/1/%%DA^DAB^DABAA9FF%%error.template.php(14): Template._smarty_include
+/alidata/www/gitspace/juchi/lifetype/class/template/smarty/Smarty.class.php(1263): include
+/alidata/www/gitspace/juchi/lifetype/class/template/template.class.php(218): Smarty.fetch
+/alidata/www/gitspace/juchi/lifetype/class/view/smartyview.class.php(257): Template.fetch
+/alidata/www/gitspace/juchi/lifetype/class/view/blogview.class.php(286): SmartyView.render
+/alidata/www/gitspace/juchi/lifetype/class/view/errorview.class.php(58): BlogView.render
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(386): ErrorView.render
+/alidata/www/gitspace/juchi/lifetype/index.php(51): Controller.process
+
+ 02-11-2016 13:07:52 ERROR - The following query = 
+"SELECT * FROM lt2_mylinks WHERE blog_id = '1' ORDER BY date DESC"
+generated the following error message = 
+"Table 'sq.lt2_mylinks' doesn't exist"
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(157): PatternLayout.format
+/alidata/www/gitspace/juchi/lifetype/class/logger/logger/logger.class.php(137): Logger.log
+/alidata/www/gitspace/juchi/lifetype/class/dao/model.class.php(142): Logger.error
+/alidata/www/gitspace/juchi/lifetype/class/dao/userdata/baseuserdataprovider.class.php(107): Model.Execute
+/alidata/www/gitspace/juchi/lifetype/class/dao/users.class.php(108): BaseUserDataProvider.getUsersBlogs
+/alidata/www/gitspace/juchi/lifetype/class/action/admin/adminaction.class.php(94): Users.getUsersBlogs
+/alidata/www/gitspace/juchi/lifetype/class/action/admin/adminemptyaction.class.php(21): AdminAction.AdminAction
+/alidata/www/gitspace/juchi/lifetype/class/controller/controller.class.php(347): AdminEmptyAction.AdminEmptyAction
+/alidata/www/gitspace/juchi/lifetype/admin.php(43): Controller.process
+
+ 02-11-2016 13:07:58 ERROR - The following query = 
+"SELECT * FROM lt2_blogs WHERE owner_id = '1' AND status = '1'"
+generated the following error message = 
+"Table 'sq.lt2_blogs' doesn't exist"

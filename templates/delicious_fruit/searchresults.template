@@ -1,0 +1,28 @@
+{include file="$blogtemplate/header.template"} 
+   <h2>{$locale->tr("search_results")}: {foreach from=$searchterms item=term}{$term} {/foreach}</h2>
+   <div id="SearchResults">
+    {foreach from=$searchresults item=result}
+    
+    
+      {assign var=article value=$result->getArticle()}
+	  {assign var="postDate" value=$article->getDateObject()}
+<div class="date_box">
+<div class="date_box_month">{$locale->formatDate($postDate,"%B")}</div>
+<div class="date_box_day">{$locale->formatDate($postDate,"%d")}</span></div>
+</div>
+      <h3><a href="{$url->postPermalink($article)}">{$article->getTopic()}</a></h3>
+	    <p class="sign">
+		{foreach name=categories from=$article->getCategories() 
+				 item=postCategory}
+          <a href="{$url->categoryLink($postCategory)}">
+			 {$postCategory->getName()}</a>{if 
+				!$smarty.foreach.categories.last}, {/if}
+        {/foreach} | {$locale->formatDate($postDate,"%Y")}
+      </p>
+      <div>
+      {$article->getText()|strip_tags|truncate:300:"...":false}
+      </div>
+
+    {/foreach}
+   </div> 
+{include file="$blogtemplate/footer.template"} 

@@ -1,0 +1,521 @@
+/* ****************** General  *************** */
+
+a:link {
+	color			: #034A81;
+	}
+
+a:visited {
+	color			: #A31418;
+	}
+	
+a:hover, a:active, a:hover {
+	text-decoration		: none;
+	border-bottom		: solid 2px;
+	}
+
+abbr, acronym {
+	cursor			: help;
+  	border			: none;
+	}
+
+html, #Bottom, #Admin { 
+	background		: #000; 
+	} 
+
+#Admin a {
+	color			: #fff;
+	} 
+
+#Admin { 
+	text-align		: right; 
+	font-size		: small;
+	padding			: 0.3em 15px;
+	} 
+
+body {
+	margin			: 0; 
+	padding			: 0;
+	font			: small 'lucida sans unicode', arial, times new roman, sans-serif;
+	color			: #000;
+	background		: #fff;
+	}
+	
+.clearer {
+	clear 			: both;
+	height			: 0px;
+	font-size			: 0px;
+	line-height		: 0px;
+	}
+      
+#Container {
+	width			: 100%;
+	text-align		: left;
+	background-color	: #fff;
+	padding-bottom		: 10px;
+	padding-top		: 10px;
+	}
+	
+	
+/* ******************  column a  *************** */
+	
+#Content {
+	width			: 56%;
+	float			: left;
+	margin-right		: 20px;
+	margin-left		: 20px;
+	background		: #F4F2E6;
+	word-wrap		: break-word;
+	overflow		: hidden;
+	}
+	
+h1 {
+   	margin			: 0;
+   	padding			: 1em 0 0.2em 0;
+	background-color	: #fff; 
+  	} 
+
+h1 a {
+	text-decoration		: none;
+	color			: #000 !important;
+	border-bottom		: solid 0px !important;
+	font-size		: xx-large;
+	}
+
+#Subtitle {
+	color			: #000;
+	font-size		: large;
+	margin			: 0;
+	border-bottom		: solid 20px #fff;
+	background-color	: #fff;
+	}
+
+
+#Content h2 {
+	margin			: 0;
+	padding			: 10px;
+	color			: #A31418;
+	}
+	
+
+	
+#SearchResults h3 {
+	margin			: 0;
+	padding			: 10px;	
+	}
+	
+#SearchResults p {
+	margin			: 0;
+	padding			: 10px;
+	}
+	
+#Content h2.category, #SearchResults h2 {
+	border-bottom		: 10px solid #fff;
+	background-color	: #fff;
+	padding			: 0.4em 0 0.3em 0;
+	margin			: 0;
+	color			: #85826F;
+	}
+	
+h3.truncate {
+	margin			: 0;
+	padding			: 10px;	
+	}
+	
+.pager {
+	background-color	: #fff;
+	}
+	
+.date {
+	font-weight		: bold;	
+	margin			: 10px 10px 1em 10px;
+	padding			: 0;
+	}
+	
+.Post { 
+	padding			: 0 10px 0 10px;
+	line-height		: 1.5em;
+	text-align		: justify;
+	}
+	
+.Post p { 
+	line-height		: 1.5em;
+	text-align		: justify;
+	padding			: 0;
+	margin			: 1em 0 1em 0;
+	}
+
+.Post img {
+	padding-top		: 1.2em;
+	}
+	
+br { 
+	line-height		: 0em;
+	font-size		: 0;
+	}
+
+p.footer {
+	border-bottom		: solid #fff 1em;
+	margin			: 1em 0 0 0;
+	padding			: 0 10px 10px 10px;
+	text-align		: left;
+	font-size:90%;
+	}
+	
+p.footer img {
+	margin-right		: 3px;
+	vertical-align		: middle;
+	}
+	
+p#Nextpost {
+	text-align		: center;
+	margin			: 0;
+	padding			: 0.5em 10px 0px 10px;
+	background		: #fff;
+	}
+	
+#Content h2.comments {
+	color			: #85826F;
+	text-transform		: capitalize;
+	background		: #fff;
+	margin-bottom		: 0;
+	padding-bottom		: 0.4em;
+	}
+	
+ol#comments {
+	background		: #F4F2E6;
+	margin-top		: 0;
+	margin-bottom		: 0;
+	}
+	
+ol#comments li {
+	margin			: 10px 10px 10px 0;
+	padding			: 10px;	
+	list-style-type		: decimal-leading-zero;
+	background		: #fff;
+	color			: #85826F;
+	font-weight		: bold;	
+	}
+	
+div.commentheader {
+	font-size		: small;	
+	line-height		: 1.5em;
+	padding			: 0 0 1em 0;
+	color			: #000;	
+	overflow		: hidden;
+	}
+	
+.commenttext p {
+	line-height		: 1.5em;
+	padding			: 0;
+	margin			: 0 0 1em 0;
+	color			: #000;	
+	font-weight		: normal;	
+	overflow		: hidden;
+	}
+	
+div.commenttext {
+	line-height		: 1.5em;
+	margin			: 0;
+	color			: #000;	
+	font-weight		: normal;
+	}
+	
+.commentposterinfo {
+	margin			: 1em 0 0 0;
+	line-height		: 1.5em;
+	color			: #85826F;
+	font-weight		: normal;	
+	}
+
+#CommentForm {
+	background		: #fff;
+	border-bottom		: 10px solid #fff;
+	border-top		: 10px solid #fff;
+	}
+	
+form#NewComment {
+	margin			: 0;
+	padding			: 0;
+	}
+	
+#CommentForm fieldset {
+	border			: 2px solid #F4F2E6; 
+	padding-left		: 10px; 
+	margin-top		: 0px;
+	padding-top		: 0px;
+	}
+
+#CommentForm legend {
+	padding			: 2px 4px 2px 4px;
+	background-color	: #ffffff;
+	font-weight		: bold;
+	}
+
+#CommentForm label {
+	width			: 6em;
+	float			: left;
+	display			: block;
+	clear			: both; 
+	float			: left;
+	margin-top		: 8px;
+	margin-bottom		: 0px;
+	}
+	
+#CommentForm input {
+	margin-top		: 8px;
+	margin-bottom		: 8px;
+	}
+	
+#Submit {
+	margin-top		: 8px;
+	margin-bottom		: 8px;
+	margin-left		: 6em;
+	}
+	
+#CommentForm textarea {
+	margin-top		: 8px;
+	margin-bottom		: 0px;
+	}
+	
+/* ******************  column b  *************** */
+	
+#Menu   {
+	width			: 28%;
+	float			: left;
+	text-align		: left;
+	border-left		: solid #000 0.3em;
+	padding-left		: 15px;
+	}
+	
+#Calendar, #Search {
+	width			: 86%;
+	margin			: 0 0 1.2em 0;
+	}
+
+#UserPicture {
+	margin			: 0 0 1.2em 0;
+	display			: block;
+	}
+	
+#Search fieldset {
+	border			: 0px solid;
+	padding			: 2px; margin:2px;
+	}
+	
+#Search input {
+	margin			: 0px;
+	padding			: 2px;
+	width			: 7em;
+	}
+	
+#Search input.button {
+	margin			: 0px;
+	padding			: 2px;
+	width			: 5em;
+	}
+	
+#Search form {
+	margin			: 0px;
+	padding			: 2px;
+	}
+	
+#Search label {
+	margin			: 0px;
+	padding			: 2px;
+	width			: 8em;
+	}
+
+table.calMonth {
+	width			: 11em;
+	border-spacing		: 4px;
+	border			: 0px;
+	}
+
+th.calMonthCurrent {
+	font-weight		: normal;
+	padding			: 0px;
+	text-align		: center;
+	}
+	
+th.calMonthBackward {
+	font-weight		: normal;
+	padding			: 0px;
+	text-align		: center;
+	}
+	
+th.calMonthForward {
+	font-weight		: normal;
+	padding			: 0px;
+	text-align		: center;
+	}
+	
+.calMonthHeader th {
+	text-align		: center;
+	font-weight		: normal;
+	padding			: 0px;
+	}
+	
+#Calendar td {	
+	padding			: 0px;
+	text-align		: center
+	}
+
+.calendarToday {
+ 	background-color	: #F4F2E6;
+	}	
+
+#Menu h2 {
+  	font-size		: small;
+  	width			: 86%;
+  	margin-top		: 0;
+  	margin-bottom		: 0;  	
+	text-transform		: capitalize;
+	}
+	
+#Menu h3 {
+  	font-size		: small;
+  	width			: 86%;
+  	margin-bottom		: 0;
+  	font-weight		: normal;
+	}
+
+#Categories ul, #Syndicate ul, #Recently ul, #Sections ul, #Links ul {
+	font-size		: small;
+	line-height		: 1.5em;
+	margin-top		: 0.5em;
+	margin-bottom		: 1.5em;
+	}
+	
+#Syndicate ul, #Sections ul {
+	text-transform		: capitalize;
+	}
+
+
+/* ******************  footer  *************** */
+
+#Bottom {
+   	color			: #fff;
+   	padding			: 3px 3px 6px 15px;
+   	clear			: both;
+   } 
+	
+#Bottom a {
+	color			: #fff;
+	}
+
+
+/* ******************  links  *************** */
+
+div#Links {
+	margin			: 0 0 0 1em;
+  	}
+  
+  	
+/* ******************  albums  *************** */
+
+div#album, div#albums {
+	margin			: 0 10px;
+  	}
+
+div.album {
+	text-align		: center;
+        float			: left;
+        width			: 150px;
+        margin-bottom		: 20px;
+        margin-right:5px;
+  	}
+
+.album p {
+   	text-align		: center;
+   	padding			: 0;
+   	margin			: 0;
+   	width			: 150px;
+   	overflow		: hidden;
+   	}
+   
+a img {
+	border			: none;
+	}
+
+#album a {
+	border-bottom		: solid 0px;
+	}
+
+
+/* ******************  trakbacks  *************** */
+
+
+#trackbacks_container {
+	padding			: 0 10px 10px 10px;
+	}
+
+#trackbacks_container h4 {
+	margin			: 1em 0 0 0;
+	padding			: 0;
+	font-size		: small;
+	}
+	
+#trackbacks_container dl {	
+	margin			: 0;
+	padding			: 0;
+	}
+	
+#trackbacks_container dt {
+	font-weight		: bold;
+	float			: left;
+	}
+	
+#trackbacks_container dd {
+	padding-left		: 4em;
+	}
+	
+blockquote {
+	background		: url('blockquote.gif') no-repeat; 
+	padding			: 10px 10px 2px 41px;
+	border			: dotted #85826F 2px; 
+	}
+	
+	
+/* ******************  to align elements  *************** */
+
+.left {
+	text-align		: left;
+	display			: block;
+	}
+
+.right {
+	text-align		: right;
+	display			: block;
+	}
+
+.center {
+	text-align		: center;
+	display			: block;
+	}
+
+
+/* ******************  to float elements  *************** */
+
+.floatleft {
+	float			: left;
+	padding			: 1.2em 1em 1em 0px
+	}
+	
+.floatright {
+	float			: right;
+	padding			: 1.2em 0px 1em 1em;
+	}
+
+
+/* ******************  to highlight text  *************** */
+.bold {
+	font-weight		: bold;
+	}
+	
+.italic {
+	font-style		: italic;
+	}
+
+.underline {
+	text-decoration		: underline;
+	}

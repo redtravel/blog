@@ -1,0 +1,94 @@
+</div>
+</div>
+
+<div id="links">
+
+<div class="sidetitle">{$locale->tr("search")}</div>
+<div class="side">
+   <form name="search_form" method="post" action="{$url->getIndexUrl()}">
+    <input type="text" name="searchTerms" value="" size="14" />
+    <input type="hidden" name="op" value="Search" />
+    <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+    <input type="submit" name="Search" value="{$locale->tr("search")}" />
+   </form>
+</div>
+
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $blogOwner->hasPicture() && $AboutMyself}  
+  	<div class="sidetitle">{$locale->tr("about_myself")}</div>
+  	<div class="side">
+  	<div align="center">
+  	{assign var=picture value=$blogOwner->getPicture()}
+  	<img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /><br/>
+  	<p>{$AboutMyself}</p>
+  	</div>
+  	</div>
+{/if}
+
+
+<div class="sidetitle">{$locale->tr("calendar")}</div>
+<div class="side">
+<div align="center">
+{$calendar}
+</div>
+</div>
+
+<div class="sidetitle">{$locale->tr("archives")}</div>
+<div class="side">
+<p>
+ <ul>
+ {foreach from=$archives item=archive}
+  <li><a href="{$archive->getUrl()}">{$archive->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("categories")}</div>
+<div class="side">
+<p>
+ <ul>
+ {foreach from=$articlecategories item=category}
+  <li><a href="{$url->categoryLink($category)}">{$category->getName()}</a></li>
+ {/foreach}
+ </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("links")}</div>
+<div class="side">
+<p>
+  <ul>
+   {foreach from=$mylinkscategories item=linkcategory}
+     <li><b>{$linkcategory->getName()}</b>
+     <ul>
+      {foreach from=$linkcategory->getLinks() item=link}
+       <li><a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a></li>
+      {/foreach}
+     </ul>
+    </li>
+   {/foreach}  
+   </ul>
+</p>
+</div>
+
+<div class="sidetitle">{$locale->tr("menu")}</div>
+<div class="side">
+<ul>
+<p>
+   <li><a href="{$url->blogLink()}">{$locale->tr("main")}</a></li>
+   <li><a href="{$url->albumLink()}">{$locale->tr("albums")}</a></li>
+   <li><a title="Link to the RSS 1.0 feed." href="{$url->rssLink("rss10")}">RSS feed</a></li>
+   <li><a title="Link to the Atom feed." href="{$url->rssLink("atom")}">Atom feed</a></li>
+  </ul>
+</p> 
+</div>
+
+<div class="powered">
+Powered by <a href="http://www.lifetype.net">LifeType</a><br />    
+</div>
+
+</div>
+</body>
+</html>

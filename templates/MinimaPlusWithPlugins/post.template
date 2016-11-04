@@ -1,0 +1,20 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+	<!-- Begin .post -->
+	<div class="post">
+		<h3 class="post-title"><a href="{$url->postPermalink($post)}" style="text-decoration:none;" rel="bookmark" title="Permanent Link: {$post->getTopic()}">{$post->getTopic()}</a></h3>
+		<div class="post-body">
+			<div>
+				<p>{$post->getText()}</p>
+			</div>
+		</div>
+		
+		<p class="post-footer">
+			<em>{$locale->tr("posted_by")} {$postOwner->getUsername()}, 
+			<a href="{$url->postPermalink($post)}" title="permanent link">{$locale->formatDate($postDate,"%m/%d,%Y")}</a> @ 
+            {$locale->formatDate($postDate,"%H:%M")}</em> | 
+            <em><a href="{$url->postPermalink($post)}#comments">{$post->getNumComments()} {$locale->tr("comments")}</a></em>
+		</p>
+	</div>
+
+<!-- End .post -->

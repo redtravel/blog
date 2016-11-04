@@ -1,0 +1,14 @@
+{assign var=pageTitle value=$blog->getBlog()}
+{assign var=about value=$locale->tr("about")}
+{include file="$blogtemplate/header.template" pageTitle="$pageTitle | $about"}
+<div id="content" class="narrowcolumn">
+<div>
+<div>
+<h2 class="title">{$locale->tr("about")}</h2>
+{$blog->getAbout()}
+</div>
+<br />
+</div>
+</div>
+
+{include file="$blogtemplate/footer.template"}

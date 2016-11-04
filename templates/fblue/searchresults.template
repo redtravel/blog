@@ -1,0 +1,10 @@
+{include file="$blogtemplate/header.template"}
+		<!-- Loop Start -->
+				<h2>{$locale->tr("search_results")}: {foreach from=$searchterms item=term}{$term} {/foreach}</h2>
+						{foreach from=$searchresults item=result}
+							{assign var=article value=$result->getArticle()}							
+								<a href="{$url->postPermalink($article)}">{$article->getTopic()}</a><br/>
+						{/foreach}
+						{pager style="links"}
+{include file="$blogtemplate/links.template"}		
+{include file="$blogtemplate/footer.template"}

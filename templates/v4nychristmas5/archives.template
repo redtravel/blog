@@ -1,0 +1,31 @@
+{include file="$blogtemplate/header.template"} 
+
+<div class="titolopost">{$locale->tr("archives")} - {$locale->tr("search")} - {$locale->tr("categories")}</div>
+
+<div align="center">
+	<form method="get" id="searchform" action="{$url->getIndexUrl()}">
+	<div>
+		<input type="text" name="searchTerms" value=""  id="s" />
+		<input type="hidden" name="op" value="Search" />
+		<input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+		<input type="submit" name="Search" value="Search" id="searchsubmit"/>
+	</div>
+	</form>
+</div>
+
+<div class="divTitle">{$locale->tr("archives")}</div>
+  <ul>
+    	{foreach from=$archives item=month}
+					<li>
+						<a href="{$month->getUrl()}">{$month->getName()}</a> [{$month->getNumArticles()}]
+					</li>
+					{/foreach}
+  </ul>
+
+<div class="divTitle">{$locale->tr("categories")}</div>
+  <ul>
+	{foreach from=$articlecategories item=articleCategory}
+	<li><a href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</a> [{$articleCategory->getNumArticles()}]</li>
+	{/foreach}
+  </ul>
+{include file="$blogtemplate/footer.template"} 

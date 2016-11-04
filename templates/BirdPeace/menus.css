@@ -1,0 +1,34 @@
+.preload1 {background: url(images/pro_drop4_2a.gif);}
+.preload1 {background: url(images/pro_drop4_2b.gif);}
+
+.prodrop4 {padding:0 0 0 100px; margin:0; list-style:none; height:35px; background:transparent url(images/pro_drop4_back.gif); position: absolute; z-index:500; font-family:arial, verdana, sans-serif;}
+.prodrop4 li.top {display:block; float:left;}
+.prodrop4 li a.top_link {display:block; float:left; height:35px; line-height:30px; color:#fff; text-decoration:none; font-size:12px; font-weight:bold; padding:0 0 0 10px; cursor:pointer;background: url(images/pro_drop4_0a.gif) no-repeat;}
+.prodrop4 li a.top_link span {float:left; display:block; padding:0 20px 0 10px; height:35px;background:url(images/pro_drop4_0b.gif) right top;}
+.prodrop4 li a.top_link:hover {color:#ffffff; background: url(images/pro_drop4_2a.gif) no-repeat; line-height:25px;line-height:30px;}
+.prodrop4 li a.top_link:hover span {background:url(images/pro_drop4_2b.gif) no-repeat right top;}
+
+.prodrop4 li:hover > a.top_link {color:#fff; background: url(images/pro_drop4_2a.gif) no-repeat; line-height:25px;}
+.prodrop4 li:hover > a.top_link span {background:url(images/pro_drop4_2b.gif) no-repeat right top;}
+
+.prodrop4 table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
+
+/* Default link styling */
+
+/* Style the list OR link hover. Depends on which browser is used */
+
+.prodrop4 a:hover {visibility:visible; position:relative; z-index:200;}
+.prodrop4 li:hover {position:relative; z-index:200;}
+
+/* keep the 'next' level invisible by placing it off screen. */
+.prodrop4 ul {position:absolute; width:0; height:0; margin:0; padding:0; list-style:none;}
+
+.prodrop4 ul.sub1 {width:160px;}
+.prodrop4 ul.sub2 {width:110px;}
+.prodrop4 ul.sub3 {width:90px;}
+.prodrop4 ul.sub4 {width:112px;}
+
+.prodrop4 :hover ul {left:0; top:35px; background: #b9d3fb; padding:3px; border:1px solid #3a93d2; border-width:0 1px 1px; white-space:nowrap; height:auto; z-index:300;}
+.prodrop4 :hover ul li {display:block; height:20px; position:relative; font-weight:normal; width:auto;}
+.prodrop4 :hover ul li a {display:block; font-size:11px; height:20px; line-height:20px; width:auto; padding:0 10px; color:#000; text-decoration:none;}
+.prodrop4 :hover ul li a:hover {background:#3a93d2; color:#fff;}

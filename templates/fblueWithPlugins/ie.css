@@ -1,0 +1,15 @@
+#wrap {
+	height:1%;
+
+}
+#main {
+	height:1%;
+}
+#content {
+	display:inline;
+	overflow:hidden;
+}
+#sidebar {
+	display:inline;
+	word-wrap:break-word;
+}

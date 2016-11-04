@@ -1,0 +1,7 @@
+{include file="$blogtemplate/header.template"}
+		<!-- Loop Start -->
+		<div class="post">
+			<h3 class="post-title">{$locale->tr("my_links")}</H3>
+		</div>
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"} 

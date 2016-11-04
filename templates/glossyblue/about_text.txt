@@ -1,0 +1,2 @@
+<h4>About</h4>
+<p>Open "about_text.txt" file in the theme folder to edit this text.</p>

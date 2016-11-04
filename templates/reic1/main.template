@@ -1,0 +1,20 @@
+{include file="$blogtemplate/header.template"}
+<div id="outcon">
+   <div id="content">
+      <div class="blogout">
+         <div class="blog">
+            {foreach from=$posts item=post}
+            {if $showAll}
+            {include file="$blogtemplate/postsummary.template"}
+            {else}
+            {include file="$blogtemplate/post.template"}
+            {/if}
+            {/foreach}
+             {pager style="links"}
+         </div>
+      </div>
+      <div class="clear">&nbsp;</div>
+   </div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,43 @@
+<div id="post_{$post->getId()}" class="post lead">
+<h3><a href="{$url->postPermalink($post)}"><span>{$post->getTopic()|strip_tags}</span></a></h3>
+<div class="timestamp author">
+<p>Posted by {$postOwner->getUsername()} on {$locale->formatDate($postDate,"%d %B, %Y %H:%M")}</p>
+</div>
+
+<div class="content">
+{$post->getText()}
+</div>
+
+{if $OnMainPage}
+<ul class="links">
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1 || $post->getNumComments() > 0 }
+<li class="icon jump">
+<a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comments")|capitalize} -> {$post->getTopic()|strip_tags}">{if $post->getNumComments() == 0 }{$locale->tr("add_comment")}{else if}{$locale->tr("comments")|capitalize} ({$post->getNumComments()}){/if}</a>
+</li>
+{/if}
+{if $post->getNumTrackbacks() > 0}
+<li class="icon jump">
+<a href="{$url->postTrackbackStatsLink($post)}" title="{$locale->tr("trackbacks")} -> {$post->getTopic()|strip_tags}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a>
+</li>
+{/if}
+</ul>
+
+{else}
+<ul class="links" style="text-align:center">    
+    {if $post->getNextArticle() != ""}
+      <li class="icon" style="display:inline">
+        {assign var=nextpost value=$post->getNextArticle()}
+        &laquo; <a href="{$url->postPermalink($nextpost)|strip_tags}">{$locale->tr("next_post")}</a>
+      </li>
+    {/if}
+        
+    {if $post->getPrevArticle() != ""}
+      <li class="icon" style="display:inline">
+        {assign var=prevpost value=$post->getPrevArticle()}
+        <a href="{$url->postPermalink($prevpost)|strip_tags}"> {$locale->tr("previous_post")}</a> &raquo; 
+      </li>
+    {/if} 
+</ul>
+{/if}   
+
+</div>

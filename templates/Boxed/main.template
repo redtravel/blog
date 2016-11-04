@@ -1,0 +1,15 @@
+{include file="$blogtemplate/header.template"}
+ {foreach from=$posts item=post}
+   {assign var="postDate" value=$post->getDateObject()}
+   {literal}<!-- *** this needs to get fixed... ***
+   {if $prevDay != $postDate->getDay()}
+    <h2 class="date">{$locale->formatDate($postDate, "%A, %B %d, %Y")}</h2>
+   {/if}
+   -->{/literal}
+   <div class="blogbody">
+   {literal}<!-- *** this needs to get fixed... *** {assign var="prevDay" value=$post->getDay()} -->{/literal}
+   {include file="$blogtemplate/post.template"}
+   </div>
+ {/foreach}
+ <div style="text-align:center">{pager style="links"}</div>
+{include file="$blogtemplate/footer.template"}

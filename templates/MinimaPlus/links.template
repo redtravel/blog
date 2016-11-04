@@ -1,0 +1,78 @@
+<div class="right"></div>
+<div class="left"></div>
+<br /><br />
+</div></div>
+
+<!-- Begin #sidebar -->
+	<div id="sidebar"><div id="sidebar2">
+	<!-- Begin #profile-container -->
+
+	{assign var=blogOwner value=$blog->getOwnerInfo()}
+	{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+	{if $blogOwner->hasPicture() && $AboutMyself}  
+	  	<h2 class="sidebar-title">{$locale->tr("about_myself")}</h2>
+	  	{assign var=picture value=$blogOwner->getPicture()}
+	  	<img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" />
+	  	<p>{$AboutMyself}</p>
+	{/if}	
+	
+	
+
+	<!-- End #profile -->
+	<ul><li></li></ul> 
+	
+	<h2 class="sidebar-title">{$locale->tr("search")}</h2>
+		   <form style="padding: 0px; margin-top: 0px; margin-bottom: 0px;" method="post" action="{$url->getIndexUrl()}">
+			  <input class =input type="text" name="searchTerms" value="" size="15" />
+			  <input type="hidden" name="op" value="Search" />
+			  <input type="hidden" name="blogId" value="{$blog->getId()}"/>   
+			  <input type="submit" name="Search" value="{$locale->tr("search")}" />
+		   </form>
+
+	<ul><li></li></ul>
+	
+	<h2 class="sidebar-title">{$locale->tr("categories")}</h2>
+		{foreach from=$articlecategories item=articleCategory}
+			<A href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</A> ({$articleCategory->getNumArticles()})<br>
+		{/foreach}<BR>
+
+	<h2 class="sidebar-title">{$locale->tr("archives")}</h2>
+		<form id="archiveform" action="" method="post">
+			<p style="margin: 0px; padding: 0px;">
+			<select id="archive_chrono">
+				<option value="">-- {$locale->tr("select")|capitalize} --</option>
+				{foreach from=$archives item=month}
+					<option value='{$month->getUrl()}'>{$month->getName()} [{$month->getNumArticles()}]</option>
+				{/foreach}
+			</select>
+			<input type="button" value="Go" onclick="window.location = (document.forms.archiveform.archive_chrono[document.forms.archiveform.archive_chrono.selectedIndex].value);" /></p>
+		</form>
+
+	<h2 class="sidebar-title">{$locale->tr("my_links")}</h2>
+	{foreach from=$mylinkscategories item=linkcategory}
+	<b>{$linkcategory->getName()}</b><br>
+		{foreach from=$linkcategory->getLinks() item=link}
+			<a href="{$link->getUrl()}" title="{$link->getDescription()}">{$link->getName()}</a><br>
+		{/foreach}<br>
+	{/foreach}
+
+
+
+	<ul><li></li></ul>
+  
+	<h2 class="sidebar-title">{$locale->tr("syndicate")}</h2>
+	<p class="post-footer">
+		<em>
+			<a href="{$url->rssLink("rss10")}" title="RSS 1.0">RSS 1.0</a><br/>
+			<a href="{$url->rssLink("rss20")}" title="RSS 2.0">RSS 2.0</a><br/>			
+			<a href="{$url->rssLink("atom")}" title="Atom">Atom</a><br/>			
+			<a href="http://validator.w3.org/check/referer">XHTML</a><br/>
+			<a class="footerLink" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+		</em>
+	</p>
+  
+	<ul><li></li></ul>
+
+
+</div></div>
+<!-- End #sidebar -->

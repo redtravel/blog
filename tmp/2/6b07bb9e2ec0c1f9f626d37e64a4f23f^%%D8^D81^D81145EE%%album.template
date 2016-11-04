@@ -1,0 +1,219 @@
+275
+a:4:{s:8:"template";a:4:{s:21:"silver/album.template";b:1;s:35:"./templates//silver/header.template";b:1;s:34:"./templates//silver/panel.template";b:1;s:35:"./templates//silver/footer.template";b:1;}s:9:"timestamp";i:1478054033;s:7:"expires";i:-1;s:13:"cache_serials";a:0:{}}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" 
+      lang="zh-CN" dir="ltr">
+<head>
+    <title>我是大侠 | 一般</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="generator" content="lifetype-1.2_r7217" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    
+    <link rel="stylesheet" title="default" type="text/css" media="screen" href="http://sq2.goodteeth.cn/templates/silver/style.css" />
+    <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=rss20" />
+    <link rel="alternate" type="text/xml" title="RSS 1.0" href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=rss10" />
+    <link rel="alternate" type="text/xml" title="RSS 0.90" href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=rss090" />
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=atom" />
+ <link rel="shortcut icon" type="image/x-icon" href="http://sq2.goodteeth.cn/templates/silver/favicon.ico" />
+   <script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1478054033 116.227.55.251';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+</head>
+
+<body>
+<div id="rap">
+    <h1 id="header"><a href="http://sq2.goodteeth.cn/index.php?blogId=2" title="我是大侠">我是大侠</a></h1>
+
+
+<div id="content">
+  <h2>album</h2>
+
+  <div class="post">
+    <h3 class="storytitle"><a href="http://sq2.goodteeth.cn/index.php?op=ViewAlbum&amp;albumId=2&amp;blogId=2">一般</a></h3>
+    <div class="meta">
+        created 01 十一月, 2016
+    </div>    
+    <div class="storycontent"><p>使用这个文件夹上传新图档</p></div>
+ 
+    
+ <!-- album contents go here -->
+<table style="border:0px;width:100%;" summary="album">
+ <tr>
+  <td style="width:25%;" align="center" >
+   <a href="http://sq2.goodteeth.cn/index.php?op=ViewAlbum&amp;albumId=0&amp;blogId=2">
+    <img style="border:0px;" src="http://sq2.goodteeth.cn/imgs/folder.gif" alt="Folder" /><br/>
+    ..
+   </a>
+  </td>
+      
+ <!--- show the resources here -->
+
+ 
+   <td style="width:25%;" align="center" >
+        <a href="http://sq2.goodteeth.cn/index.php?op=ViewResource&amp;blogId=2&amp;resource=aaa.png">
+    <img alt="ssss" style="border:0px;" src="http://sq2.goodteeth.cn/gallery/2/previews/aaa.png" />
+    <br/>aaa.png
+   </a>
+    <br/>
+    24 KB<br/>
+     320 x 320<br/>
+      </td>
+    <td></td></tr>
+</table>
+ 
+ <!-- end of album contents -->
+ 
+ </div>
+</div>
+
+
+<div id="menu">
+<ul>
+    <li id="search">站内搜寻
+	   <form name="search_form" method="post"
+	   	      action="http://sq2.goodteeth.cn/index.php">
+	      <input type="text" name="searchTerms" value="" size="14" /><br/>
+		  <input type="hidden" name="op" value="Search" />
+		  <input type="hidden" name="blogId" value="2"/>
+   </form>
+    </li>
+    <li id="wordpress">选单
+    <ul>
+     <li><a href="http://sq2.goodteeth.cn/index.php?op=ViewAlbum&amp;albumId=0&amp;blogId=2">文件夹</a></li>
+    </ul> 
+    </li>
+
+ <li id="categories">
+  文章分类
+  <ul>
+       <li><a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;postCategoryId=2&amp;blogId=2">一般 [1]</a></li>
+      </ul>
+ </li>
+  
+ <li id="archives">
+  文章汇整
+  <ul>
+     <li><a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;Date=201611&amp;blogId=2">十一月 2016</a></li>
+    </ul>
+  </li>
+  <li id="calendar">
+	<table class="calMonth" summary="">
+<thead>
+<tr class="calMonthNav">
+	<th class="calMonthBackward"><a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;Date=201610&amp;blogId=2" title="十月 2016">&laquo;</a></th>
+	<th class="calMonthCurrent" colspan="5">十一月 2016</th>
+	<th class="calMonthForward"><a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;Date=201612&amp;blogId=2" title="十二月 2016">&raquo;</a></th>
+</tr>
+<tr class="calMonthHeader">
+	<th scope="col" abbr="星期一">一</th>
+	<th scope="col" abbr="星期二">二</th>
+	<th scope="col" abbr="星期三">三</th>
+	<th scope="col" abbr="星期四">四</th>
+	<th scope="col" abbr="星期五">五</th>
+	<th scope="col" abbr="星期六">六</th>
+	<th scope="col" abbr="星期日">日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td class="calMonthDay">&nbsp;</td>
+	<td class="calMonthDay"><a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;Date=20161101&amp;blogId=2">1</a></td>
+	<td class="calMonthToday">2</td>
+	<td class="calMonthDay">3</td>
+	<td class="calMonthDay">4</td>
+	<td class="calMonthDay">5</td>
+	<td class="calMonthDay">6</td>
+</tr>
+<tr>
+	<td class="calMonthDay">7</td>
+	<td class="calMonthDay">8</td>
+	<td class="calMonthDay">9</td>
+	<td class="calMonthDay">10</td>
+	<td class="calMonthDay">11</td>
+	<td class="calMonthDay">12</td>
+	<td class="calMonthDay">13</td>
+</tr>
+<tr>
+	<td class="calMonthDay">14</td>
+	<td class="calMonthDay">15</td>
+	<td class="calMonthDay">16</td>
+	<td class="calMonthDay">17</td>
+	<td class="calMonthDay">18</td>
+	<td class="calMonthDay">19</td>
+	<td class="calMonthDay">20</td>
+</tr>
+<tr>
+	<td class="calMonthDay">21</td>
+	<td class="calMonthDay">22</td>
+	<td class="calMonthDay">23</td>
+	<td class="calMonthDay">24</td>
+	<td class="calMonthDay">25</td>
+	<td class="calMonthDay">26</td>
+	<td class="calMonthDay">27</td>
+</tr>
+<tr>
+	<td class="calMonthDay">28</td>
+	<td class="calMonthDay">29</td>
+	<td class="calMonthDay">30</td>
+	<td class="calMonthDay">&nbsp;</td>
+	<td class="calMonthDay">&nbsp;</td>
+	<td class="calMonthDay">&nbsp;</td>
+	<td class="calMonthDay">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+  </li>
+
+    <li id="meta">
+    Meta
+    <ul>
+     <li><a title="Link to the RSS 0.90 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=rss090">RSS 0.90</a></li>
+     <li><a title="Link to the RSS 1.0 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=rss10">RSS 1.0</a></li>
+     <li><a title="Link to the RSS 2.0 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=rss20">RSS 2.0</a></li>
+     <li><a title="Link to the Atom 0.3 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=2&amp;profile=atom">Atom 0.3</a></li>
+     <li><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+     
+    </ul> 
+    </li>
+
+  <li id="style"> 
+  网站链接
+  <ul>
+        <li><b>一般</b>
+     <ul>
+           </ul>
+    </li>
+     
+   </ul>
+    </li>
+</ul> 
+</div>    </div>
+    <p class="credit">
+        Powered by <a href="http://www.lifetype.net" target="_blank">LifeType</a>
+    </p>
+    </body>
+</html>

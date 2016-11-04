@@ -1,0 +1,125 @@
+385
+a:4:{s:8:"template";a:5:{s:33:"andreas-3-columns/albums.template";b:1;s:46:"./templates//andreas-3-columns/header.template";b:1;s:49:"./templates//andreas-3-columns/sidebar-l.template";b:1;s:49:"./templates//andreas-3-columns/sidebar-r.template";b:1;s:46:"./templates//andreas-3-columns/footer.template";b:1;}s:9:"timestamp";i:1478054617;s:7:"expires";i:-1;s:13:"cache_serials";a:0:{}}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" 
+      lang="zh-CN" dir="ltr">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ <meta name="generator" content="lifetype-1.2_r7217" />
+ <meta http-equiv="Content-Language" content="zh-CN" />
+ <meta name="author" content="Your Name / Original design: Andreas Viklund - http://andreasviklund.com/" />
+ <title>my blog | 文件夹</title>
+ <link rel="stylesheet" title="Default" href="http://sq2.goodteeth.cn/templates/andreas-3-columns/andreas01.css" type="text/css" />
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss20" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss10" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss090" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=atom" />
+ <link rel="stylesheet" type="text/css" href="http://sq2.goodteeth.cn/templates/andreas-3-columns/print.css" media="print" />
+ <link rel="shortcut icon" type="image/x-icon" href="http://sq2.goodteeth.cn/templates/andreas-3-columns/favicon.ico" />
+   <script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1478054617 116.227.55.251';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		
+</head>
+<body><div id="wrap">
+
+<div id="header">
+<h1><a href="http://sq2.goodteeth.cn/index.php?blogId=1">my blog</a></h1>
+<p></p>
+</div>
+
+<img id="frontphoto" src="http://sq2.goodteeth.cn/templates/andreas-3-columns/front.jpg" width="760" height="175" alt="" />
+<div id="avmenu">
+	<h2 class="hide">Menu:</h2>
+	<ul>
+		<li><a href="http://sq2.goodteeth.cn/index.php?blogId=1">Home</a></li>
+		<li><a href="http://sq2.goodteeth.cn/index.php?op=ViewAlbum&amp;albumId=0&amp;blogId=1">Albums</a></li>
+		<li><a href="http://sq2.goodteeth.cn/admin.php">Admin</a></li>
+		<li><a title="文章汇整" href="http://sq2.goodteeth.cn/index.php?op=Template&amp;blogId=1&amp;show=archives">Archives</a></li>
+		<li><a title="summary" href="http://sq2.goodteeth.cn/summary.php">Summary</a></li>
+	</ul>
+
+<h3>Recent Entries</h3>		
+		<ul>
+					<li><a title=" test " href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=3&amp;blogId=1">test</a></li>
+					<li><a title="如果你可以看到这篇文章，表示注册过程已经顺利完成。现在你可以开始blogging了！" href="http://sq2.goodteeth.cn/index.php?op=ViewArticle&amp;articleId=1&amp;blogId=1">恭喜！</a></li>
+				</ul>
+
+	<form method="post" action="http://sq2.goodteeth.cn/index.php">
+		<LABEL for=s>Search this site:</LABEL>
+		<input type="text" name="searchTerms" value="" size="13" />
+		<input type="hidden" name="op" value="Search" />
+		<input type="hidden" name="blogId" value="1"/>
+		<input type="submit" name="Search" value="Go" />
+	</form>
+
+</div><div id="extras">
+			
+	<h3>Categories</h3>
+	<p>
+		<a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;postCategoryId=3&amp;blogId=1">随笔</a> [1]<br/>
+		<a href="http://sq2.goodteeth.cn/index.php?op=Default&amp;postCategoryId=1&amp;blogId=1">General</a> [1]<br/>
+		</p>
+	
+	<h3>Links</h3>
+	<p>
+		<b>General</b><br/>
+				</p>
+	
+	<h3>Syndicate</h3>
+	<p>
+		<a class="nodecoration" title="Link to the RSS 0.90 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss090"><img src="http://sq2.goodteeth.cn/imgs/rss090_logo.gif" style="border:0px;" alt="RSS 0.90" /></a><br/>
+		<a class="nodecoration" title="Link to the RSS 1.0 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss10"><img src="http://sq2.goodteeth.cn/imgs/rss10_logo.gif" style="border:0px;" alt="RSS 1.0" /></a><br/>
+		<a class="nodecoration" title="Link to the RSS 2.0 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=rss20"><img src="http://sq2.goodteeth.cn/imgs/rss20_logo.gif" style="border:0px;" alt="RSS 2.0" /></a><br/>
+		<a class="nodecoration" title="Link to the Atom 0.3 feed." href="http://sq2.goodteeth.cn/rss.php?blogId=1&amp;profile=atom"><img src="http://sq2.goodteeth.cn/imgs/atom_logo.png" style="border:0px;" alt="Atom 0.3" /></a><br/>	
+	</p>
+	
+	<h3>Version:</h3>
+	<p>andreas01 v1.3</p>
+</div>
+ 
+ <div id="content">
+<h2>文件夹</h2>
+ <!-- album contents go here -->
+<table style="border:0px;width:90%;" summary="Albums">
+<tr>
+      <td style="width:33%;" align="center">
+   <a class="nodecoration" href="http://sq2.goodteeth.cn/index.php?op=ViewAlbum&amp;albumId=1&amp;blogId=1">
+   <img style="border:0px;" src="http://sq2.goodteeth.cn/imgs/admin/icon_folder-72.png" alt="Folder" /><br/>
+   General (0)
+  </a>
+    </td>
+    <td></td></tr>
+ </table>
+ <!-- end of the albums -->
+ </div>
+<div id="footer">
+Design by <a href="http://andreasviklund.com">Andreas Viklund</a>.
+Powered by <a href="http://www.lifetype.net">LifeType</a>.
+</div>
+
+</div>
+</body>
+</html>

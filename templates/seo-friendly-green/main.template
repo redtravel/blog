@@ -1,0 +1,27 @@
+{assign var="OnMainPage" value=1}
+{include file="$blogtemplate/header.template"}
+{if $category}<h1 id="page-title" class="archive-title"><em>{$category->getName()}</em></h1>{/if}
+
+
+{foreach name=currPost from=$posts item=post}
+{if $showAll | 1 && $category}
+<!-- showing only the topic of the post, in case we have too many! -->
+<div class="entry-asset asset hentry">
+	  <div class="asset-header">
+		<h2 class="asset-name entry-title"><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h2>
+	  </div>
+	  <div class="asset-content entry-content">
+		<div class="asset-body">{$post->getText()|strip_tags|truncate:300:"...":false}</div>
+	  </div>
+	  <div class="asset-footer">
+	    {foreach name=categories from=$post->getCategories() item=postCategory}
+          <a href="{$url->categoryLink($postCategory)}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}
+        {/foreach}
+      </div>
+</div><!-- entry-1 -->
+{else}
+  <!-- show the whole post, as we would normally do -->
+   {include file="$blogtemplate/post.template"}
+{/if}
+{/foreach}
+{include file="$blogtemplate/footer.template"}

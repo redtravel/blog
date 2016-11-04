@@ -1,0 +1,9 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/title.template"}
+{include file="$blogtemplate/banner.template"}
+ <div class="comments-head"><a name="comments"></a>Comments</div>
+ {if $blogsettings->getValue("comments_enabled")}
+  <div class="comments-head">Post a comment</div>
+  {include file="$blogtemplate/commentform.template"}
+ {/if}
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,22 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/title.template"}
+{include file="$blogtemplate/banner.template"}
+<div id="content">
+ <div class="blog">
+  <div class="blogbody">
+   <div><h2 class="title"><a class="aposted" href="{$url->postLink($post)}">{$post->getTopic()}</a></h2></div>
+   <div><h2 class="title">{$locale->tr("trackbacks_for_article")}</h2></div>
+   <div class="main">
+    {foreach from=$trackbacks item=trackback}
+     <div><a class="aposted" href="{$trackback->getUrl()}">{$trackback->getTitle()}</a></div>
+     <div><b>{$locale->tr("trackback_excerpt")}:</b> {$trackback->getExcerpt()}</div>
+     <div><b>{$locale->tr("trackback_weblog")}:</b> {$trackback->getBlogName()}</div>
+     {assign var="trackbackDate" value=$trackback->getDateObject()}
+     <div><b>{$locale->tr("date")}:</b> Date would be here<br/></div>
+    {/foreach}
+   </div>
+  </div>
+ </div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

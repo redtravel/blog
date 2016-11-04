@@ -1,0 +1,151 @@
+		{assign var="postPageTitle" value=$post->getTopic()}
+		{assign var="blogTitle" value=$blog->getBlog()}
+		{assign var="categories" value=$post->getCategories()}
+		
+		{assign var="postDate" value=$post->getDateObject()}
+		{assign var="postOwner" value=$post->getUserInfo()}
+		
+		{assign var="archiveLink" value=$locale->formatDate($postDate,"%Y%m")}
+		
+		{include file="$blogtemplate/header.template" pageTitle="$postPageTitle | $blogTitle"} 
+   
+   		{assign var="poster" value=$post->getUserInfo()}
+   		<!-- {$url->postTrackbackLink($post)} -->
+   		
+   		<div id="loop_single">
+   		
+   		{include file="$blogtemplate/post.template"}
+
+        </div>
+
+
+<div id="post_meta" class="prominent reduced"><div class="inner">
+				<h2>Information and Links</h2>
+				<p>Join the fray by commenting, tracking what others have to say, or linking to it from your blog.</p>
+
+
+				<dl class="metadata odd">
+					<dt class="">Information</dt>
+
+					<dd class="icon date"><a href="{$url->getArchiveLink($archiveLink)}">Months Archive</a></dd> 
+					{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1 || $post->getNumComments() > 0 }
+					<dd class="icon comment"><a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comments")|capitalize} -> {$post->getTopic()|strip_tags}">{if $post->getNumComments() == 0 }{$locale->tr("add_comment")}{else if}{$locale->tr("comments")|capitalize} ({$post->getNumComments()}){/if}</a></dd>
+					{/if}
+					{if $post->getNumTrackbacks() > 0}
+					<dd class="icon comment"><a href="{$url->postTrackbackStatsLink($post)}#trackbacks" title="{$locale->tr("trackbacks")} -> {$post->getTopic()|strip_tags}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a></dd>
+					{/if}
+				</dl>
+
+				<dl class="metadata even">
+					<dt>Feeds and Links</dt>
+                    {foreach from=$categories item=postCategory}
+					<dd class="icon feed"><a href="{$url->categoryRssLink($postCategory)}"  title="{$locale->tr("category")}: {$postCategory->getName()}">{$postCategory->getName()}</a></dd>
+					{/foreach} 
+                    {if $authuser && $authuser->getUsername() === $poster->getUsername()}
+					    <dd class="icon entry"><a href="{$url->getAdminUrl()}?op=editPost&amp;postId={$post->getId()}">Edit this Post</a></dd>
+					{/if}
+					<dd class="icon delicious"><a href="http://del.icio.us/post?url={$url->postPermalink($post)}&amp;title={$post->getTopic()|escape:'url'}">Del.icio.us</a></dd>
+					<dd class="icon digg"><a href="http://www.digg.com/submit" target="_blank">Digg</a></dd>
+					<dd class="icon technorati"><a href="http://technorati.com/cosmos/search.html?url={$url->postPermalink($post)}">Technorati</a></dd>
+				</dl>
+
+	
+				<dl class="metadata odd">
+					<dt>Categories</dt>				
+{foreach from=$categories item=postCategory}
+<dd class="icon category">
+<a href="{$url->categoryLink($postCategory)}" title="{$locale->tr("category")}: {$postCategory->getName()}">{$postCategory->getName()}</a>
+</dd>{/foreach}
+
+				</dl>
+				
+				<br class="clear" />
+				
+{* ----- this would need a plugin or some template editing... -------
+				<dl class="other">
+					<dt>Other Posts</dt>
+					<dd class="icon jump"></dd>
+					<dd class="icon jump"></dd>
+				</dl>
+*}
+
+</div></div>
+
+{*  --- two more colums for the article view, which are not needed atm...
+			<div id="widgets" class="single">
+				<div id="widgets_single_a" class="widget_set reduced"></div>
+				<div id="widgets_single_b" class="widget_set reduced"></div>
+			</div>
+			
+			<br class="clear" />
+*}
+			
+<br />
+
+
+
+
+
+<!-- Comments -->
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+<!-- Commentform -->
+{include file="$blogtemplate/commentform.template"}
+{/if}
+
+<div id="loop_comments">
+
+{if $comments}
+    <h2 id="comments">{$locale->tr("comments")|capitalize}</h2>
+
+{foreach from=$comments item=comment}
+
+<h3 class="commentheader">{if $comment->getTopic() != null} {$comment->getTopic()|strip_tags}{else}Re: <em>{$post->getTopic()|strip_tags}</em>{/if}</h3>
+
+<p class="commentposterinfo">
+		{assign var="postDate" value=$comment->getTimestamp()}
+		{if $comment->getUserUrl() != ""}<a href="{$comment->getUserUrl()}">{$comment->getUsername()}</a>
+		{else}
+			{$comment->getUsername()}
+		{/if} | {$locale->formatDate($postDate, "%d/%m/%Y, %H:%M")}
+</p>
+
+<div class="commenttext">
+{if $comment->IsPosterAuthenticated()}
+ {assign var=poster value=$comment->getUser()}
+ {if $poster->hasPicture()}
+   {assign var=posterimg value=$poster->getPicture()}
+   {assign var=commenter value=$comment->getUser()}
+   <img src="{$posterimg->getPreviewLink()}" alt="{$commenter->getUserName()}" />
+  {/if}
+{/if}
+{$comment->getText()}
+</div>
+{/foreach}	
+{pager style="links"}
+
+
+{elseif $trackbacks}
+<h2 id="comments">{$locale->tr("trackbacks")|capitalize}</h2>
+
+{foreach from=$trackbacks item=trackback}
+{assign var="trackbackDate" value=$trackback->getDateObject()}
+
+<h3 class="commentheader">{$trackback->getTitle()}</h3>
+
+<p class="commentposterinfo">
+		<a href="{$trackback->getUrl()}">{$trackback->getBlogName()}</a>
+         | {$locale->formatDate($trackbackDate, "%d/%m/%Y %H:%M")}
+</p>
+
+<div class="commenttext">
+{$trackback->getExcerpt()}
+</div>
+{/foreach}	
+
+{/if}
+
+
+</div>
+ 		
+
+{include file="$blogtemplate/footer.template"}

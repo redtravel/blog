@@ -1,0 +1,11 @@
+{if $badbehavior}
+   {$badbehavior->showBB2JavaScript()}
+{/if}
+</head>
+<body>
+<a name="top"></a>
+<div id="container">
+<div id="banner">
+   <h1 class="blogtitle"><a href="{$url->blogLink()}">{$blog->getBlog()}</a></h1>
+   <div class="description">{$blog->getAbout()}</div>
+</div>

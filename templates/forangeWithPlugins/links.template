@@ -1,0 +1,99 @@
+</DIV>
+<!-- begin sidebar -->
+<DIV id=sidebar>
+<DIV id=searchdiv>
+<form method="post" action="{$url->getIndexUrl()}"><LABEL for=s>Search this site:</LABEL>
+<input type="text" name="searchTerms" value="" size="20" />
+<input type="hidden" name="op" value="Search" />
+<input type="hidden" name="blogId" value="{$blog->getId()}"/>
+<input type="submit" name="Search" value="Go" />
+</form>
+</DIV>
+
+<UL>
+
+
+<li>
+{assign var=blogOwner value=$blog->getOwnerInfo()}
+{assign var=AboutMyself value=$blogOwner->getAboutMyself()}
+{if $blogOwner->hasPicture() && $AboutMyself}  
+  	 <li id="about_myself">{$locale->tr("about_myself")}
+  	 <ul>
+  	{assign var=picture value=$blogOwner->getPicture()}
+  	<li><img id="UserPicture" src="{$picture->getPreviewLink()}" alt="{$blogOwner->getUsername()}" /></li>
+  	<br/>
+  	{$AboutMyself}
+  	</ul>
+  	</li>
+{/if}
+</li>
+
+<LI>
+<H2>Around here</H2>
+<UL>
+{foreach from=$recentposts item=recentpost}
+<LI class=page_item><A title="{$recentpost->getText()|truncate:150:"..."|strip_tags|escape}" href="{$url->postLink($recentpost)}">{$recentpost->getTopic()}</a><br/></LI>
+{/foreach}
+</UL>
+
+<LI>
+{if !empty($recentcomments)}
+{if $recentcomments->isEnabled()}
+<H2>Recent Comments</H2>
+<UL>
+{assign var=comments value=$recentcomments->getRecentComments()}
+{foreach from=$post->getComments() item=comment}
+{assign var=commentpostid value=$comment->getArticleId()}
+{assign var=commentpost value=$recentcomments->getArticle($commentpostid)}
+<LI><b>{$comment->getUsername()}：</b><a title="View comments by {$comment->getUsername()}" href="{$url->postPermalink($commentpost)}#{$comment->getId()}">{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()|truncate:100:"..."|strip_tags}</a><br /></LI>
+{/foreach}
+</UL>
+{/if}
+{/if}
+
+
+
+
+<LI>
+<H2>Categories</H2>
+<UL>
+{foreach from=$articlecategories item=articleCategory}
+<LI><A href="{$url->categoryLink($articleCategory)}">{$articleCategory->getName()}</A> ({$articleCategory->getNumArticles()})</LI>
+{/foreach}
+</UL>
+
+<LI>
+<H2>Navigate</H2>
+<UL>
+<LI><a title="{$locale->tr("main")}" href="{$url->blogLink()}">{$locale->tr("main")}</a>
+<LI><a title="{$locale->tr("archives")}" href="{$url->templatePage("archives")}">{$locale->tr("archives")}</a>
+<LI><a title="{$locale->tr("links")}" href="{$url->templatePage("bookmark")}">{$locale->tr("links")}</a>
+<LI><a title="{$locale->tr("summary")}" href="{$url->getUrl("/summary.php")}">{$locale->tr("summary")}</a>
+</UL>
+</LI>
+
+
+<LI>
+<H2>Meta</H2>
+<UL>
+<LI><A title="{$locale->tr("admin")}" href="{$url->getAdminUrl()}">{$locale->tr("admin")}</a></LI>
+<LI><A title="{$locale->tr("albums")}" href="{$url->albumLink()}">{$locale->tr("albums")}</a></LI>
+<LI><A title="This page validates as XHTML 1.0 Transitional" href="http://validator.w3.org/check/referer">Valid <ABBR title="eXtensible HyperText Markup Language">XHTML</ABBR></A> </LI>
+<LI><A href="http://gmpg.org/xfn/"><ABBR title="XHTML Friends Network">XFN</ABBR></A> </LI>
+<LI><A title="Powered by LifeType, state-of-the-art semantic personal publishing platform." href="http://www.lifetype.net/">LifeType</A> </LI>
+</UL>
+</LI>
+
+
+</LI>
+
+</UL>
+</DIV>
+<!-- The main column ends  -->	</DIV>

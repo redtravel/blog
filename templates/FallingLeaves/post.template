@@ -1,0 +1,20 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+	<div class="post">
+		<h2 class="storytitle"><a class="aposted" href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h2>
+		<div class="date">{#lcl_publishedon#} {$locale->formatDate($postDate,"%H:%M, %m/%d,%Y")}</div>
+		<div class=storycontent>
+		{$post->getText()}
+	</div><br />
+	<div class="feedback">
+		<div class="meta">
+		{$locale->tr("posted_in")}
+			{foreach name=categories from=$post->getCategories() item=postcategory}
+				<a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+			{if !$smarty.foreach.categories.last}, {/if}
+			{/foreach}
+				| <a  href="{$url->postPermalink($post)}#comments">{$locale->tr("comment on this")} ({$post->getNumComments()})</a>
+		</div>
+	</div>
+	<div class="sep">&nbsp;</div>
+	</div>

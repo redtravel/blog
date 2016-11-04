@@ -1,0 +1,16 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/title.template"}
+{include file="$blogtemplate/banner.template"}
+<div id="content">
+ <div class="blog">
+  <div class="blogbody">
+  <h2 class="title">{$locale->tr("about")} mtplog {$locale->tr("template")}</h2>
+  <div class="posted"><a href="{$url->templatePage("about")}">{$locale->tr("permalink")}</a></div>
+  <a class="aposted" href="http://blog.yam.com">樣板設計及版權所有 ─ 樂多</a></div>
+Porting and maintain: fragileness</p>
+  </div>
+  <br />
+ </div>
+</div>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

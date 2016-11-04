@@ -1,0 +1,461 @@
+
+
+/*
+	Theme Name: fBlue
+	Theme URI: http://www.fahlstad.se
+	Description: Liquid theme with max width, easy to customize.
+	Version: 1.0
+	Author: Fredrik Fahlstad
+	Author URI: http://www.fahlstad.se
+*/
+#wrap {
+	margin: 0px auto;
+	padding: 0px;
+	width: 802px;
+	border: 1px solid #000000;
+	position:relative;
+}
+
+#resource {
+	background-color:white;
+}
+body {
+	background-color: #606060;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(images/bg.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 76%;
+	line-height: 115%;
+	color: #333333;
+}
+#subheader {
+	background-color: #188CD7;
+	margin: 0px;
+	padding: 0px;
+	height: 110px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	background-image: url(images/top.jpg);
+	background-repeat: no-repeat;
+	border-top-style: none;
+}
+#main {
+	overflow: hidden;
+	border-bottom-width: 1px;
+	border-bottom-color: #FFFFFF;
+	background-color: #FFFFFF;
+	padding-top: 1em;
+	border-top: 1px #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	background-image: url(images/bg_main.jpg);
+	background-repeat: repeat-y;
+	background-position: right;
+}
+
+#resource-main {
+	overflow: hidden;
+	border-bottom-width: 1px;
+	border-bottom-color: #FFFFFF;
+	background-color: #FFFFFF;
+	padding-top: 1em;
+	border-top: 1px #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	background-repeat: repeat-y;
+	background-position: right;
+}
+
+#content {
+	float: left;
+	width: 520px;
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 20px 20px 0px;
+	overflow: hidden;
+	line-height: 1.6em;
+	ovh1erflow:hidden;
+	font-size:10pt;
+	letter-spacing:1px;
+
+}
+#sidebar {
+	background-color: #24345C;
+	float: right;
+	clear:right;
+	width: 220px;
+	margin: 0px;
+	padding: 10px;
+	line-height:1.3em;
+	color: #FFFFFF;
+	font-family:Lucida Grande, Lucida Sans Unicode, Verdana, Helvetica, Arial, sans-serif;
+}
+#description {
+	margin: 0px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #FFFFFF;
+	padding-top: 50px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-align: right;
+}
+#footer {
+	background-color: #333643;
+	clear: both;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-bottom-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	height: 40px;
+}
+#footer p {
+	color: #FFFFFF;
+	text-align: center;
+	margin: 0px;
+	padding: 10px 0px 0px;
+	font-size: 10px;
+}
+#headtitle {
+	background-color: #2A2C38;
+	margin: 0px;
+	padding: 0px;
+	height: 100px;
+	border: 1px solid #FFFFFF;
+	background-image: url(images/title.jpg);
+	background-position: right;
+}
+
+h1#title {
+	font-size:2.4em;
+	font-family: "Century Gothic";
+	font-weight: normal;
+	float:left;
+	display:inline;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	margin: 0px;
+}
+h1#title a {
+	color: #FFFFFF;
+}
+h1,h2,h3,h4 {
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Tahoma, Arial, sans-seriff;
+}
+h2 {
+	font-size: 1.8em;
+	margin: 0 0 0.5em 0;
+}
+h3 {
+	font-size: 1.6em;
+	margin: 0 0 10px 0;
+
+}
+h4 {
+	font-size: 1.4em;
+	margin: 0 0 10px 0;
+
+}
+
+
+/* Links
+================================================*/
+a:link,
+a:visited {
+	color:#1d79c9;
+	text-decoration:none;
+	padding:2px 2px 0;
+	margin:0 -2px;
+	
+	}
+a:focus {
+	color:#580801;
+	}
+a:hover {
+	color:#580801;
+	border-color:#580801;
+	text-decoration:underline;
+	}
+
+.current_page_item a {
+font-weight:bold;
+	}
+
+/************************************************
+*	Comments													*
+************************************************/
+h2#comments{
+	text-align:center;
+	border-top:1px solid #acb1ba;
+	background:#eeeeee;
+	padding:2px;
+	border-bottom:1px solid #acb1ba;
+	margin-bottom:10px;
+	margin-top:80px;
+	font-size: 110%;
+}
+
+ol#commentlist {
+	margin-top:0px;
+	padding: 5px;
+	margin-left: 0px;
+	color: #9b9b9b;
+	list-style-type: none;
+	font-size:0.9em;
+}
+
+#commentlist li  p{
+	margin-top: 8px;
+	margin-bottom: 16px;
+	line-height: 20px;
+}
+
+.commentname {
+	float: left;
+	margin: 0;
+	padding: 0  0 2px 0;
+	font-weight: bold;
+}
+
+.commentinfo{
+	width: 300px;
+	float: right;
+	text-align: right;
+}
+
+.commenttext {
+	clear: both;
+	margin-top: 0px;
+	margin-bottom: 30px;
+	border-top: 1px solid #ebebeb;
+	line-height:12px;
+	color: #5b5b5b;
+	background-color: #F8F8F8;
+	padding: 5px;
+}
+
+.commenttext-admin {
+	clear: both;
+	margin-top: 0px;
+	margin-bottom: 30px;
+	border-top: 1px solid #ebebeb;
+	line-height:12px;
+	color: #5b5b5b;
+	background-color: #CEE4F4;
+	padding: 5px;
+}
+
+#commentsformheader{
+	padding-left:18px;
+	font-size: 1.4em;
+}
+
+#commentsform{
+	margin-top:0;
+	text-align:center;
+	border:1px solid #ddd;
+	background:#ededed;
+	padding:0px 10px;
+}
+
+#commentsform form{
+	text-align:left;
+	margin:0px;
+}
+
+#commentsform p{
+	margin:5px;
+}
+
+#commentsform form textarea{
+	width:100%;
+}
+p.comments_link  img{
+	margin: 0px;
+	padding: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+/************************************************
+*	Header																			*
+************************************************/
+
+h2.entrydate{
+	margin-bottom:1px;
+	font-weight:normal;
+	text-transform:uppercase;
+	border-bottom:solid 1px #ccc;
+	text-align:right;
+}
+
+.entrymeta{
+	font-size: 10pt;
+}
+
+h3.entrytitle {
+	margin-top:0px;
+	padding-bottom:10px;
+	font-weight:bold;
+	color:#000000
+}
+h3.entrytitle a, h3.entrytitle a:visited{
+color:#24345C;
+}
+
+.entry{
+	margin-top:8px;
+	border-bottom:dotted 1px #ccc;
+}
+
+.entrybody p a{
+	/*font-weight:bold;*/
+}
+blockquote {
+	border-left-width: 3px;
+	border-left-style: solid;
+	border-left-color: #CCCCCC;
+	padding-left: 10px;
+	font-style: italic;
+	color: #666666;
+}
+
+.entrybody p {
+	margin-top:8px;
+	margin-bottom:16px;
+	text-align: justify;
+	font-size: 10pt;
+	line-height:1.5;
+	letter-spacing:1px;
+}
+
+.entrybody li {
+	font-size: 10pt;
+	line-height:1.8;
+}
+
+
+code {
+	background-color: #eeeeee;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+}
+#sidebar ul {
+	list-style: none;
+	padding-left: 10px;
+	margin-left: 10px;
+}
+
+#sidebar h2 {
+	font-size: 90%;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:#ffffff
+}
+
+#sidebar ul, #sidebar ul ol {
+	margin: 0px;
+	padding: 0px;
+}
+
+#sidebar ul li {
+	list-style-type: none;
+	margin-bottom: 15px;
+}
+
+#sidebar ul p, #sidebar ul select {
+	margin: 5px 0 8px;
+	font-size: 0.9em;
+}
+
+#sidebar ul ul, #sidebar ul ol { margin: 5px 0 0 7px; }
+
+#sidebar ul ul ul, #sidebar ul ol { margin: 0 0 0 0px; }
+
+#sidebar ul ul li, #sidebar ul ol li {
+	margin: 0px 0 0;
+	display: block;
+	width: 200px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 0px;
+	border-bottom: 1px solid #395293;
+}
+
+#sidebar ul ul ul li{
+	border:0px;
+	margin-left:5px;
+}
+
+#sidebar form { margin-top: 20px; }
+	
+#sidebar a {
+	color:#ABC7ED;
+}
+#searchdiv
+{
+	padding: 5px;
+	margin-bottom: 20px;
+	font-weight:bold;
+}
+
+#sidebar form {
+	margin: 0px;
+	padding: 0px;
+}
+.pager {
+	clear:all;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.pager a, .pager a:link, .pager a:href, .pager a:hover {
+ text-decoration: none;
+ border: 0px;
+}
+
+.pager .pagerLinkPrevPage, .pagerLink, .pagerLinkNextPage{
+	padding: 2px 6px;
+}
+
+.pager .pagerLinkPrevPage{
+	margin-right:20px;
+}
+.pager .pagerLinkNextPage {
+	margin-left:20px;
+}
+
+.pager .pagerCurrent {
+	padding: 2px 6px; 
+	border-color: #999; 
+	font-weight: bold; 
+	font-size: 13px; 
+	vertical-align: top; 
+	background: #fff; 
+	color: #FF0084;	
+}
+

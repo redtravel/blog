@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$locale->getLanguageId()}" 
+      lang="{$locale->getLanguageId()}" dir="{$locale->getDirection()}">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset={$locale->getCharset()}" />
+ <meta name="generator" content="{$version}" />
+ <meta http-equiv="Content-Language" content="{$locale->getLanguageId()}" />
+ <title>{$blog->getBlog()}{$postPageTitle}</title>
+ <link rel="stylesheet" title="Default" href="{$url->getTemplateFile("style.css")}" type="text/css" media=screen />
+ <link rel="alternate" type="text/xml" title="RSS 2.0" href="{$url->rssLink("rss20")}" />
+ <link rel="alternate" type="text/xml" title="RSS 1.0" href="{$url->rssLink("rss10")}" />
+ <link rel="alternate" type="text/xml" title="RSS 0.90" href="{$url->rssLink("rss090")}" />
+ <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="{$url->rssLink("atom")}" />
+ <link rel="shortcut icon" type="image/x-icon" href="{$url->getTemplateFile("favicon.ico")}" />
+<!--[if IE]><LINK href="{$url->getTemplateFile("ie.css")}" type=text/css rel=stylesheet><![endif]-->
+
+{if $badbehavior}
+   {$badbehavior->showBB2JavaScript()}
+{/if}
+</head>
+
+<body class="log" id="home">
+<div id="wrap">
+	<div id="headtitle">
+		<h1 id="title"><a href="{$url->blogLink()}">{$blog->getBlog()}</a></h1>
+	</div>
+	<div id="subheader">
+		<div id="description">{$blog->getAbout()}</div>
+	</div>
+	<div id="resource-main">
+	<div id="resource">
+	<!-- end header -->
+		{assign var=metadata value=$resource->getMetadataReader()}
+		{assign var=updated value=$resource->getTimestamp()}
+		
+		<h4>
+			{$resource->getFileName()} ({$metadata->getRoundedSize()}) | 
+			{$locale->tr("created")|capitalize} {$locale->formatDate($updated,"%d %B, %Y")} | 
+			<a href="{$url->resourceDownloadLink($resource)}">{$locale->tr("download")}</a>
+		</h4>
+		<br/>
+		    
+		<p>{$resource->getDescription()}</p>
+		{if $resource->isImage()}
+		<img src="{$url->resourceMediumSizePreviewLink($resource)}" alt="{$resource->getFileName()}, {$metadata->getRoundedSize()}" />
+	{else}
+		<a href="{$url->resourceDownloadLink($resource)}">
+		
+		{* show some information about the file *}
+		{if $resource->isSound()}
+			<img alt="Sound" src="{$url->getUrl("/imgs/sound.gif")}" height="64" width="64" style="border:0px;" /><br/>
+			{$resource->getFileName()}
+			</a><br/>     
+			{$locale->tr("format")}: {$metadata->getFormat()|upper}<br/>
+			{$locale->tr("length")}: {$metadata->getLengthString()}<br/>
+			{$locale->tr("sample_rate")}: {$metadata->getSampleRate()} Khz
+		{elseif $resource->isVideo()}
+			<img alt="Sound" src="{$url->getUrl("/imgs/video.gif")}" height="64" width="64" style="border:0px;" /><br/>
+			{$resource->getFileName()}
+			</a><br/>
+			{$locale->tr("format")}: {$metadata->getFormat()|upper}<br/>
+			{$locale->tr("size")}: {$metadata->getHeight()} x {$metadata->getWidth()}<br/>
+			{$locale->tr("length")}: {$metadata->getLengthString()}<br/>
+			{$locale->tr("video_codec")}: {$metadata->getVideoCodec()}<br/>
+			{$locale->tr("audio_codec")}: {$metadata->getAudioCodec()}
+		{elseif $resource->isZip()}
+			<img alt="Sound" src="{$url->getUrl("/imgs/compressed.gif")}" height="64" width="64" style="border:0px;" /><br/>
+			{$resource->getFileName()}
+			</a><br/>
+			{$metadata->getTotalFiles()} {$locale->tr("files")}<br/>
+			{$locale->tr("uncompressed_size")}: {$metadata->getRoundedUncompressedSize()}
+	{else}
+		<img alt="Sound" src="{$url->getUrl("/imgs/file.gif")}" height="64" width="64" style="border:0px;" /><br/>
+		{$resource->getFileName()}
+		</a>    
+		{/if}
+	{/if}
+	<br/>
+	<p>
+		{assign var=album value=$resource->getAlbum()}
+   		{if $prevresource}<a href="{$url->resourceLink($prevresource)}">&laquo;</a> | {/if}
+   		<a href="{$url->albumLink($album)}">{$locale->tr("back")}</a>
+   		{if $nextresource}| <a href="{$url->resourceLink($nextresource)}">&raquo;</a>{/if}
+	</p>
+	</div>
+
+
+{include file="$blogtemplate/footer.template"}

@@ -1,0 +1,35 @@
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<div class="date_box">
+<div class="date_box_month">{$locale->formatDate($postDate,"%B")}</div>
+<div class="date_box_day">{$locale->formatDate($postDate,"%d")}</div>
+
+</div>
+<h3>{$post->getTopic()}</h3>
+<p class="sign">{foreach name=categories from=$post->getCategories() item=postCategory}<a href="{$url->categoryLink($postCategory)}" title="{$locale->tr("category")}: {$postCategory->getName()}">{$postCategory->getName()}</a>{if !$smarty.foreach.categories.last}, {/if}{/foreach} | {$postOwner->getUsername()} | {$locale->formatDate($postDate,"%B %d, %Y,%H:%M")} </p>
+
+
+
+<div class="blog">
+{$post->getText()}
+</div>
+
+{if $OnMainPage}
+
+<p class="read_more">
+<a title="{$locale->tr("permalink_title")} -> {$post->getTopic()}" href="{$url->postPermalink($post)}">{$locale->tr("permalink")}</a> |
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1 || $post->getNumComments() > 0 }<a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comments")|capitalize} -> {$post->getTopic()}">{if $post->getNumComments() == 0 }{$locale->tr("add_comment")}{else if}{$locale->tr("comments")} ({$post->getNumComments()}){/if}</a> | {/if}
+{if $post->getNumTrackbacks() > 0}<a href="{$url->postTrackbackStatsLink($post)}" title="{$locale->tr("trackbacks")} -> {$post->getTopic()}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a>{else}{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()}){/if}
+</p>
+
+{else}
+
+<p class="read_more">
+{assign var=nextpost value=$post->getNextArticle()}{if $nextpost == true}<a href="{$url->postPermalink($nextpost)}" title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}</a> | {/if}
+{assign var=prevpost value=$post->getPrevArticle()}{if $prevpost == true}
+<a href="{$url->postPermalink($prevpost)}" title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">{$locale->tr("previous_post")}</a> | {/if}
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1 || $post->getNumComments() > 0 }{$locale->tr("comments")} ({$post->getNumComments()}) | {/if}
+{if $post->getNumTrackbacks() > 0}<a href="{$url->postTrackbackStatsLink($post)}" title="{$locale->tr("trackbacks")} -> {$post->getTopic()}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a>{else}{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()}){/if}
+</p>
+
+{/if}

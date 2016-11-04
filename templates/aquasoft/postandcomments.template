@@ -1,0 +1,96 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+
+{include file="$blogtemplate/header.template"}
+<tr>
+  <td class="content" valign="top">
+    
+    {if $post->getNextArticle() != ""}
+    <div class="alignleft">
+      {assign var=nextpost value=$post->getNextArticle()}
+      &laquo; <a href="{$url->postPermalink($nextpost)}">{$nextpost->getTopic()}</a>
+    </div>
+    {/if}
+    
+    {if $post->getPrevArticle() != ""}
+    <div class="alignright">
+      {assign var=prevpost value=$post->getPrevArticle()}
+      <a href="{$url->postPermalink($prevpost)}"> {$prevpost->getTopic()}</a> &raquo; 
+    </div>
+    {/if}    
+  </div>
+  <!-- commented this part because the comment part want to change -->
+  <!-- {$url->postTrackbackLink($post)} -->
+  {assign var="postDate" value=$post->getDateObject()}
+  {assign var="postOwner" value=$post->getUserInfo()}
+  <div>
+    <div class="post">
+      <h2><a href="{$url->postPermalink($post)}">{$post->getTopic()}</a></h2>
+      <small>
+	{$locale->tr("posted_by")} {$postOwner->getUsername()} | 
+	{$locale->formatDate($postDate,"%j %B, %Y")} |
+	{$locale->tr("num_reads")} ({$post->getNumReads()})
+      </small>
+      
+      <div class="entry">
+	<ul>{$post->getText()}</ul>
+      </div>
+      <br />
+      <p class="postmetadata alt">
+	<small>
+	  {include file="$blogtemplate/postmetadata.inc"}
+	</small> 
+      </p>
+      
+    </div>
+    
+    <!-- comment these out if you want to see an example of custom fields, but remember to name the fields
+	 in the same way they are named here: 'imfeeling' (livejournal.com style), 'listening' and 'new_field' 
+	 <p>
+	 <b>{$post->getFieldDescription("imfeeling")}</b> {$post->getField("imfeeling")}<br/>
+	 <b>{$post->getFieldDescription("listening")}:</b> {$post->getField("listening")}<br/> 
+	 <b>{$post->getFieldDescription("non-searchable")}</b>{$post->getField("non-searchable")}
+	 </p> 
+    -->
+        {pager style="links"}    
+  </div>
+
+  <div>
+    {if $comments}
+    <h3 id="comments">{$post->getNumComments()} {$locale->tr("comments")}  &amp; {$post->getNumTrackbacks()} {$locale->tr("trackbacks")} {$locale->tr("of")} "{$post->getTopic()}" </h3>
+    {foreach from=$comments item=comment}
+    <ol class="commentlist">
+      <a name="{$comment->getId()}"></a><p>{if $comment->IsPosterAuthenticated()}
+	{assign var=poster value=$comment->getUser()}
+	{if $poster->hasPicture()}
+		{assign var=posterimg value=$poster->getPicture()}
+		<img src="{$posterimg->getPreviewLink()}" alt="{$poster->getUserName()}" align="right" class="poster_avatar"/>
+	{/if}
+{/if}
+{$comment->gettext()}</p>
+      <span class="comments-post">
+	{$locale->tr("posted_by")}
+	{if $comment->getUserUrl() != ""}
+	<a href="{$comment->getUserUrl()}"}>{$comment->getUsername()}</a>
+	{else}
+	{$comment->getUsername()}
+	{/if}
+	{assign var=commentDate value=$comment->getDateObject()}
+	{$locale->formatDate($commentDate, "%d %B %Y, %H:%M")}
+      </span>
+    </ol>
+    {/foreach}
+    {/if}
+    
+  </div>
+  {if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+  <div>
+    {include file="$misctemplatepath/commentform.template"}
+  </div>
+  {/if}
+</div> 
+</td>
+{include file="$blogtemplate/panel.template"}
+{include file="$blogtemplate/footer.template"}

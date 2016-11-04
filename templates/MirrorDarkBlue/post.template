@@ -1,0 +1,31 @@
+<div class="post">
+<div class="post-date">
+<span class="post-month">{$locale->formatDate($postDate,"%B")}</span>
+<span class="post-day">{$locale->formatDate($postDate,"%d")}</span>
+</div>
+<div class="post-title">
+<h2><a href="{$url->postPermalink($post)}" rel="bookmark">{$post->getTopic()|capitalize}</a></h2>
+{assign var=postText value=$post->getText()}
+{assign var="postDate" value=$post->getDateObject()}
+{assign var="postOwner" value=$post->getUserInfo()}
+<span class="post-cat">
+{foreach name=categories from=$post->getCategories() item=postcategory}
+<a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+{/foreach}
+</span>
+<span class="post-links"> <a href="{$url->postTrackbackStatsLink($post)}" title="{$locale->tr("trackbacks")} -> {$post->getTopic()}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</a></span>
+{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+{if $post->getNumComments() > 0 }
+<span class="post-comments"><a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("comments")|capitalize} -> {$post->getTopic()}">{$locale->tr("comments")} ({$post->getNumComments()})</a>&nbsp;&nbsp;&nbsp;</span>
+{/if}
+{if $post->getNumComments() == 0 }
+<span class="mini-add-comment"><a href="{$url->postPermalink($post)}#comments" title="{$locale->tr("add_comment")|capitalize} -> {$post->getTopic()}">{$locale->tr("add_comment")}</a>&nbsp;&nbsp;&nbsp;</span>
+{/if}
+{/if}
+
+</div>
+<div class="post-content">
+{$postText}<p />
+<div class="line"></div>
+</div>
+</div>

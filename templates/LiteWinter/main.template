@@ -1,0 +1,9 @@
+{include file="$blogtemplate/header.template"}
+{include file="$blogtemplate/panel.template"}
+	{foreach from=$posts item=post}
+			<div id="Article_body">
+  		{include file="$blogtemplate/post.template"}
+  			</div>
+	{/foreach}
+ {pager style="links"}
+{include file="$blogtemplate/footer.template"}

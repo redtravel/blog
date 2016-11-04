@@ -1,0 +1,14 @@
+{include file="$blogtemplate/header.template"}
+  <div id="content">      
+    <div class="post">
+        <h2>{$locale->tr("error")}</h2>		
+		<div class="entry">
+		<img src="{$url->getTemplateFile("/images/error.gif")}" height="64" width="64" align="middle" alt="Error"/>
+		{$locale->tr($message)}
+		</div>	
+	</div>
+	<div class="page-nav">{$locale->tr("generated")} {$locale->formatDate($now,"%d %B, %Y")}</div>
+  </div>
+</div>
+{include file="$blogtemplate/sidebar.template"}
+{include file="$blogtemplate/footer.template"}

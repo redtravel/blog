@@ -1,0 +1,9 @@
+{include file="$blogtemplate/header.template"}
+		<div class=entry>
+		<!-- Loop Start -->
+				<h2>{$locale->tr("error")}</h2>
+				<p>{$locale->tr($message)}</p>
+				<p><a href="javascript:history.go(-1)">{$locale->tr("back")}</a></p>
+		</div>
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"}

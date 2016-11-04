@@ -1,0 +1,30 @@
+{include file="$blogtemplate/header.template"}
+	<div class="post"> 
+		<h2>{$locale->tr("search_results")}: {foreach from=$searchterms item=term}{$term} {/foreach}</h2><br/>
+		{foreach from=$searchresults item=result}
+			{assign var=article value=$result->getArticle()}
+			{assign var="postDate" value=$article->getDateObject()}
+			{assign var="postOwner" value=$article->getUserInfo()}
+			<div class="post-date">
+				<span class="post-month">{$locale->formatDate($postDate,"%B")}</span>  
+				<span class="post-day">{$locale->formatDate($postDate,"%d")}</span>
+			</div>
+			<div class="post-title">
+				<h2><a href="{$url->postPermalink($article)}" rel="bookmark" >{$article->getTopic()}</a></h2>
+				<span class="post-cat">
+					{foreach name=categories from=$article->getCategories() item=postcategory}
+						<a href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+					{/foreach}
+				</span> 
+				<span class="post-links"> <a href="{$url->postTrackbackStatsLink($article)}" title="{$locale->tr("trackbacks")} -> {$article->getTopic()}">{$locale->tr("trackbacks")} ({$article->getNumTrackbacks()})</a></span>	
+			</div>
+			<div class="post-content">
+				{$article->getText()|strip_tags|truncate:300:"...":false}
+			</div>
+			<br/>
+		{/foreach}
+		<div class="navigation">{pager style="links"}</div>
+	</div>
+</div>
+{include file="$blogtemplate/sidebar.template"}
+{include file="$blogtemplate/footer.template"}

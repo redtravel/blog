@@ -1,0 +1,80 @@
+{assign var="postPageTitle" value=$post->getTopic()}
+{assign var="postPageTitle" value=" | $postPageTitle"}
+
+{include file="$blogtemplate/header.template"}
+	
+<div class="entry single">
+		{assign var="postDate" value=$post->getDateObject()}
+		{assign var="postOwner" value=$post->getUserInfo()}
+
+
+		<h2><A href="{$url->postPermalink($post)}">{$post->getTopic()}</A></h2>
+
+		<p class="info">
+		   		<em class="date">{$locale->formatDate($postDate,"%m/%d/%Y")}</em>
+
+   		   		</p>
+
+			<P>{$post->getText()}</P>
+			
+	<DIV class=feedback>
+		<DIV class=meta>Posted by {$postOwner->getUsername()} at
+			{$locale->formatDate($postDate,"%H:%M")}
+			<A class=aposted href="{$url->postPermalink($post)}#comments">{$locale->tr("comment on this")} ({$post->getNumComments()})</A>,
+			<A class=aposted href="{$url->postTrackbackStatsLink($post)}">{$locale->tr("trackbacks")} ({$post->getNumTrackbacks()})</A>,
+			{foreach name=categories from=$post->getCategories() item=postcategory}
+				<a class=aposted href="{$url->categoryLink($postcategory)}">{$postcategory->getName()}</a>
+				{if !$smarty.foreach.categories.last}, {/if}
+			{/foreach}<br>
+			{* Prevpost and nextpost use *}
+			<a href="{$url->blogLink()}">Back to Home</a>
+			{assign var=nextpost value=$post->getNextArticle()}
+			{assign var=prevpost value=$post->getPrevArticle()}
+			{if $prevpost == true}
+				<a href="{$url->postPermalink($prevpost)}" 
+                   title="{$locale->tr("previous_post")}: {$prevpost->getTopic()}">{$locale->tr("previous_post")}</a>
+			{/if}
+			{if $nextpost == true}
+				<a href="{$url->postPermalink($nextpost)}" 
+                   title="{$locale->tr("next_post")}: {$nextpost->getTopic()}">{$locale->tr("next_post")}</a>
+			{/if}
+			{* End of article_index *}
+		</DIV>
+	</DIV>
+	</DIV>
+<!-- {$url->postTrackbackLink($post)} -->
+	
+		<!-- comments ................................. -->
+		<div id="comments">		
+		
+		<h2>{$post->getNumComments()} Comments <a href="#commentform" class="more">Add your own</a></h2>
+ {pager style="links"}
+ <br/>
+	<ul>
+	
+	{assign var="counter" value=1}
+	{foreach name=comment from=$comments item=comment}
+		<li class="comment" id="comment-{$comment->getId()}">
+		{if $counter%2!=0}
+		<p class="header"><strong>{$counter}.</strong>
+		
+		{else}
+		<p class="header alt"><strong>{$counter}.</strong>
+		{/if}
+			<a href="{$comment->getUserUrl()}">{$comment->getUsername()}</a> &nbsp;|&nbsp; {assign var=commentDate value=$comment->getDateObject()} {$locale->formatDate($commentDate, "%m/%d,%Y")}</p>
+			<p>{$comment->getText()}</p>
+		</LI>
+		{assign var="counter" value="`$counter+1`"}
+	{/foreach}
+	</UL>
+ {pager style="links"}<br/>
+	<a name="commentform"></a>
+
+	<h2 id="commentsformheader">Leave a Reply</h2>
+	{if $blogsettings->getValue("comments_enabled") && $post->getCommentsEnabled()==1}
+		{include file="$blogtemplate/commentform.template"}
+	{/if}
+	</div> <!-- /comments -->
+
+{include file="$blogtemplate/links.template"}
+{include file="$blogtemplate/footer.template"}

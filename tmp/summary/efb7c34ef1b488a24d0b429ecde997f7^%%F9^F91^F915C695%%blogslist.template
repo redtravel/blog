@@ -1,0 +1,121 @@
+243
+a:4:{s:8:"template";a:4:{s:26:"summary/blogslist.template";b:1;s:23:"summary/header.template";b:1;s:21:"summary/blog.template";b:1;s:23:"summary/footer.template";b:1;}s:9:"timestamp";i:1478054712;s:7:"expires";i:-1;s:13:"cache_serials";a:0:{}}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+    <title>聚齿网</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style type="text/css" media="screen">@import "styles/summary.css";</style>
+    <meta name="description" content="聚齿网" />
+ 	<link rel="shortcut icon" type="image/x-icon" href="http://sq2.goodteeth.cn/imgs/favicon.ico" />
+    <script type="text/javascript">
+    var blogLocale = 'UTF-8';
+  	// base url where we can find the admin.php script
+  	var plogBaseUrl = "http://sq2.goodteeth.cn";
+	var plogSummaryBaseUrl = plogBaseUrl + "/summary.php";
+	var plogBlogId = "0";
+</script>
+<script type="text/javascript" src="js/ui/default.js"></script>
+<script type="text/javascript" src="js/ui/common.js"></script>
+</head>
+<body class="column1">
+<div id="wrapper">
+<div id="header">
+</div>
+<map name="linksmenu" id="linksmenu" title="Navigation">
+    <div id="menubar">
+        <div id="menu">
+          <ul class="menuTop">
+             <li class="menuOption"><a href="summary.php?op=Summary">汇整</a></li>
+             <li class="menuOption"><a href="summary.php?op=Register&amp;start=1">注册</a></li>
+             <li class="menuOption"><a href="summary.php?op=PostList">文章</a></li>
+             <li class="menuOption"><a href="summary.php?op=BlogList">博客</a></li>
+             <li class="menuOption"><a href="summary.php?op=UserList">用户</a></li>
+          </ul>
+        </div>
+    </div>
+</map>
+
+<div id="onecolumn">
+
+          <h2>全部
+				  <a href="http://sq2.goodteeth.cn/rss.php?summary=1&amp;type=blogslist">
+			<img src="http://sq2.goodteeth.cn/imgs/rss_logo_mini.gif" alt="RSS" />
+		  </a>
+		      </h2>
+        
+
+           
+<div id="boxes">
+<div id="searchbox">
+<form id="searchForm" method="post" action="/summary.php">
+<div>
+            <label for="searchTerms"><input type="text" tabindex="1" name="searchTerms" id="searchTerms" value="" size="14" /></label>
+        <input type="hidden" name="searchType" id="searchType" value="2" />     
+        <input type="hidden" name="op" value="summarySearch" />            
+        <input type="submit" class="button" name="summarySearch" value="站内搜寻" tabindex="21" />
+    </div>
+    </form>
+    
+</div>
+<div id="categories">
+    
+<h3>博客分类</h3>
+	<ul>
+	<li>
+		全部	
+		</li>	
+	
+	  		
+		<li>
+				<a style="font-size: 18px" href="?op=BlogList&amp;blogCategoryId=1">随笔</a>
+				
+		</li>
+	
+  </ul> 
+
+   
+</div>   
+</div> 
+    
+    
+    
+                        		   
+                      		     <img src="http://sq2.goodteeth.cn/gallery/2/previews/aaa.png"  width="60" height="60" class="postgrav" />
+     
+    <h3>
+	 <a href="http://sq2.goodteeth.cn/index.php?blogId=2">我是大侠</a>
+	</h3>
+    <div class="subtitle">文章数: 1 | 评论: 0 | 引用: 0 | 分类: <a href="?op=BlogList&amp;blogCategoryId=1">随笔</a>    </div>
+
+         <div class="footer">
+						建立时间: 1 十一月 2016 | 用户: 
+			<strong>redtreelchao</strong>
+        </div>
+
+        <div class="clearleft">&nbsp;</div>        
+                        		   
+                              <img src="templates/summary/nouser.gif" class="postgrav" width="60" height="60" alt="lichao" />	
+     
+    <h3>
+	 <a href="http://sq2.goodteeth.cn/index.php?blogId=1">my blog</a>
+	</h3>
+    <div class="subtitle">文章数: 1 | 评论: 0 | 引用: 0 | 分类: <a href="?op=BlogList&amp;blogCategoryId=1">随笔</a>    </div>
+
+         <div class="footer">
+						建立时间: 1 十一月 2016 | 用户: 
+			<strong>lichao</strong>
+        </div>
+
+        <div class="clearleft">&nbsp;</div>        
+    
+
+
+</div>
+<div class="spacer">&nbsp;</div>
+<div id="footer">
+  Powered by <a href="http://www.lifetype.net">LifeType</a>	-
+  Design by <a href="http://www.balearweb.com">BalearWeb</a> 
+</div>
+</div>
+</body>
+</html>

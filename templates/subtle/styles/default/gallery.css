@@ -1,0 +1,89 @@
+
+/* -- Gallery thumbnails ------------------ */
+
+.gallery-thumb {
+	margin: 5px;
+	float: left;
+	text-align: center;
+}
+
+.gallery-thumb img {
+	background: #f3f3f3;
+	border: 1px solid #ddd;
+	padding: 7px;
+	margin: 1px;
+	-moz-border-radius: 3px;
+}
+
+.gallery-thumb a img {
+	border-color: #ccc;
+}
+
+.gallery-thumb a:hover img {
+	border-width: 2px;
+	border-color: #38c;
+	margin: 0;
+	-moz-border-radius: 5px;
+}
+
+
+.gallery-albums .gallery-thumb {
+	margin-right: 5px !important;
+}
+
+.gallery-album {
+	width: 46%; /* Change to 96% if you want 1 Album per line */
+	padding-right: 3%;
+	display: block;
+	float: left;
+	overflow: hidden;
+}
+.gallery-album h4 {
+    margin-top: 5px;
+}
+.gallery-album p {
+	font-size: 1em;
+}
+
+.gallery-album .meta {
+	margin-top: 3px;
+	color: #999;
+	font-size: 0.9em;
+}
+
+
+/* -- Gallery Items ----------------------- */
+
+.gallery-items {
+	margin: 0;
+	clear: both;
+}
+
+.gallery-empty {
+	padding: 0.5em 1.5em;
+	margin: 1.5em 3em;
+	border: 1px solid #ddd;
+	background: #ffe;
+	font-size: 1.2em;
+}
+img.parent {
+   border:none; 
+}
+
+/* -- Gallery Photo (detail page) --------- */
+
+div.gallery-photo {
+	text-align: center;
+}
+
+img.gallery-photo {
+	background: #f3f3f3;
+	border: 1px solid #ddd;
+	padding: 7px;
+	-moz-border-radius: 3px;
+}
+
+#prevArrow img, #nextArrow img {
+	border-style: none;
+}
+
